@@ -22,6 +22,8 @@
 /* TIPOGRAFIA */
 body {
   font-family: 'Inter', sans-serif;
+  width: 90%;
+  margin: 2rem auto;
 }
 
 h1 {
@@ -99,7 +101,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 1rem;
 }
 
 .navegação .nav-header {
@@ -144,7 +145,7 @@ p {
 
 /* SECÇÕES PRODUTOS */
 .produtos {
-  margin: 4rem 2rem 4rem 2rem;
+  margin: 4rem 0;
 }
 
 .produtos h2 {
@@ -204,7 +205,7 @@ p {
 
 /* SECÇÃO OPINIÕES */
 .opiniões {
-  margin: 4rem 2rem 4rem 2rem;
+  margin: 4rem 0;
 }
 
 .opiniões .título {
@@ -273,4 +274,72 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+/* seção newsletter */
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.newsletter .condições {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.divisoria {
+  width: 100%;
+  height: 2px;
+  background-color: var(--cor-cinzento-10);
+  margin-bottom: 2rem;
+}
+.newsletter .subscrição {
+  margin-bottom: 1rem;
+}
+.newsletter .condições input {
+  margin-right: 0.25rem;
+}
+
+.newsletter .subscrição input {
+  width: 12rem;
+  padding: 0.5rem;
+  outline: none;
+  border: var(--cor-cinzento-10) 2px solid;
+  border-radius: 0.25rem;
+  font-family: inherit;
+}
+.newsletter h3 {
+  margin-bottom: 1rem;
+}
+
+/* rodapé */
+
+.rodapé {
+  display: flex;
+  justify-content: space-between;
+}
+.rodapé .rodapé-header img {
+  width: 192px;
+  margin-bottom: 0.25rem;
+}
+.rodapé .rodapé-header .redes-sociais {
+  margin-top: 2rem;
+}
+.rodapé .rodapé-header .redes-sociais i {
+  margin-right: 1rem;
+}
+.rodapé .rodapé-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+}
+.rodapé .rodapé-info p {
+  margin-top: 0.25rem;
+}
+
+.rodapé .rodapé-pagamento {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
