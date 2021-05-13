@@ -1,22 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
-/* RESET DE MARGENS */
+/* RESET GLOBAL */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: inherit;
 }
 
-/* RESET ELEMENTOS */
 a {
   text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
 }
 
 input {
   display: block;
+  padding: 0.5rem;
+  outline: none;
+  border: 2px solid var(--cor-cinzento-10);
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in;
 }
 
-/* VARIÁVEIS GLOBAIS */
+input:focus {
+  border-color: var(--cor-primária);
+}
+
+/* ESTILOS GLOBAIS */
+body {
+  font-family: 'Inter', sans-serif;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+/* CORES */
 :root {
   --cor-primária: #2994ff;
   --cor-alerta: #ff4a4a;
@@ -26,15 +48,7 @@ input {
   --cor-cinzento-60: #899098;
 }
 
-/* ESTILOS GLOBAIS */
-
 /* TIPOGRAFIA */
-body {
-  font-family: 'Inter', sans-serif;
-  width: 90%;
-  margin: 2rem auto;
-}
-
 h1 {
   font-size: 4rem;
   font-weight: bold;
@@ -73,7 +87,6 @@ p {
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.05rem;
 }
 
 .categoria-pequeno {
@@ -96,7 +109,6 @@ p {
 /* BOTÕES */
 .btn-primário {
   display: block;
-  font-family: inherit;
   border: none;
   border-radius: 0.25rem;
   background-color: var(--cor-primária);
@@ -106,10 +118,9 @@ p {
 
 .btn-social {
   display: block;
-  font-family: inherit;
   border: none;
   border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
 }
 
 /* DIVISÓRIAS */
@@ -161,21 +172,21 @@ p {
 }
 
 .navegação .nav-items .pesquisar {
+  position: relative;
   display: flex;
   align-items: center;
-  border: 1px solid var(--cor-cinzento-10);
-  border-radius: 0.25rem;
   width: 16rem;
   padding: 0.5rem 0 0.5rem 0.5rem;
   margin-right: 1rem;
 }
 
-.navegação .nav-items .pesquisar p {
-  color: var(--cor-cinzento-60);
+.navegação .nav-items .pesquisar i {
+  position: absolute;
+  left: 1rem;
 }
 
-.navegação .nav-items .pesquisar i {
-  margin-right: 0.25rem;
+.navegação .nav-items .pesquisar input {
+  text-indent: 1.2rem;
 }
 
 .navegação .nav-items .menus i {
@@ -240,6 +251,7 @@ p {
 
 .produtos .cartão-produto .favoritos i {
   color: var(--cor-alerta);
+  margin-right: 0.25rem;
 }
 
 /* SECÇÃO OPINIÕES */
@@ -315,12 +327,13 @@ p {
   align-items: center;
 }
 
-/* seção newsletter */
+/* SECÇÃO NEWSLETTER */
 .newsletter {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .newsletter .condições {
   display: flex;
   align-items: center;
@@ -328,46 +341,46 @@ p {
 }
 
 .newsletter .subscrição {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-bottom: 1rem;
 }
+
 .newsletter .condições input {
   margin-right: 0.25rem;
 }
 
-.newsletter .subscrição input {
-  width: 12rem;
-  padding: 0.5rem;
-  outline: none;
-  border: var(--cor-cinzento-10) 2px solid;
-  border-radius: 0.25rem;
-  font-family: inherit;
-}
 .newsletter h3 {
   margin-bottom: 1rem;
 }
 
-/* rodapé */
-
+/* RODAPÉ */
 .rodapé {
   display: flex;
   justify-content: space-between;
 }
+
 .rodapé .rodapé-header img {
   width: 192px;
   margin-bottom: 0.25rem;
 }
+
 .rodapé .rodapé-header .redes-sociais {
   margin-top: 2rem;
 }
+
 .rodapé .rodapé-header .redes-sociais i {
   margin-right: 1rem;
 }
+
 .rodapé .rodapé-info {
   display: flex;
   justify-content: space-between;
   gap: 4rem;
 }
-.rodapé .rodapé-info p {
+
+.rodapé .rodapé-info li {
   margin-top: 0.25rem;
 }
 
@@ -388,25 +401,28 @@ p {
 .login .entrar {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .login .entrar h3 {
   margin-bottom: 1rem;
 }
+
 .login .entrar .btn-social {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
 }
+
 .login .entrar #facebook {
   background-color: #4267b2;
   color: #fff;
 }
+
 .login .entrar #google {
   background-color: #fff;
   box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
 }
+
 .login .entrar .btn-social i {
   font-size: 1rem;
   padding-right: 0.5rem;
@@ -419,7 +435,8 @@ p {
   width: 12rem;
   margin-top: 1rem;
 }
-.login .entrar form .dados{
+
+.login .entrar form .dados {
   padding-top: 1rem;
 }
 
@@ -448,10 +465,3 @@ p {
 .login .registar .btn-primário {
   margin-top: 2rem;
 }
-
-
-
-
-
-
-
