@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vício Tecnológico</title>
+   <!-- ICONS -->
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+   <script defer src="script.js"></script>
+</head>
+
+<body>
+   <div class="centrar">
+      <img src="./img/logo-primário.png" alt="logo" class="logo">
+   </div>
+   <section class="login">
+      <div class="entrar">
+         <h3>Entre na sua conta <br> Vício Tecnológico</h3>
+         <button id= "facebook" class="btn-social">
+            <i class="ri-facebook-fill"></i>
+            <p>Entrar com Facebook</p>
+         </button>
+         <button id="google" class="btn-social">
+            <i class="ri-google-fill"></i>
+            <p>Entrar com Google</p>
+         </button>
+         <div class="divisória">
+            <div class="divisória-horizontal"></div>
+            <p class="categoria-pequeno">Ou</p>
+            <div class="divisória-horizontal"></div>
+         </div>
+         <form action="index.html" method="GET">
+            <div class="dados">
+               <label for="email" class="categoria-pequeno">Email</label>
+               <input type="email" name="email" id="email">
+            </div>
+            <div class="dados">
+               <label for="palavra-passe" class="categoria-pequeno">Palavra-passe</label>
+               <input type="password" name="palavra-passe" id="palavra-passe">
+            </div>
+            <a href="#">
+               <p class="subtexto">Esqueceu-se da palavra-passe?</p>
+            </a>
+            <button type="submit" class="btn-primário categoria-pequeno">Login</button>
+         </form>
+      </div>
+      <div class="divisória-vertical"></div>
+      <div class="registar">
+         <h3>Ainda não tem conta<br>
+            Registe-se agora
+         </h3>
+         <p class="subtítulo">Fácil e rápido</p>
+         <div class="vantagens">
+            <i class="ri-check-line"></i>
+            <p class="subtexto">Acompanhe os seus pedidos</p>
+         </div>
+         <div class="vantagens">
+            <i class="ri-check-line"></i>
+            <p class="subtexto">Guarde os seus detalhes de pagamento e de envio e poupe tempo</p>
+         </div>
+         <div class="vantagens">
+            <i class="ri-check-line"></i>
+            <p class="subtexto">Faça devoluções online</p>
+         </div>
+         <a href="registar.html"><button class="btn-primário categoria-pequeno">Registar</button></a>
+      </div>
+   </section>
+</body>
