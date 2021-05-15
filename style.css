@@ -31,10 +31,18 @@ input:focus {
   border-color: var(--cor-primária);
 }
 
+input::placeholder {
+  font-size: 0.75rem;
+}
+
+i {
+  font-size: 1.2rem;
+}
+
 /* ESTILOS GLOBAIS */
 body {
   font-family: 'Inter', sans-serif;
-  width: 90%;
+  width: 90vw;
   margin: 2rem auto;
 }
 
@@ -152,9 +160,10 @@ p {
 
 /* NAVEGAÇÃO */
 .navegação {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .navegação .nav-header {
@@ -175,18 +184,16 @@ p {
   position: relative;
   display: flex;
   align-items: center;
-  width: 16rem;
-  padding: 0.5rem 0 0.5rem 0.5rem;
   margin-right: 1rem;
 }
 
 .navegação .nav-items .pesquisar i {
   position: absolute;
-  left: 1rem;
+  left: 0.5rem;
 }
 
 .navegação .nav-items .pesquisar input {
-  text-indent: 1.2rem;
+  text-indent: 1.5rem;
 }
 
 .navegação .nav-items .menus i {
