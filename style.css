@@ -37,6 +37,7 @@ input::placeholder {
 
 i {
   font-size: 1.2rem;
+  margin-right: 0.25rem;
 }
 
 /* ESTILOS GLOBAIS */
@@ -121,7 +122,7 @@ p {
   border-radius: 0.25rem;
   background-color: var(--cor-primária);
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.25rem;
 }
 
 .btn-social {
@@ -136,6 +137,7 @@ p {
   width: 100%;
   height: 2px;
   background-color: var(--cor-cinzento-10);
+  margin-bottom: 2rem;
 }
 
 .divisória-vertical {
@@ -144,9 +146,13 @@ p {
   background-color: var(--cor-cinzento-10);
 }
 
-/* LOGO */
+/* IMAGENS */
+img {
+  max-width: 100%;
+}
+
 .logo {
-  width: 192px;
+  width: 12rem;
 }
 
 /* CENTRAR */
@@ -240,10 +246,6 @@ p {
   margin-bottom: 0.5rem;
 }
 
-.produtos .cartão-produto .data-entrega i {
-  margin-right: 0.25rem;
-}
-
 .produtos .cartão-produto .preço {
   display: flex;
   align-items: center;
@@ -258,7 +260,6 @@ p {
 
 .produtos .cartão-produto .favoritos i {
   color: var(--cor-alerta);
-  margin-right: 0.25rem;
 }
 
 /* SECÇÃO OPINIÕES */
@@ -304,10 +305,6 @@ p {
 .opiniões .cartão-opinião .header .tempo {
   display: flex;
   align-items: center;
-}
-
-.opiniões .cartão-opinião .header .tempo i {
-  margin-right: 0.25rem;
 }
 
 .opiniões .cartão-opinião .comentário {
@@ -432,7 +429,7 @@ p {
 
 .login .entrar .btn-social i {
   font-size: 1rem;
-  padding-right: 0.5rem;
+  margin-right: 1rem;
 }
 
 .login .entrar .divisória {
