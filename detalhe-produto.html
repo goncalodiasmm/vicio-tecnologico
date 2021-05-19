@@ -8,7 +8,10 @@
    <title>Vício Tecnológico</title>
    <!-- ICONS -->
    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-   <link rel="stylesheet" href="style.css">
+   <!-- CSS -->
+   <link rel="stylesheet" href="./css/global.css">
+   <link rel="stylesheet" href="./css/style.css">
+   <!-- JS -->
    <script defer src="script.js"></script>
 </head>
 
@@ -18,7 +21,7 @@
       <div class="navegação">
          <div class="nav-header">
             <i class="ri-menu-2-line"></i>
-            <img src="./img/logo-primário.png" alt="logo" class="logo">
+            <a href="index.html"><img src="./img/logo-primário.png" alt="logo" class="logo"></a>
          </div>
          <div class="nav-items">
             <div class="pesquisar">
@@ -36,20 +39,26 @@
 
    <!-- APRESENTAÇÃO PRODUTO -->
    <section class="apresentação-produto">
-      <div class="página-atual">
+      <div class="breadcrumbs">
          <i class="ri-home-line"></i>
          <p class="categoria-pequeno">/ Computadores</p>
          <p class="categoria-pequeno">/ Portáteis</p>
       </div>
       <div class="apresentação">
          <div class="fotografias">
-            <div class="miniatura">
-               <img src="./img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_2.jpg"
-                  alt="auriculares xiaomi">
-               <img src="./img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_3.jpg"
-                  alt="auriculares xiaomi">
-               <img src="./img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_4.jpg"
-                  alt="auriculares xiaomi">
+            <div class="miniaturas">
+               <div class="miniatura">
+                  <img src="./img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_2.jpg"
+                     alt="auriculares xiaomi">
+               </div>
+               <div class="miniatura">
+                  <img src="./img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_3.jpg"
+                     alt="auriculares xiaomi">
+               </div>
+               <div class="miniatura">
+                  <img src="./img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_4.jpg"
+                     alt="auriculares xiaomi">
+               </div>
             </div>
             <div class="principal">
                <img src="./img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_1.jpg" alt="">
@@ -57,20 +66,22 @@
          </div>
          <div class="informação">
             <div class="info-produto">
-               <div class="disponibilidade">
+               <div class="informações">
                   <i class="ri-check-line"></i>
-                  <p>Produto Disponível</p>
-                  <p>53 restantes em stock</p>
+                  <div>
+                     <p class="subtexto negrito">Produto Disponível</p>
+                     <p class="subtexto">53 restantes em stock</p>
+                  </div>
                </div>
-               <div class="envio">
+               <div class="informações">
                   <i class="ri-truck-line"></i>
-                  <p>Envio Grátis</p>
-                  <p>Entrega entre 3 a 5 dias úteis</p>
+                  <div>
+                     <p class="subtexto negrito">Envio Grátis</p>
+                     <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+                  </div>
                </div>
             </div>
-            <div class="etiqueta-produto">
-
-            </div>
+            <div class="etiqueta-primária categoria-pequeno">Novidade</div>
             <h3>HP Pavilion Gaming 15-dk1011np</h3>
             <div class="preço">
                <h2>898,99€</h2>

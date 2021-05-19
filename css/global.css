@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* RESET GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+/* ESTILOS GLOBAIS */
+body {
+  font-family: 'Inter', sans-serif;
+  width: 90vw;
+  margin: 2rem auto;
+}
+
+/* CORES */
+:root {
+  --cor-primária: #2994ff;
+  --cor-alerta: #ff4a4a;
+  --cor-sucesso: #00d800;
+  --cor-rating: #ffbf00;
+  --cor-cinzento-10: #cfdbe6;
+  --cor-cinzento-60: #899098;
+}
+
+/* TIPOGRAFIA */
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.subtítulo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.subtexto {
+  font-size: 0.75rem;
+}
+
+.categoria-grande {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.categoria-médio {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.categoria-pequeno {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.negrito {
+  font-weight: bold;
+}
+
+.cruzado {
+  text-decoration: line-through;
+}
+
+.sublinhado-título {
+  width: 6rem;
+  height: 0.25rem;
+  background-color: var(--cor-primária);
+}
+
+/* ÍCONES */
+i {
+  font-size: 1.2rem;
+  margin-right: 0.25rem;
+}
+
+/* BOTÕES */
+a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.btn-primário {
+  display: block;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--cor-primária);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+}
+
+.btn-secundário {
+  display: block;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--cor-rating);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+}
+
+.btn-social {
+  display: block;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 1rem 2rem;
+}
+
+/* ETIQUETAS */
+.etiqueta-primária {
+  display: block;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--cor-primária);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+}
+
+.etiqueta-secundária {
+  display: block;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: var(--cor-rating);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+}
+
+/* INPUTS */
+input {
+  display: block;
+  padding: 0.5rem;
+  outline: none;
+  border: 2px solid var(--cor-cinzento-10);
+  border-radius: 0.25rem;
+  transition: all 0.2s ease-in;
+  margin-top: 0.25rem;
+}
+
+input:focus {
+  border-color: var(--cor-primária);
+}
+
+input::placeholder {
+  font-size: 0.75rem;
+}
+
+input[type='checkbox'] {
+  margin-right: 0.25rem;
+}
+
+.dados {
+  margin-bottom: 1rem;
+}
+
+.condições {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+/* LISTAS */
+ul {
+  list-style: none;
+}
+
+/* DIVISÓRIAS */
+.divisória-horizontal {
+  width: 100%;
+  background-color: var(--cor-cinzento-10);
+  padding: 0.0625rem 0;
+  margin: 1rem 0;
+}
+
+.divisória-vertical {
+  height: 100%;
+  background-color: var(--cor-cinzento-10);
+  padding: 0 0.0625rem;
+  margin: 0 1rem;
+}
+
+/* IMAGENS */
+img {
+  max-width: 100%;
+}
+
+.logo {
+  width: 12rem;
+}
+
+.miniatura {
+  width: 6rem;
+  border: 2px solid var(--cor-cinzento-10);
+}
+
+/* BREADCRUMBS */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* CENTRAR */
+.centrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
