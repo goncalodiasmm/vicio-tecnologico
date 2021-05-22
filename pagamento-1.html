@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vício Tecnológico</title>
+   <!-- ICONS -->
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+   <!-- CSS -->
+   <link rel="stylesheet" href="./css/global.css">
+   <link rel="stylesheet" href="./css/style.css">
+   <!-- JS -->
+   <script defer src="script.js"></script>
+</head>
+
+<body>
+   <!-- NAVEGAÇÃO -->
+   <nav>
+      <div class="navegação">
+         <div class="nav-header">
+            <i class="ri-menu-2-line"></i>
+            <a href="index.html"><img src="./img/logo-primário.png" alt="logo" class="logo"></a>
+         </div>
+         <div class="nav-items">
+            <div class="pesquisar">
+               <i class="ri-search-line"></i>
+               <input type="text" name="pesquisar" placeholder="Pesquise">
+            </div>
+            <div class="menus">
+               <a href="#"><i class="ri-heart-line"></i></a>
+               <a href="login.html"><i class="ri-user-fill"></i></a>
+               <a href="#"><i class="ri-shopping-cart-2-fill"></i></a>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <!--SECCÃO DE PAGAMENTO - SEPARADOR 1 -->
+   <section class="pagamento">
+      <div class="flex-h justificar-centro">
+         <!--CARRINHO DE COMPRAS-->
+         <button class="borda-primária">
+            <p class="categoria-médio">Carrinho de compras</p>
+         </button>
+         <!--CHECKOUT-->
+         <button class="borda-cinzento">
+            <p class="categoria-médio">Checkout</p>
+         </button>
+         <!--CONFIRMAÇÃO-->
+         <button class="borda-cinzento">
+            <p class="categoria-médio">confirmação</p>
+         </button>
+      </div>
+   </section>
+
+   <!--SECÇÃO LISTAGEM DO CARRINHO DE COMPRAS-->
+   <section class="lista-compras">
+      <div class="flex-h flex-inicial alinhar-centro espaço-4">
+         <div class="flex-h espaço-1">
+            <div class="miniatura">
+               <img src="./img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_2.jpg"
+                  alt="auriculares xiaomi">
+            </div>
+            <div class="flex-v">
+               <p class="negrito">HP Pavilion Gaming 15-dk1011np</p>
+               <div class="flex-h alinhar-centro espaço-0.25">
+                  <i class="ri-check-line sucesso"></i>
+                  <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
+               </div>
+            </div>
+         </div>
+         <div class="informação">
+         </div>
+         <div class="contador-quantidade">
+            <i class="ri-add-line"></i>
+            <input type="text" name="quantidade" id="quantidade" value="1">
+            <i class="ri-subtract-line"></i>
+         </div>
+         <div class="preço">
+            <h4>14,90€</h3>
+         </div>
+         <div class="confirmação">
+            <i class="ri-close-line"></i>
+         </div>
+      </div>
+   </section>
+
+   <!--LINHA DE FUNDO VALE PROMOÇÃO-->
+
+   <div class="campo-inferior">
+      <div class="vale-desconto">
+         <i class="ri-gift-fill"></i>
+         <input type="text" name="codigo-Promo" placeholder="Codigo Promocional">
+      </div>
+
+      <div class="custo-total">
+         <div class="custototal">
+            <p>Custo Total:</p>
+         </div>
+         <div class="total">
+            <h3>14,90€</h3>
+         </div>
+      </div>
+
+      <div class="flex-h alinhar-centro espaço-2">
+         <a href="pesquisa-produto.html" class="btn-contorno categoria-pequeno">Continuar a comprar</a>
+         <a href="pagamento-2.html" class="btn-primário categoria-pequeno">Checkout</a>
+      </div>
+</body>
+
+</html>

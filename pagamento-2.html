@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vício Tecnológico</title>
+   <!-- ICONS -->
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+   <!-- CSS -->
+   <link rel="stylesheet" href="./css/global.css">
+   <link rel="stylesheet" href="./css/style.css">
+   <!-- JS -->
+   <script defer src="script.js"></script>
+</head>
+
+<body>
+   <!-- NAVEGAÇÃO -->
+   <nav>
+      <div class="navegação">
+         <div class="nav-header">
+            <i class="ri-menu-2-line"></i>
+            <a href="index.html"><img src="./img/logo-primário.png" alt="logo" class="logo"></a>
+         </div>
+         <div class="nav-items">
+            <div class="pesquisar">
+               <i class="ri-search-line"></i>
+               <input type="text" name="pesquisar" placeholder="Pesquise">
+            </div>
+            <div class="menus">
+               <a href="#"><i class="ri-heart-line"></i></a>
+               <a href="login.html"><i class="ri-user-fill"></i></a>
+               <a href="#"><i class="ri-shopping-cart-2-fill"></i></a>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <!--SECCÃO DE PAGAMENTO - SEPARADOR 1 -->
+   <section class="pagamento">
+      <div class="flex-h justificar-centro">
+         <!--CARRINHO DE COMPRAS-->
+         <button class="borda-cinzento">
+            <p class="categoria-médio">Carrinho de compras</p>
+         </button>
+         <!--CHECKOUT-->
+         <button class="borda-primária">
+            <p class="categoria-médio">Checkout</p>
+         </button>
+         <!--CONFIRMAÇÃO-->
+         <button class="borda-cinzento">
+            <p class="categoria-médio">confirmação</p>
+         </button>
+      </div>
+   </section>
+
+   <!--DETALHES ENVIO-->
+   <form action="pagamento-3.html" method="GET">
+      <div class="flex-h espaço-8 flex-ajustar">
+         <div>
+            <header>
+               <p class="categoria-pequeno cinzento-60">Detalhes de Envio</p>
+               <div class="divisória-horizontal"></div>
+            </header>
+            <div class="flex-h espaço-2">
+               <div class="dados">
+                  <label for="nome" class="categoria-pequeno">Nome</label>
+                  <input type="text" name="nome" id="nome">
+               </div>
+               <div class="dados">
+                  <label for="apelido" class="categoria-pequeno">Apelido</label>
+                  <input type="text" name="apelido" id="apelido">
+               </div>
+            </div>
+            <div class="flex-h espaço-2">
+               <div class="dados">
+                  <label for="morada" class="categoria-pequeno">Morada</label>
+                  <input type="text" name="morada" id="morada">
+               </div>
+               <div class="dados">
+                  <label for="codigo-postal" class="categoria-pequeno">Código Postal</label>
+                  <input type="text" name="codigo-postal" id="codigo-postal">
+               </div>
+            </div>
+            <div class="flex-h espaço-2">
+               <div class="dados">
+                  <label for="pais" class="categoria-pequeno">País</label>
+                  <input type="text" name="pais" id="pais">
+               </div>
+               <div class="dados">
+                  <label for="cidade" class="categoria-pequeno">Cidade</label>
+                  <input type="text" name="cidade" id="cidade">
+               </div>
+            </div>
+            <div class="flex-h espaço-2">
+               <div class="dados">
+                  <label for="email" class="categoria-pequeno">Email</label>
+                  <input type="email" name="email" id="email">
+               </div>
+               <div class="dados">
+                  <label for="telemovel" class="categoria-pequeno">Telemóvel</label>
+                  <input type="text" name="telemovel" id="telemovel">
+               </div>
+            </div>
+            <div class="condições">
+               <input type="checkbox">
+               <p class="subtexto">Guardar detalhes de envio para compras futuras.</p>
+            </div>
+            <!-- DETALHES DE PAGAMENTO -->
+            <header>
+               <p class="categoria-pequeno cinzento-60">Detalhes de Pagamento</p>
+               <div class="divisória-horizontal"></div>
+            </header>
+            <div class="flex-h alinhar-centro espaço-2">
+               <img src="./img/pagamento-visa.png" alt="pagamento-visa">
+               <img src="./img/pagamento-mastercard.png" alt="pagamento-mastercard">
+               <img src="./img/pagamento-paypal.png" alt="pagamento-paypal">
+            </div>
+            <div class="flex-h espaço-2">
+               <div class="dados">
+                  <label for="nome-cartao" class="categoria-pequeno">Nome Cartão</label>
+                  <input type="text" name="nome-cartao" id="nome-cartao">
+               </div>
+               <div class="dados">
+                  <label for="numero-cartao" class="categoria-pequeno">Número Cartão</label>
+                  <input type="number" name="numero-cartao" id="numero-cartao">
+               </div>
+            </div>
+            <div class="flex-h espaço-2">
+               <div class="dados">
+                  <label for="valido-ate" class="categoria-pequeno">Válido até</label>
+                  <input type="date" name="valido-ate" id="valido-ate">
+               </div>
+               <div class="dados">
+                  <label for="codigo-cvc" class="categoria-pequeno">Código CVC</label>
+                  <input type="number" name="codigo-cvc" id="codigo-cvc">
+               </div>
+            </div>
+            <div class="condições">
+               <input type="checkbox">
+               <p class="subtexto">Guardar detalhes de pagamento para compras futuras.</p>
+            </div>
+         </div>
+         <!-- O SEU PEDIDO -->
+         <div>
+            <header>
+               <p class="categoria-pequeno cinzento-60">O seu pedido</p>
+               <div class="divisória-horizontal"></div>
+            </header>
+            <div class="flex-h alinhar-centro">
+               <div class="w-16"><img src="/img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_1.jpg"
+                     alt="auriculares"></div>
+               <div>
+                  <p class="subtítulo">HP Pavillion Gaming 15-dk1011np</p>
+                  <div class="flex-h">
+                     <i class="ri-check-line sucesso"></i>
+                     <p class="subtexto sucesso">Entrega prevista a 30 de fevereiro</p>
+                  </div>
+               </div>
+            </div>
+            <div class="divisória-horizontal"></div>
+            <div class="flex-h">
+               <div class="w-16"><img src="/img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_1.jpg"
+                     alt="auriculares"></div>
+               <div>
+                  <p class="subtítulo">HP Pavillion Gaming 15-dk1011np</p>
+                  <div class="flex-h">
+                     <i class="ri-check-line sucesso"></i>
+                     <p class="subtexto sucesso">Entrega prevista a 30 de fevereiro</p>
+                  </div>
+               </div>
+            </div>
+            <div class="divisória-horizontal"></div>
+            <div class="flex-h alinhar-centro justificar-entre">
+               <p class="subtítulo">Subtotal</p>
+               <p>1668.89€</p>
+            </div>
+            <div class="flex-h alinhar-centro justificar-entre">
+               <p class="subtítulo">Custos de Envio</p>
+               <p>0.00€</p>
+            </div>
+            <div class="flex-h alinhar-centro justificar-entre">
+               <p class="subtítulo">Total</p>
+               <p>1668.89€</p>
+            </div>
+            <div class="flex-h espaço-2 justificar-fim">
+               <a href="pagamento-1.html" class="btn-contorno categoria-pequeno">Retroceder</a>
+               <button type="submit" class="btn-primário categoria-pequeno">Continuar</button>
+            </div>
+         </div>
+      </div>
+   </form>
+</body>
+
+</html>

@@ -118,14 +118,6 @@
   margin-right: 0.5rem;
 }
 
-.opiniões .classificações {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-}
-
 /* SECÇÃO NEWSLETTER */
 .newsletter {
   display: flex;
@@ -210,28 +202,141 @@
 }
 
 /* DETALHES DE PRODUTO */
+
+/* APRESENTAÇÃO PRODUTO */
 .apresentação {
   display: flex;
+  flex-wrap: wrap;
 }
 
-.fotografias {
+.apresentação > * {
+  flex: 1 1 12rem;
+}
+
+.apresentação .fotografias {
   display: flex;
 }
 
-.miniaturas {
+.apresentação .fotografias .miniaturas {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.info-produto {
+/* INFORMAÇÃO PRODUTO */
+.informação {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.informação .info-produto {
+  display: flex;
+  gap: 2rem;
+}
+
+.informação .informações {
   display: flex;
 }
 
-.informações {
-  display: flex;
-}
-
-.informações i {
+.informação .informações i {
   color: var(--cor-sucesso);
+}
+
+.informação .etiqueta-primária {
+  align-self: flex-start;
+}
+
+.informação .preço {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.informação .preço > h3 {
+  color: var(--cor-cinzento-60);
+  font-weight: 400;
+}
+
+.informação .classificação-produto {
+  display: flex;
+  align-items: center;
+}
+
+.informação .classificação-produto .opiniões {
+  display: flex;
+  align-items: center;
+}
+
+.adicionar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.adicionar a {
+  display: flex;
+  align-items: center;
+}
+
+.adicionar button i {
+  border: 2px solid #000;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+/* SECÇÃO DETALHES E OPINIÕES */
+#info-detalhes > * {
+  flex-basis: 100%;
+  flex: 1 1 30rem;
+}
+
+.detalhes-opiniões button {
+  width: 25%;
+}
+
+.detalhes .especificações .spec {
+  display: flex;
+  gap: 2rem;
+}
+
+/*SECÇÃO DE PAGAMENTO 1*/
+.pagamento button {
+  width: 100%;
+}
+
+.lista-compras .linha-compra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lista-compras .informação {
+  display: flex;
+  flex-direction: column;
+}
+
+.lista-compras .informação .entrega-prevista {
+  display: flex;
+}
+
+.campo-inferior {
+  display: flex;
+  justify-content: space-between;
+}
+
+.campo-inferior .vale-desconto {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.campo-inferior .vale-desconto i {
+  position: absolute;
+  left: 0.5rem;
+}
+
+.campo-inferior .vale-desconto input {
+  text-indent: 1.5rem;
 }

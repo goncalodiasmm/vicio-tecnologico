@@ -36,15 +36,15 @@
          </div>
       </div>
    </nav>
-
+   <section class="breadcrumbs">
+      <i class="ri-home-line"></i>
+      <p class="categoria-pequeno">/ Computadores</p>
+      <p class="categoria-pequeno">/ Portáteis</p>
+   </section>
    <!-- APRESENTAÇÃO PRODUTO -->
    <section class="apresentação-produto">
-      <div class="breadcrumbs">
-         <i class="ri-home-line"></i>
-         <p class="categoria-pequeno">/ Computadores</p>
-         <p class="categoria-pequeno">/ Portáteis</p>
-      </div>
       <div class="apresentação">
+         <!-- FOTOGRAFIAS PRODUTO -->
          <div class="fotografias">
             <div class="miniaturas">
                <div class="miniatura">
@@ -64,6 +64,7 @@
                <img src="./img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_1.jpg" alt="">
             </div>
          </div>
+         <!-- INFORMAÇÃO PRODUTO -->
          <div class="informação">
             <div class="info-produto">
                <div class="informações">
@@ -88,26 +89,30 @@
                <h3 class="cruzado">998,99€</h3>
             </div>
             <div class="classificação-produto">
-               <div class="estrelas">
+               <div class="rating">
                   <i class="ri-star-fill"></i>
                   <i class="ri-star-fill"></i>
                   <i class="ri-star-fill"></i>
                   <i class="ri-star-fill"></i>
                   <i class="ri-star-half-fill"></i>
-                  <p>4.5</p>
                </div>
+               <p>4.5</p>
                <div class="divisória-vertical"></div>
                <div class="opiniões">
                   <i class="ri-user-fill"></i>
                   <p>81 opiniões</p>
                </div>
             </div>
-            <p>ID Produto: 343610</p>
-            <input type="text">
+            <p class="subtexto">ID Produto: 343610</p>
+            <div class="contador-quantidade">
+               <i class="ri-add-line"></i>
+               <input type="text" name="quantidade" id="quantidade" value="1">
+               <i class="ri-subtract-line"></i>
+            </div>
             <div class="adicionar">
-               <a href="carrinho-1.html" class="btn-primário categoria-pequeno">
+               <a href="pagamento-1.html" class="btn-primário">
                   <i class="ri-shopping-cart-2-fill"></i>
-                  <p>Adicionar ao carrinho</p>
+                  <p class="categoria-pequeno">Adicionar ao carrinho</p>
                </a>
                <button>
                   <i class="ri-heart-line"></i>
@@ -116,16 +121,19 @@
          </div>
       </div>
    </section>
-
    <!-- SECÇÃO DETALHES E OPINIÕES -->
    <section class="detalhes-opiniões">
+      <div class="flex-h justificar-centro">
+         <button class="borda-primária">
+            <p class="categoria-médio">Detalhes</p>
+         </button>
+         <button class="borda-cinzento">
+            <p class="categoria-médio">Opiniões</p>
+         </button>
+      </div>
       <!-- DETALHES -->
       <div class="detalhes">
-         <button>
-            <p class="categoria-médio">Detalhes</p>
-            <div class="divisória-horizontal"></div>
-         </button>
-         <div class="info-detalhes">
+         <div class="flex-h justificar-centro espaço-4 flex-ajustar" id="info-detalhes">
             <div class="descrição">
                <h3>Faz tudo e muito mais com o HP Pavilion Gaming</h3>
                <p>Um portátil fino e potente. Joga e executa várias tarefas em simultâneo com gráficos nítidos e
@@ -137,125 +145,80 @@
                   permite fazer tudo.</p>
             </div>
             <div class="especificações">
-               <div>
-                  <p>Processador</p>
+               <div class="spec">
+                  <p class="negrito">Processador</p>
                   <p>Intel® Core™ i5-10300H 2.5GHz (8 MB de cache, até 4,5 GHz)</p>
                </div>
-               <div>
-                  <p>Memória</p>
+               <div class="spec">
+                  <p class="negrito">Memória</p>
                   <p>16 GB DDR4 2933MHz (2 x 8 GB)</p>
                </div>
-               <div>
-                  <p>Armazenamento</p>
+               <div class="spec">
+                  <p class="negrito">Armazenamento</p>
                   <p>SSD 512 GB PCIe® NVMe™ M.2</p>
                </div>
-               <div>
-                  <p>Áudio</p>
+               <div class="spec">
+                  <p class="negrito">Áudio</p>
                   <p>Áudio B&O; Dois altifalantes</p>
                </div>
-               <div>
-                  <p>Processador</p>
+               <div class="spec">
+                  <p class="negrito">Processador</p>
                   <p>Intel® Core™ i5-10300H 2.5GHz (8 MB de cache, até 4,5 GHz)</p>
                </div>
-               <div>
-                  <p>Ecrã</p>
+               <div class="spec">
+                  <p class="negrito">Ecrã</p>
                   <p>15.6" FHD (1920 x 1080), 144 Hz, IPS, moldura fina, antirreflexo, 250 nits, NTSC a 45%</p>
                </div>
-               <div>
-                  <p>Gráfica</p>
+               <div class="spec">
+                  <p class="negrito">Gráfica</p>
                   <p>NVIDIA® GeForce RTX™ 2060 Max-Q, com 6 GB de memória VRAM GDDR6</p>
                </div>
-               <div>
-                  <p>Teclado</p>
+               <div class="spec">
+                  <p class="negrito">Teclado</p>
                   <p>Numérico, Retroiluminado</p>
                </div>
-               <div>
-                  <p>Sistema Operativo</p>
+               <div class="spec">
+                  <p class="negrito">Sistema Operativo</p>
                   <p>Não Incluído (Free DOS)</p>
                </div>
             </div>
          </div>
       </div>
       <!-- OPINIÕES -->
-      <div class="opiniões">
-         <div class="opiniões-classificações">
-            <div class="classificação-geral">
-               <h1>4.5</h1>
-               <div class="estrelas">
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-fill"></i>
-                  <i class="ri-star-half-fill"></i>
-                  <p>4.5</p>
-               </div>
-               <div class="opiniões">
-                  <i class="ri-user-fill"></i>
-                  <p>81 opiniões</p>
-               </div>
-               <div>
-               </div>
-               <div class="classificação-detalhe">
-                  <div class="5-estrelas">
-                     <i class="ri-star-fill"></i>
-                     <p>5</p>
-                     <div class="divisória-horizontal"></div>
-                     <div class="divisória-preenchida"></div>
-                  </div>
-               </div>
-               <a href="#" class="btn-secundário categoria-pequeno"></a>
+      <div class="flex-h justificar-centro espaço-4">
+         <div class="flex-v espaço-4">
+            <h1>4.5</h1>
+            <div class="rating">
+               <i class="ri-star-fill"></i>
+               <i class="ri-star-fill"></i>
+               <i class="ri-star-fill"></i>
+               <i class="ri-star-fill"></i>
+               <i class="ri-star-half-fill"></i>
             </div>
-            <div class="opiniões-comentários">
-               <div class="comentário">
-                  <img src="./img/utilizador-1.png" alt="utilizador-1">
-                  <div class="info-comentário">
-                     <p>João Pereira</p>
-                     <div class="estrelas">
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-half-fill"></i>
-                        <p>4.5</p>
-                     </div>
-                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id itaque dignissimos amet ea odit
-                        porro.</p>
+            <div class="flex-h alinhar-centro">
+               <i class="ri-user-fill cinzento-60"></i>
+               <p>81 opiniões</p>
+            </div>
+            <a href="#" class="btn-secundário categoria-pequeno">Adicionar opinião</a>
+         </div>
+         <div class="info-comentário">
+            <div class="flex-h alinhar-inicio espaço-1">
+               <img src="./img/utilizador-1.png" alt="utilizador-1">
+               <div class="flex-v espaço-4">
+                  <p class="categoria-pequeno">João Pereira</p>
+                  <div class="rating">
+                     <i class="ri-star-fill"></i>
+                     <i class="ri-star-fill"></i>
+                     <i class="ri-star-fill"></i>
+                     <i class="ri-star-fill"></i>
+                     <i class="ri-star-half-fill"></i>
                   </div>
-               </div>
-               <div class="comentário">
-                  <img src="./img/utilizador-1.png" alt="utilizador-1">
-                  <div class="info-comentário">
-                     <p>João Pereira</p>
-                     <div class="estrelas">
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-half-fill"></i>
-                        <p>4.5</p>
-                     </div>
-                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id itaque dignissimos amet ea odit
-                        porro.</p>
-                  </div>
-               </div>
-               <div class="comentário">
-                  <img src="./img/utilizador-1.png" alt="utilizador-1">
-                  <div class="info-comentário">
-                     <p>João Pereira</p>
-                     <div class="estrelas">
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-half-fill"></i>
-                        <p>4.5</p>
-                     </div>
-                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id itaque dignissimos amet ea odit
-                        porro.</p>
-                  </div>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id itaque dignissimos amet ea odit
+                     porro.</p>
                </div>
             </div>
          </div>
+      </div>
    </section>
 
    <!-- SECÇÃO NEWSLETTER -->
