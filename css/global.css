@@ -119,10 +119,25 @@ p {
   background-color: var(--cor-primária);
 }
 
+.texto-centro {
+  text-align: center;
+}
+
+.texto-estender {
+  white-space: nowrap;
+}
+
 /* ÍCONES */
 i {
   font-size: 1.2rem;
   margin-right: 0.25rem;
+}
+
+.anel {
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 0.125rem;
+  padding: 1rem;
 }
 
 /* BOTÕES */
@@ -407,6 +422,10 @@ header {
   margin-top: 2rem;
 }
 
+.ml-1 {
+  margin-left: 1rem;
+}
+
 /* BORDAS */
 .borda-primária {
   border-bottom: 0.25rem solid var(--cor-primária);
@@ -435,4 +454,3 @@ header {
 .w-32 {
   width: 32rem;
 }
-

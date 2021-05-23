@@ -37,61 +37,114 @@
       </div>
    </nav>
 
-   <!--SECCÃO DE PAGAMENTO - SEPARADOR 1 -->
+   <!-- SECCÃO DE PAGAMENTO - SEPARADOR 1 -->
    <section class="pagamento">
-      <!--CARRINHO DE COMPRAS-->
-      <div class="carrinho-Compras">
-         <button>
+      <div class="flex-h justificar-centro">
+         <!-- CARRINHO DE COMPRAS -->
+         <button class="borda-cinzento">
             <p class="categoria-médio">Carrinho de compras</p>
-            <div class="divisória-horizontal">
          </button>
-      </div>
-
-      <!--CHECKOUT-->
-      <div class="checkout">
-         <button>
+         <!-- CHECKOUT -->
+         <button class="borda-cinzento">
             <p class="categoria-médio">Checkout</p>
-            <div class="divisória-horizontal">
+         </button>
+         <!-- CONFIRMAÇÃO -->
+         <button class="borda-primária">
+            <p class="categoria-médio">Confirmação</p>
          </button>
       </div>
+   </section>
 
-      <!--CONFIRMAÇÃO-->
-      <div class="confirmação">
-         <button>
-            <p class="categoria-médio">confirmação</p>
-            <div class="divisória-horizontal">
-         </button>
-      </div>
-
-      <!--DETALHES ENVIO-->
-      <section class="breadcrumbs">
-         <p class="categoria-pequeno">DETALHES DE ENVIO</p>
-      </section>
-      <div class="detalhes envio">
-         <p>João Silva</p>
-         <p>Praça Teólifo Braga 60</p>
-         <p>910193845</p>
-         <p>joaosilva@gmail.com</p>
-
-         <!--DETALHES DE PAGAMENTO-->
-         <section class="breadcrumbs">
-            <p class="categoria-pequeno">DETALHES DE PAGAEMNTO</p>
-         </section>
-         <div class="pagamentos">
-            <img src="./img/pagamento-visa.png" alt="visa" class="meio-pagamento">
-            <p> XXXX XXXX XXXX 5909</p>
+   <!-- PAGAMENTO 3 -->
+   <div class="flex-h justificar-entre flex-ajustar flex-1">
+      <div>
+         <header>
+            <div class="flex-h justificar-entre">
+               <p class="categoria-pequeno cinzento-60">Detalhes de Envio</p>
+               <a href="pagamento-2.html" class="flex-h alinhar-centro">
+                  <p class="subtexto primária">Editar</p>
+                  <i class="ri-arrow-right-s-line primária"></i>
+               </a>
+            </div>
+            <div class="divisória-horizontal"></div>
+         </header>
+         <div>
+            <p>João Silva</p>
+            <p>Praça Teófilo Braga 60</p>
+            <p>2665-620 Lisboa, Portugal</p>
+            <p>910193845</p>
+            <p>joaosilva@gmail.com</p>
          </div>
-         <!--O SEU PEDIDO-->
-
-         <!--SECÇÃO LISTAGEM DO CARRINHO DE COMPRAS-->
-         <section class="lista-compras">
-            <div class="linha-compra">
-               <div class="miniatura">
-                  <img src="./img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_2.jpg"
-                     alt="auriculares xiaomi">
-         </section>
-
-
+         <!-- DETALHES PAGAMENTO -->
+         <header>
+            <div class="flex-h justificar-entre">
+               <p class="categoria-pequeno cinzento-60">Detalhes de Pagamento</p>
+               <a href="pagamento-2.html" class="flex-h alinhar-centro">
+                  <p class="subtexto primária">Editar</p>
+                  <i class="ri-arrow-right-s-line primária"></i>
+               </a>
+            </div>
+            <div class="divisória-horizontal"></div>
+         </header>
+         <div class="flex-h alinhar-centro">
+            <img src="./img/pagamento-visa.png" alt="pagamento-visa">
+            <p class="ml-1">XXXX XXXX XXXX 5909</p>
+         </div>
+      </div>
+      <!-- O SEU PEDIDO -->
+      <div>
+         <header>
+            <div class="flex-h justificar-entre alinhar-centro">
+               <p class="categoria-pequeno cinzento-60">O seu pedido</p>
+               <div class="flex-h alinhar-centro">
+                  <p class="subtexto primária">Editar</p>
+                  <i class="ri-arrow-right-s-line primária"></i>
+               </div>
+            </div>
+            <div class="divisória-horizontal"></div>
+         </header>
+         <div class="flex-h alinhar-centro">
+            <div class="w-16"><img src="/img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_1.jpg"
+                  alt="auriculares"></div>
+            <div>
+               <p class="subtítulo">HP Pavillion Gaming 15-dk1011np</p>
+               <div class="flex-h">
+                  <i class="ri-check-line sucesso"></i>
+                  <p class="subtexto sucesso">Entrega prevista a 30 de fevereiro</p>
+               </div>
+            </div>
+         </div>
+         <div class="divisória-horizontal"></div>
+         <div class="flex-h">
+            <div class="w-16"><img src="/img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_1.jpg"
+                  alt="auriculares"></div>
+            <div>
+               <p class="subtítulo">HP Pavillion Gaming 15-dk1011np</p>
+               <div class="flex-h">
+                  <i class="ri-check-line sucesso"></i>
+                  <p class="subtexto sucesso">Entrega prevista a 30 de fevereiro</p>
+               </div>
+            </div>
+         </div>
+         <div class="divisória-horizontal"></div>
+         <div class="flex-h alinhar-centro justificar-entre">
+            <p class="subtítulo">Subtotal</p>
+            <p>1668.89€</p>
+         </div>
+         <div class="flex-h alinhar-centro justificar-entre">
+            <p class="subtítulo">Custos de Envio</p>
+            <p>0.00€</p>
+         </div>
+         <div class="flex-h alinhar-centro justificar-entre">
+            <p class="subtítulo">Total</p>
+            <p>1668.89€</p>
+         </div>
+         <div class="flex-h espaço-2 alinhar-centro justificar-fim">
+            <a href="pagamento-1.html" class="btn-contorno categoria-pequeno">Retroceder</a>
+            <a href="pagamento-4.html" class="btn-primário categoria-pequeno">Confirmar Compra</a>
+         </div>
+      </div>
+   </div>
 </body>
 
 </html>

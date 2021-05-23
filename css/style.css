@@ -301,6 +301,10 @@
 }
 
 /*SECÇÃO DE PAGAMENTO 1*/
+.pagamento {
+  margin: 2rem 0;
+}
+
 .pagamento button {
   width: 100%;
 }
@@ -339,4 +343,9 @@
 
 .campo-inferior .vale-desconto input {
   text-indent: 1.5rem;
+}
+
+/* PAGAMENTO 4 */
+.anel {
+  font-size: 4rem;
 }
