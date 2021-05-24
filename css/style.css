@@ -79,45 +79,6 @@
   color: var(--cor-alerta);
 }
 
-/* SECÇÃO OPINIÕES */
-.opiniões .título {
-  margin-bottom: 2rem;
-}
-
-.opiniões .cartões-opinião {
-  display: flex;
-  gap: 4rem;
-}
-
-.opiniões .cartão-opinião {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  gap: 1rem;
-  border: 1px solid var(--cor-cinzento-10);
-  border-radius: 0.25rem;
-  padding: 1rem;
-}
-
-.opiniões .cartão-opinião .header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.opiniões .cartão-opinião .header .tempo {
-  display: flex;
-  align-items: center;
-}
-
-.opiniões .cartão-opinião .perfil {
-  display: flex;
-  align-items: center;
-}
-
-.opiniões .cartão-opinião .perfil img {
-  margin-right: 0.5rem;
-}
-
 /* SECÇÃO NEWSLETTER */
 .newsletter {
   display: flex;
