@@ -80,40 +80,8 @@
 }
 
 /* SECÇÃO NEWSLETTER */
-.newsletter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 1rem 0;
-}
-
-.newsletter .subscrição {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.newsletter .subscrição a {
-  margin: 0.25rem 0;
-}
 
 /* RODAPÉ */
-.rodapé {
-  display: flex;
-  justify-content: space-between;
-}
-
-.rodapé .rodapé-header {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.rodapé .rodapé-header .redes-sociais i {
-  margin-right: 1rem;
-}
-
 .rodapé .rodapé-info {
   display: flex;
   justify-content: space-between;
@@ -304,9 +272,4 @@
 
 .campo-inferior .vale-desconto input {
   text-indent: 1.5rem;
-}
-
-/* PAGAMENTO 4 */
-.anel {
-  font-size: 4rem;
 }

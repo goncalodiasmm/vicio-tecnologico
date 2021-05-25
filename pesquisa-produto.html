@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vício Tecnológico</title>
+   <!-- ICONS -->
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+   <!-- CSS -->
+   <link rel="stylesheet" href="./css/global.css">
+   <link rel="stylesheet" href="./css/style.css">
+   <!-- JS -->
+   <script defer src="script.js"></script>
+</head>
+
+<body>
+   <!-- NAVEGAÇÃO -->
+   <nav>
+      <div class="navegação">
+         <div class="nav-header">
+            <i class="ri-menu-2-line"></i>
+            <a href="index.html"><img src="./img/logo-primário.png" alt="logo" class="logo"></a>
+         </div>
+         <div class="nav-items">
+            <div class="pesquisar">
+               <i class="ri-search-line"></i>
+               <input type="text" name="pesquisar" placeholder="Pesquise">
+            </div>
+            <div class="menus">
+               <a href="perfil.html"><i class="ri-heart-line"></i></a>
+               <a href="login.html"><i class="ri-user-fill"></i></a>
+               <a href="pagamento-1.html"><i class="ri-shopping-cart-2-fill"></i></a>
+            </div>
+         </div>
+      </div>
+   </nav>
+
+   <!-- BREADCRUMBS -->
+   <section class="breadcrumbs">
+      <i class="ri-home-line"></i>
+      <p class="categoria-pequeno">/ Mobilidade</p>
+      <p class="categoria-pequeno">/ Smartphones</p>
+   </section>
+
+   <div class="flex-h alinhar-inicio justificar-entre espaço-4">
+      <!-- FILTRAGEM DE PRODUTOS -->
+      <aside class="filtragem-produtos">
+         <!-- TÍTULO -->
+         <div class="flex-v">
+            <p class="categoria-grande">Smartphones</p>
+            <div class="sublinhado-título"></div>
+         </div>
+         <!-- FILTRO -->
+         <div class="flex-v">
+            <div class="flex-v pt-1">
+               <div class="mb-0-5">
+                  <div class="flex-h justificar-entre">
+                     <p class="categoria-pequeno">Stock</p>
+                     <i class="ri-arrow-down-s-line primária"></i>
+                  </div>
+                  <div class="divisória-horizontal"></div>
+               </div>
+               <!-- ITEM FILTRO -->
+               <div class="flex-h alinhar-centro espaço-0-5">
+                  <input type="checkbox" name="em-stock" id="em-stock">
+                  <p>Em Stock</p>
+                  <p class="cinzento-60">(96)</p>
+               </div>
+               <!-- ITEM FILTRO -->
+               <div class="flex-h alinhar-centro espaço-0-5">
+                  <input type="checkbox" name="sem-stock" id="sem-stock">
+                  <p>Sem Stock</p>
+                  <p class="cinzento-60">(32)</p>
+               </div>
+            </div>
+            <!-- FILTRO -->
+            <div class="flex-v">
+               <div class="flex-v pt-1">
+                  <div class="mb-0-5">
+                     <div class="flex-h justificar-entre">
+                        <p class="categoria-pequeno">Marca</p>
+                        <i class="ri-arrow-down-s-line primária"></i>
+                     </div>
+                     <div class="divisória-horizontal"></div>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="apple" id="apple">
+                     <p>Apple</p>
+                     <p class="cinzento-60">(74)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="huawei" id="huawei">
+                     <p>Huawei</p>
+                     <p class="cinzento-60">(32)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="samsung" id="samsung">
+                     <p>Samsung</p>
+                     <p class="cinzento-60">(48)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="oneplus" id="oneplus">
+                     <p>OnePlus</p>
+                     <p class="cinzento-60">(18)</p>
+                  </div>
+               </div>
+            </div>
+            <!-- FILTRO -->
+            <div class="flex-v">
+               <div class="flex-v pt-1">
+                  <div class="mb-0-5">
+                     <div class="flex-h justificar-entre">
+                        <p class="categoria-pequeno">Preço</p>
+                        <i class="ri-arrow-down-s-line primária"></i>
+                     </div>
+                     <div class="divisória-horizontal"></div>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="range" name="preco" id="preco">
+                  </div>
+               </div>
+            </div>
+            <!-- FILTRO -->
+            <div class="flex-v">
+               <div class="flex-v pt-1">
+                  <div class="mb-0-5">
+                     <div class="flex-h justificar-entre">
+                        <p class="categoria-pequeno">Estado</p>
+                        <i class="ri-arrow-down-s-line primária"></i>
+                     </div>
+                     <div class="divisória-horizontal"></div>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="novidade" id="novidade">
+                     <p>Novidade</p>
+                     <p class="cinzento-60">(74)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="em-destaque" id="em-destaque">
+                     <p>Em Destaque</p>
+                     <p class="cinzento-60">(32)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="promocao" id="promocao">
+                     <p>Promoção</p>
+                     <p class="cinzento-60">(48)</p>
+                  </div>
+               </div>
+            </div>
+            <!-- FILTRO -->
+            <div class="flex-v">
+               <div class="flex-v pt-1">
+                  <div class="mb-0-5">
+                     <div class="flex-h justificar-entre">
+                        <p class="categoria-pequeno">Processador</p>
+                        <i class="ri-arrow-down-s-line primária"></i>
+                     </div>
+                     <div class="divisória-horizontal"></div>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="octa-core" id="octa-core">
+                     <p>Octa-Core</p>
+                     <p class="cinzento-60">(74)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="hexa-core" id="hexa-core">
+                     <p>Hexa-Core</p>
+                     <p class="cinzento-60">(32)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="quad-core" id="quad-core">
+                     <p>Quad-Core</p>
+                     <p class="cinzento-60">(48)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="dual-core" id="dual-core">
+                     <p>Dual-Core</p>
+                     <p class="cinzento-60">(18)</p>
+                  </div>
+               </div>
+            </div>
+            <!-- FILTRO -->
+            <div class="flex-v">
+               <div class="flex-v pt-1">
+                  <div class="mb-0-5">
+                     <div class="flex-h justificar-entre">
+                        <p class="categoria-pequeno">Armazenamento</p>
+                        <i class="ri-arrow-down-s-line primária"></i>
+                     </div>
+                     <div class="divisória-horizontal"></div>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="16gb" id="16gb">
+                     <p>16GB</p>
+                     <p class="cinzento-60">(74)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="32gb" id="32gb">
+                     <p>32GB</p>
+                     <p class="cinzento-60">(32)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="64gb" id="64gb">
+                     <p>64GB</p>
+                     <p class="cinzento-60">(48)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="128gb" id="128gb">
+                     <p>128GB</p>
+                     <p class="cinzento-60">(18)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="256gb" id="256gb">
+                     <p>256GB</p>
+                     <p class="cinzento-60">(18)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="512gb" id="512gb">
+                     <p>512GB</p>
+                     <p class="cinzento-60">(18)</p>
+                  </div>
+               </div>
+            </div>
+            <!-- FILTRO -->
+            <div class="flex-v">
+               <div class="flex-v pt-1">
+                  <div class="mb-0-5">
+                     <div class="flex-h justificar-entre">
+                        <p class="categoria-pequeno">Memória RAM</p>
+                        <i class="ri-arrow-down-s-line primária"></i>
+                     </div>
+                     <div class="divisória-horizontal"></div>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="2gb" id="2gb">
+                     <p>2GB</p>
+                     <p class="cinzento-60">(74)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="3gb" id="3gb">
+                     <p>3GB</p>
+                     <p class="cinzento-60">(32)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="4gb" id="4gb">
+                     <p>4GB</p>
+                     <p class="cinzento-60">(48)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="6gb" id="6gb">
+                     <p>6GB</p>
+                     <p class="cinzento-60">(18)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="8gb" id="8gb">
+                     <p>8GB</p>
+                     <p class="cinzento-60">(18)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="12gb" id="12gb">
+                     <p>12GB</p>
+                     <p class="cinzento-60">(18)</p>
+                  </div>
+                  <!-- ITEM FILTRO -->
+                  <div class="flex-h alinhar-centro espaço-0-5">
+                     <input type="checkbox" name="16gb" id="16gb">
+                     <p>16GB</p>
+                     <p class="cinzento-60">(18)</p>
+                  </div>
+               </div>
+            </div>
+      </aside>
+      <!-- PRODUTOS ENCONTRADOS -->
+      <main class="produtos-encontrados">
+         <div class="flex-v">
+            <!-- CABEÇALHO -->
+            <div class="flex-h justificar-entre mb-2">
+               <div class="flex-h ml-1">
+                  <p class="negrito mr-0-25">192</p>
+                  <p>artigos encontrados</p>
+               </div>
+               <div class="flex-h">
+                  <p class="negrito mr-0-5">Ordenar por:</p>
+                  <select name="ordenacao" id="ordenacao">
+                     <option value="relevancia">Relevância</option>
+                     <option value="mais-recente">Mais Recente</option>
+                     <option value="preco-baixo">Preço mais baixo</option>
+                     <option value="preço-alto">Preço mais alto</option>
+                  </select>
+               </div>
+            </div>
+            <!-- GRELHA DE PRODUTOS -->
+            <div class="grid grid-cols-4 espaço-4">
+               <!-- PRODUTO -->
+               <div class="flex-v">
+                  <img src="./img/Smartphone OnePlus 7T/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
+                  <div class="flex-v">
+                     <p class="categoria-pequeno">Mobilidade</p>
+                     <p>Auriculares Xiaomi Mi Airdots</p>
+                  </div>
+                  <div class="flex-h alinhar-centro sucesso">
+                     <i class="ri-check-line"></i>
+                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                  </div>
+                  <div class="flex-h alinhar-centro justificar-entre">
+                     <h3>14,90€</h3>
+                     <p class="cruzado">19,90€</p>
+                  </div>
+                  <div class="flex-h alinhar-centro">
+                     <i class="ri-heart-line alerta"></i>
+                     <p class="subtexto">Favoritos</p>
+                  </div>
+               </div>
+               <!-- PRODUTO -->
+               <div class="flex-v">
+                  <img src="./img/Smartphone OnePlus 7T/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
+                  <div class="flex-v">
+                     <p class="categoria-pequeno">Mobilidade</p>
+                     <p>Auriculares Xiaomi Mi Airdots</p>
+                  </div>
+                  <div class="flex-h alinhar-centro sucesso">
+                     <i class="ri-check-line"></i>
+                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                  </div>
+                  <div class="flex-h alinhar-centro justificar-entre">
+                     <h3>14,90€</h3>
+                     <p class="cruzado">19,90€</p>
+                  </div>
+                  <div class="flex-h alinhar-centro">
+                     <i class="ri-heart-line alerta"></i>
+                     <p class="subtexto">Favoritos</p>
+                  </div>
+               </div>
+               <!-- PRODUTO -->
+               <div class="flex-v">
+                  <img src="./img/Smartphone OnePlus 7T/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
+                  <div class="flex-v">
+                     <p class="categoria-pequeno">Mobilidade</p>
+                     <p>Auriculares Xiaomi Mi Airdots</p>
+                  </div>
+                  <div class="flex-h alinhar-centro sucesso">
+                     <i class="ri-check-line"></i>
+                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                  </div>
+                  <div class="flex-h alinhar-centro justificar-entre">
+                     <h3>14,90€</h3>
+                     <p class="cruzado">19,90€</p>
+                  </div>
+                  <div class="flex-h alinhar-centro">
+                     <i class="ri-heart-line alerta"></i>
+                     <p class="subtexto">Favoritos</p>
+                  </div>
+               </div>
+               <!-- PRODUTO -->
+               <div class="flex-v">
+                  <img src="./img/Smartphone OnePlus 7T/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
+                  <div class="flex-v">
+                     <p class="categoria-pequeno">Mobilidade</p>
+                     <p>Auriculares Xiaomi Mi Airdots</p>
+                  </div>
+                  <div class="flex-h alinhar-centro sucesso">
+                     <i class="ri-check-line"></i>
+                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                  </div>
+                  <div class="flex-h alinhar-centro justificar-entre">
+                     <h3>14,90€</h3>
+                     <p class="cruzado">19,90€</p>
+                  </div>
+                  <div class="flex-h alinhar-centro">
+                     <i class="ri-heart-line alerta"></i>
+                     <p class="subtexto">Favoritos</p>
+                  </div>
+               </div>
+               <!-- PRODUTO -->
+               <div class="flex-v">
+                  <img src="./img/Smartphone OnePlus 7T/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
+                  <div class="flex-v">
+                     <p class="categoria-pequeno">Mobilidade</p>
+                     <p>Auriculares Xiaomi Mi Airdots</p>
+                  </div>
+                  <div class="flex-h alinhar-centro sucesso">
+                     <i class="ri-check-line"></i>
+                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                  </div>
+                  <div class="flex-h alinhar-centro justificar-entre">
+                     <h3>14,90€</h3>
+                     <p class="cruzado">19,90€</p>
+                  </div>
+                  <div class="flex-h alinhar-centro">
+                     <i class="ri-heart-line alerta"></i>
+                     <p class="subtexto">Favoritos</p>
+                  </div>
+               </div>
+               <!-- PRODUTO -->
+               <div class="flex-v">
+                  <img src="./img/Smartphone OnePlus 7T/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
+                  <div class="flex-v">
+                     <p class="categoria-pequeno">Mobilidade</p>
+                     <p>Auriculares Xiaomi Mi Airdots</p>
+                  </div>
+                  <div class="flex-h alinhar-centro sucesso">
+                     <i class="ri-check-line"></i>
+                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                  </div>
+                  <div class="flex-h alinhar-centro justificar-entre">
+                     <h3>14,90€</h3>
+                     <p class="cruzado">19,90€</p>
+                  </div>
+                  <div class="flex-h alinhar-centro">
+                     <i class="ri-heart-line alerta"></i>
+                     <p class="subtexto">Favoritos</p>
+                  </div>
+               </div>
+               <!-- PRODUTO -->
+               <div class="flex-v">
+                  <img src="./img/Smartphone OnePlus 7T/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
+                  <div class="flex-v">
+                     <p class="categoria-pequeno">Mobilidade</p>
+                     <p>Auriculares Xiaomi Mi Airdots</p>
+                  </div>
+                  <div class="flex-h alinhar-centro sucesso">
+                     <i class="ri-check-line"></i>
+                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                  </div>
+                  <div class="flex-h alinhar-centro justificar-entre">
+                     <h3>14,90€</h3>
+                     <p class="cruzado">19,90€</p>
+                  </div>
+                  <div class="flex-h alinhar-centro">
+                     <i class="ri-heart-line alerta"></i>
+                     <p class="subtexto">Favoritos</p>
+                  </div>
+               </div>
+               <!-- PRODUTO -->
+               <div class="flex-v">
+                  <img src="./img/Smartphone OnePlus 7T/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
+                  <div class="flex-v">
+                     <p class="categoria-pequeno">Mobilidade</p>
+                     <p>Auriculares Xiaomi Mi Airdots</p>
+                  </div>
+                  <div class="flex-h alinhar-centro sucesso">
+                     <i class="ri-check-line"></i>
+                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                  </div>
+                  <div class="flex-h alinhar-centro justificar-entre">
+                     <h3>14,90€</h3>
+                     <p class="cruzado">19,90€</p>
+                  </div>
+                  <div class="flex-h alinhar-centro">
+                     <i class="ri-heart-line alerta"></i>
+                     <p class="subtexto">Favoritos</p>
+                  </div>
+               </div>
+               <!-- PRODUTO -->
+               <div class="flex-v">
+                  <img src="./img/Smartphone OnePlus 7T/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
+                  <div class="flex-v">
+                     <p class="categoria-pequeno">Mobilidade</p>
+                     <p>Auriculares Xiaomi Mi Airdots</p>
+                  </div>
+                  <div class="flex-h alinhar-centro sucesso">
+                     <i class="ri-check-line"></i>
+                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                  </div>
+                  <div class="flex-h alinhar-centro justificar-entre">
+                     <h3>14,90€</h3>
+                     <p class="cruzado">19,90€</p>
+                  </div>
+                  <div class="flex-h alinhar-centro">
+                     <i class="ri-heart-line alerta"></i>
+                     <p class="subtexto">Favoritos</p>
+                  </div>
+               </div>
+               <!-- PRODUTO -->
+               <div class="flex-v">
+                  <img src="./img/Smartphone OnePlus 7T/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
+                  <div class="flex-v">
+                     <p class="categoria-pequeno">Mobilidade</p>
+                     <p>Auriculares Xiaomi Mi Airdots</p>
+                  </div>
+                  <div class="flex-h alinhar-centro sucesso">
+                     <i class="ri-check-line"></i>
+                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                  </div>
+                  <div class="flex-h alinhar-centro justificar-entre">
+                     <h3>14,90€</h3>
+                     <p class="cruzado">19,90€</p>
+                  </div>
+                  <div class="flex-h alinhar-centro">
+                     <i class="ri-heart-line alerta"></i>
+                     <p class="subtexto">Favoritos</p>
+                  </div>
+               </div>
+               <!-- PRODUTO -->
+               <div class="flex-v">
+                  <img src="./img/Smartphone OnePlus 7T/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
+                  <div class="flex-v">
+                     <p class="categoria-pequeno">Mobilidade</p>
+                     <p>Auriculares Xiaomi Mi Airdots</p>
+                  </div>
+                  <div class="flex-h alinhar-centro sucesso">
+                     <i class="ri-check-line"></i>
+                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                  </div>
+                  <div class="flex-h alinhar-centro justificar-entre">
+                     <h3>14,90€</h3>
+                     <p class="cruzado">19,90€</p>
+                  </div>
+                  <div class="flex-h alinhar-centro">
+                     <i class="ri-heart-line alerta"></i>
+                     <p class="subtexto">Favoritos</p>
+                  </div>
+               </div>
+               <!-- PRODUTO -->
+               <div class="flex-v">
+                  <img src="./img/Smartphone OnePlus 7T/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
+                  <div class="flex-v">
+                     <p class="categoria-pequeno">Mobilidade</p>
+                     <p>Auriculares Xiaomi Mi Airdots</p>
+                  </div>
+                  <div class="flex-h alinhar-centro sucesso">
+                     <i class="ri-check-line"></i>
+                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                  </div>
+                  <div class="flex-h alinhar-centro justificar-entre">
+                     <h3>14,90€</h3>
+                     <p class="cruzado">19,90€</p>
+                  </div>
+                  <div class="flex-h alinhar-centro">
+                     <i class="ri-heart-line alerta"></i>
+                     <p class="subtexto">Favoritos</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="divisória-horizontal mt-2 mb-2"></div>
+         <!-- LISTA DE PÁGINAS -->
+         <div class="flex-h espaço-1 alinhar-centro justificar-centro">
+            <!-- PÁGINA -->
+            <button class="btn-primário categoria-médio">1</button>
+            <button class="btn-contorno categoria-médio">2</button>
+            <button class="btn-contorno categoria-médio">3</button>
+            <button class="btn-contorno categoria-médio">4</button>
+            <i class="ri-arrow-right-s-line texto-lg"></i>
+         </div>
+      </main>
+   </div>
+   <!-- SECÇÃO NEWSLETTER -->
+   <section class="newsletter">
+      <div class="flex-v alinhar-centro">
+         <div class="divisória-horizontal mb-2"></div>
+         <h3>Não perca as próximas ofertas</h3>
+         <div class="flex-h alinhar-centro espaço-1">
+            <input type="email" placeholder="Email">
+            <a href="#"><button class="btn-primário categoria-pequeno">Subscrever-me</button></a>
+         </div>
+         <div class="condições">
+            <input type="checkbox">
+            <p class="subtexto">Li e aceito as condições gerais e a política de privacidade do Vício Tecnológico</p>
+         </div>
+         <div class="divisória-horizontal mt-2"></div>
+      </div>
+   </section>
+   
+   <!-- RODAPÉ -->
+   <footer class="rodapé">
+      <div class="flex-h justificar-entre">
+         <div class="flex-v espaço-1">
+            <a href="index.html"><img src="./img/logo-primário.png" alt="logo" class="logo"></a>
+            <p class="subtexto">A loja de referência em Tecnologia</p>
+            <div class="flex-h espaço-1">
+               <i class="ri-facebook-circle-fill"></i>
+               <i class="ri-instagram-line"></i>
+               <i class="ri-twitter-fill"></i>
+            </div>
+         </div>
+         <div class="flex-h alinhar-inicio justificar-entre espaço-2">
+            <!-- APOIO AO CLIENTE -->
+            <ul>
+               <li class="categoria-pequeno">Apoio ao Cliente</li>
+               <a href="#">
+                  <li class="subtexto">Perguntas Frequentes</li>
+               </a>
+               <a href="#">
+                  <li class="subtexto">Contactos</li>
+               </a>
+               <a href="#">
+                  <li class="subtexto">Devoluções</li>
+               </a>
+               <a href="#">
+                  <li class="subtexto">Garantias</li>
+               </a>
+            </ul>
+            <!-- QUEM SOMOS -->
+            <ul>
+               <li class="categoria-pequeno">Quem Somos</li>
+               <a href="#">
+                  <li class="subtexto">Quem Somos</li>
+               </a>
+               <a href="#">
+                  <li class="subtexto">Parcerias</li>
+               </a>
+            </ul>
+            <!-- SERVIÇOS -->
+            <ul>
+               <li class="categoria-pequeno">Serviços</li>
+               <a href="#">
+                  <li class="subtexto">Suporte Técnico</li>
+               </a>
+               <a href="#">
+                  <li class="subtexto">Marcação de Assistência Técnica</li>
+               </a>
+            </ul>
+         </div>
+         <div class="flex-v alinhar-fim justificar-entre">
+            <div class="flex-h alinhar-centro espaço-1">
+               <img src="./img/pagamento-visa.png" alt="visa">
+               <img src="./img/pagamento-mastercard.png" alt="mastercard">
+               <img src="./img/pagamento-paypal.png" alt="paypal">
+            </div>
+            <div>
+               <p class="categoria-pequeno">&copy; Vício Tecnológico</p>
+               <p class="subtexto">Todos os direitos reservados</p>
+            </div>
+         </div>
+      </div>
+   </footer>
+</body>
