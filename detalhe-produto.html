@@ -128,69 +128,63 @@
    </section>
    <!-- SECÇÃO DETALHES E OPINIÕES -->
    <section class="detalhes-opiniões">
-      <div class="flex-h justificar-centro mb-2">
-         <button class="borda-primária">
+      <div class="flex-h justificar-centro mb-4">
+         <button class="borda-primária w-total" id="detalhes-btn">
             <p class="categoria-médio">Detalhes</p>
          </button>
-         <button class="borda-cinzento">
+         <button class="borda-cinzento w-total" id="opinioes-btn">
             <p class="categoria-médio">Opiniões</p>
          </button>
       </div>
       <!-- DETALHES -->
-      <div class="flex-h justificar-centro espaço-4 flex-ajustar">
-         <div class="flex-h flex-1">
-            <div>
-               <p class="subtítulo">Faz tudo e muito mais com o HP Pavilion Gaming</p>
-               <p>Um portátil fino e potente. Joga e executa várias tarefas em simultâneo com gráficos nítidos e
-                  potência de
-                  processamento, e beneficia de arrefecimento térmico melhorado para um desempenho e estabilidade
-                  superiores. Deixa-te
-                  envolver pelo jogo com um ecrã de moldura fina e áudio aperfeiçoado. O equilíbrio perfeito entre
-                  trabalho e lazer que te
-                  permite fazer tudo.</p>
+      <div class="flex-h flex-1 justificar-centro espaço-4" id="seccao-detalhes">
+         <div class="flex-v">
+            <p class="subtítulo">Faz tudo e muito mais com o HP Pavilion Gaming</p>
+            <p>Um portátil fino e potente. Joga e executa várias tarefas em simultâneo com gráficos nítidos e
+               potência de
+               processamento, e beneficia de arrefecimento térmico melhorado para um desempenho e estabilidade
+               superiores. Deixa-te
+               envolver pelo jogo com um ecrã de moldura fina e áudio aperfeiçoado. O equilíbrio perfeito entre
+               trabalho e lazer que te
+               permite fazer tudo.</p>
+         </div>
+         <div class="flex-v espaço-0-5">
+            <div class="flex-h justificar-entre espaço-8">
+               <p class="negrito">Processador</p>
+               <p>Intel® Core™ i5-10300H 2.5GHz</p>
             </div>
-            <div class="flex-v espaço-0-5">
-               <div class="flex-h justificar-entre">
-                  <p class="negrito">Processador</p>
-                  <p>Intel® Core™ i5-10300H 2.5GHz (8 MB de cache, até 4,5 GHz)</p>
-               </div>
-               <div class="flex-h justificar-entre">
-                  <p class="negrito">Memória</p>
-                  <p>16 GB DDR4 2933MHz (2 x 8 GB)</p>
-               </div>
-               <div class="flex-h justificar-entre">
-                  <p class="negrito">Armazenamento</p>
-                  <p>SSD 512 GB PCIe® NVMe™ M.2</p>
-               </div>
-               <div class="flex-h justificar-entre">
-                  <p class="negrito">Áudio</p>
-                  <p>Áudio B&O; Dois altifalantes</p>
-               </div>
-               <div class="flex-h justificar-entre">
-                  <p class="negrito">Processador</p>
-                  <p>Intel® Core™ i5-10300H 2.5GHz (8 MB de cache, até 4,5 GHz)</p>
-               </div>
-               <div class="flex-h justificar-entre">
-                  <p class="negrito">Ecrã</p>
-                  <p>15.6" FHD (1920 x 1080), 144 Hz</p>
-               </div>
-               <div class="flex-h justificar-entre">
-                  <p class="negrito">Gráfica</p>
-                  <p>NVIDIA® GeForce RTX™ 2060 Max-Q, com 6 GB de memória VRAM GDDR6</p>
-               </div>
-               <div class="flex-h justificar-entre">
-                  <p class="negrito">Teclado</p>
-                  <p>Numérico, Retroiluminado</p>
-               </div>
-               <div class="flex-h justificar-entre">
-                  <p class="negrito">Sistema Operativo</p>
-                  <p>Não Incluído (Free DOS)</p>
-               </div>
+            <div class="flex-h justificar-entre">
+               <p class="negrito">Memória</p>
+               <p>16 GB DDR4 2933MHz (2 x 8 GB)</p>
+            </div>
+            <div class="flex-h justificar-entre">
+               <p class="negrito">Armazenamento</p>
+               <p>SSD 512 GB PCIe® NVMe™ M.2</p>
+            </div>
+            <div class="flex-h justificar-entre">
+               <p class="negrito">Áudio</p>
+               <p>Áudio B&O; Dois altifalantes</p>
+            </div>
+            <div class="flex-h justificar-entre">
+               <p class="negrito">Ecrã</p>
+               <p>15.6" FHD (1920 x 1080), 144 Hz</p>
+            </div>
+            <div class="flex-h justificar-entre">
+               <p class="negrito">Gráfica</p>
+               <p>NVIDIA® GeForce RTX™ 2060 Max-Q</p>
+            </div>
+            <div class="flex-h justificar-entre">
+               <p class="negrito">Teclado</p>
+               <p>Numérico, Retroiluminado</p>
+            </div>
+            <div class="flex-h justificar-entre">
+               <p class="negrito">Sistema Operativo</p>
+               <p>Não Incluído (Free DOS)</p>
             </div>
          </div>
       </div>
       <!-- OPINIÕES -->
-      <div class="flex-h alinhar-centro justificar-centro espaço-4">
+      <div class="flex-h flex-1 justificar-centro espaço-8 ocultar" id="seccao-opinioes">
          <div class="flex-v espaço-0-5">
             <h1>4.5</h1>
             <div class="rating">
@@ -220,8 +214,7 @@
                      <i class="ri-star-fill"></i>
                      <i class="ri-star-half-fill"></i>
                   </div>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id itaque dignissimos amet ea odit
-                     porro.</p>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt numquam ratione, tenetur nihil, adipisci quasi odio quidem odit consectetur necessitatibus blanditiis culpa deserunt atque assumenda cupiditate cumque minima reprehenderit repellendus earum placeat!</p>
                </div>
             </div>
             <!-- COMENTÁRIO -->
@@ -236,8 +229,7 @@
                      <i class="ri-star-fill"></i>
                      <i class="ri-star-half-fill"></i>
                   </div>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id itaque dignissimos amet ea odit
-                     porro.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laboriosam illum officiis, id tenetur nemo sapiente.</p>
                </div>
             </div>
             <!-- COMENTÁRIO -->
@@ -252,8 +244,7 @@
                      <i class="ri-star-fill"></i>
                      <i class="ri-star-half-fill"></i>
                   </div>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id itaque dignissimos amet ea odit
-                     porro.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur saepe repudiandae explicabo dolorum delectus consectetur! A, iusto voluptatum qui rem iure ab placeat est porro? Dicta enim repudiandae fuga tempora! Corporis dicta asperiores et odio tempore facilis eveniet aut iste corrupti nulla? Est, iusto excepturi! Eaque rerum voluptatem sint voluptate dolor deserunt accusantium, natus ullam accusamus maiores optio, architecto a libero placeat impedit reiciendis?</p>
                </div>
             </div>
          </div>

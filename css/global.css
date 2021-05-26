@@ -150,7 +150,6 @@ i {
   border-radius: 50%;
   border-style: solid;
   border-width: 0.125rem;
-  padding: 1rem;
 }
 
 /* BOTÕES */
@@ -676,4 +675,29 @@ header {
 
 .w-64 {
   width: 64rem;
+}
+
+.w-total {
+  width: 100%;
+}
+
+.max-w-8 {
+  max-width: 8rem;
+}
+
+.max-w-16 {
+  max-width: 16rem;
+}
+
+.max-w-32 {
+  max-width: 32rem;
+}
+
+.max-w-64 {
+  max-width: 64rem;
+}
+
+/* CLASSES DINÂMICAS */
+.ocultar {
+  display: none;
 }

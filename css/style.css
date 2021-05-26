@@ -76,10 +76,6 @@
   margin: 2rem 0;
 }
 
-.pagamento button {
-  width: 100%;
-}
-
 .lista-compras .linha-compra {
   display: flex;
   justify-content: space-between;
