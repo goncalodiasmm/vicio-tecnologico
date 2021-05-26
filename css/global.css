@@ -103,7 +103,11 @@ p {
 }
 
 .negrito {
-  font-weight: bold;
+  font-weight: 700;
+}
+
+.regular {
+  font-weight: 400;
 }
 
 .cruzado {
@@ -376,6 +380,14 @@ header {
   align-items: flex-end;
 }
 
+.alinhar-item-inicio {
+  align-self: flex-start;
+}
+
+.alinhar-item-fim {
+  align-self: flex-end;
+}
+
 .justificar-centro {
   justify-content: center;
 }
@@ -397,6 +409,10 @@ header {
 }
 
 .justificar-item-inicio {
+  justify-self: start;
+}
+
+.justificar-item-fim {
   justify-self: start;
 }
 
@@ -530,6 +546,12 @@ header {
   margin-bottom: 4rem;
 }
 
+.ml-0-25 {
+  margin-left: 0.25rem;
+}
+.ml-0-5 {
+  margin-left: 0.5rem;
+}
 .ml-1 {
   margin-left: 1rem;
 }
