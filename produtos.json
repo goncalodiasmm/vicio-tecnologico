@@ -1,0 +1,12 @@
+{
+   "produtos": [
+      {
+         "id": 2,
+         "categoria": "Periféricos",
+         "nome": "Gamepad Microsoft Xbox",
+         "preco": 54.90,
+         "imagem": "./img/Gamepad Microsoft Xbox/gamepad-microsoft-xbox_1.jpg",
+         "stock": 34
+      }
+   ]
+}
