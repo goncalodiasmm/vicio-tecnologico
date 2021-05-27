@@ -1,13 +1,14 @@
+const novidadesProduto = document.getElementById('novidades-produto')
+const destaquesProduto = document.getElementById('destaques-produto')
+
 // BUSCAR PRODUTOS
 class Produtos {
-  async getProdutos() {
+  async buscarProdutos() {
     try {
       let resultado = await fetch('produtos.json')
-      let data = await resultado.json();
-      let produtos = data.produtos;
-      produtos = produtos.map(item => {
-        const {}
-      })
+      let data = await resultado.json()
+      let produtos = data.produtos
+      return produtos
     } catch (error) {
       console.log(error)
     }
@@ -16,20 +17,86 @@ class Produtos {
 
 // MOSTRAR PRODUTOS
 class UI {
-
+  mostrarDestaques(produtos) {
+    let resultado = ''
+    produtos.destaques.forEach((produto) => {
+      resultado += `
+      <!-- CARTÃO DE PRODUTO -->
+         <a href="detalhe-produto.html">
+            <div class="flex-v">
+               <img src=${produto.imagem} alt="${produto.nome}" class="w-16">
+               <div class="flex-v">
+                  <p class="categoria-pequeno">${produto.categoria}</p>
+                  <p>${produto.nome}</p>
+               </div>
+               <div class="flex-h alinhar-centro sucesso">
+                  <i class="ri-check-line"></i>
+                  <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+               </div>
+               <div class="flex-h alinhar-centro justificar-entre">
+                  <h3>${produto.preco}€</h3>
+                  <p class="cruzado">${produto.preco}€</p>
+               </div>
+               <div class="flex-h alinhar-centro">
+                  <i class="ri-heart-line alerta"></i>
+                  <p class="subtexto">Favoritos</p>
+               </div>
+            </div>
+         </a>
+      `
+      destaquesProduto.innerHTML = resultado
+    })
+  }
+  mostrarNovidades(produtos) {
+    let resultado = ''
+    produtos.novidades.forEach((produto) => {
+      resultado += `
+      <!-- CARTÃO DE PRODUTO -->
+         <a href="detalhe-produto.html">
+            <div class="flex-v">
+               <img src=${produto.imagem} alt="${produto.nome}" class="w-16">
+               <div class="flex-v">
+                  <p class="categoria-pequeno">${produto.categoria}</p>
+                  <p>${produto.nome}</p>
+               </div>
+               <div class="flex-h alinhar-centro sucesso">
+                  <i class="ri-check-line"></i>
+                  <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+               </div>
+               <div class="flex-h alinhar-centro justificar-entre">
+                  <h3>${produto.preco}€</h3>
+                  <p class="cruzado">${produto.preco}€</p>
+               </div>
+               <div class="flex-h alinhar-centro">
+                  <i class="ri-heart-line alerta"></i>
+                  <p class="subtexto">Favoritos</p>
+               </div>
+            </div>
+         </a>
+      `
+      novidadesProduto.innerHTML = resultado
+    })
+  }
 }
 // LOCAL STORAGE
-class Storage {
-
-}
+class Storage {}
 
 document.addEventListener('DOMContentLoaded', () => {
-  const UI = new UI();
+  const ui = new UI()
   const produtos = new Produtos()
 
   // BUSCAR PRODUTOS
-  produtos.getProdutos().then(data => console.log(data))
+  produtos.buscarProdutos().then((produtos) => ui.mostrarDestaques(produtos))
+  produtos.buscarProdutos().then((produtos) => ui.mostrarNovidades(produtos))
 })
+
+
+
+
+
+
+
+
 
 // ALTERNAR SECÇÃO DE DETALHES E OPINIÕES
 const seccaoDetalhes = document.getElementById('seccao-detalhes')

@@ -1,12 +1,72 @@
 {
-   "produtos": [
+  "produtos": {
+    "novidades": [
       {
-         "id": 2,
-         "categoria": "Periféricos",
-         "nome": "Gamepad Microsoft Xbox",
-         "preco": 54.90,
-         "imagem": "./img/Gamepad Microsoft Xbox/gamepad-microsoft-xbox_1.jpg",
-         "stock": 34
+        "id": 1,
+        "categoria": "Periféricos",
+        "nome": "Gamepad Microsoft Xbox",
+        "preco": "54.90",
+        "imagem": "./img/gamepad-microsoft-xbox/gamepad-microsoft-xbox_1.jpg",
+        "stock": 34
+      },
+      {
+        "id": 2,
+        "categoria": "Mobilidade",
+        "nome": "Auriculares Xiaomi Mi Airdots",
+        "preco": "14.90",
+        "imagem": "./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg",
+        "stock": 65
+      },
+      {
+        "id": 3,
+        "categoria": "Imagem e Som",
+        "nome": "Monitor HP P24H G4 FHD",
+        "preco": "164.90",
+        "imagem": "./img/monitor-hp-p24h-g4-fhd/monitor-hp-p24h-g4-fhd_1.jpg",
+        "stock": 34
+      },
+      {
+        "id": 4,
+        "categoria": "Imagem e Som",
+        "nome": "Monitor HP P24H G4 FHD",
+        "preco": "164.90",
+        "imagem": "./img/monitor-hp-p24h-g4-fhd/monitor-hp-p24h-g4-fhd_1.jpg",
+        "stock": 34
       }
-   ]
+    ],
+    "destaques": [
+      {
+        "id": 5,
+        "categoria": "Periféricos",
+        "nome": "Tapete Lenovo Y Gaming",
+        "preco": "12.90",
+        "imagem": "./img/tapete-lenovo-y-gaming/tapete-lenovo-y-gaming_1.jpg",
+        "stock": 23
+      },
+      {
+        "id": 6,
+        "categoria": "Mobilidade",
+        "nome": "Auriculares Xiaomi Mi Airdots",
+        "preco": "14.90",
+        "imagem": "./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg",
+        "stock": 65
+      },
+      {
+        "id": 7,
+        "categoria": "Periféricos",
+        "nome": "Gamepad Microsoft Xbox",
+        "preco": "54.90",
+        "imagem": "./img/gamepad-microsoft-xbox/gamepad-microsoft-xbox_1.jpg",
+        "stock": 34
+      },
+      {
+        "id": 8,
+        "categoria": "Imagem e Som",
+        "nome": "Monitor HP P24H G4 FHD",
+        "preco": "164.90",
+        "imagem": "./img/monitor-hp-p24h-g4-fhd/monitor-hp-p24h-g4-fhd_1.jpg",
+        "stock": 34
+      }
+    ]
+  }
 }
