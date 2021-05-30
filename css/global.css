@@ -23,6 +23,7 @@ body {
   --cor-rating: #ffbf00;
   --cor-cinzento-10: #cfdbe6;
   --cor-cinzento-60: #899098;
+  --cor-branco: #ffffff;
 }
 
 .primária {
@@ -47,6 +48,14 @@ body {
 
 .cinzento-60 {
   color: var(--cor-cinzento-60);
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-branco {
+  background-color: var(--cor-branco);
 }
 
 /* TIPOGRAFIA */
@@ -132,6 +141,10 @@ p {
   white-space: nowrap;
 }
 
+.texto-md {
+  font-size: 1.5rem;
+}
+
 .texto-lg {
   font-size: 2rem;
 }
@@ -155,7 +168,7 @@ i {
 /* BOTÕES */
 button {
   border: none;
-  background-color: #fff;
+  background-color: transparent;
   cursor: pointer;
 }
 
@@ -190,6 +203,26 @@ a {
   border: 0.125rem solid var(--cor-primária);
   border-radius: 0.25rem;
   color: #000;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+.btn-inativo {
+  display: block;
+  border: 0.125rem solid var(--cor-cinzento-60);
+  border-radius: 0.25rem;
+  background-color: none;
+  color: var(--cor-cinzento-60);
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+.btn-remove {
+  display: block;
+  border: 0.125rem solid var(--cor-alerta);
+  border-radius: 0.25rem;
+  background-color: none;
+  color: var(--cor-alerta);
   padding: 0.75rem 1.25rem;
   cursor: pointer;
   margin: 1rem 0;
@@ -637,6 +670,10 @@ header {
 }
 
 /* LARGURAS E ALTURAS */
+.w-0 {
+  width: 0px;
+}
+
 .w-1 {
   width: 1rem;
 }
@@ -695,6 +732,81 @@ header {
 
 .max-w-64 {
   max-width: 64rem;
+}
+
+.h-0 {
+  width: 0;
+}
+
+.h-1 {
+  height: 1rem;
+}
+
+.h-2 {
+  height: 2rem;
+}
+
+.h-4 {
+  height: 4rem;
+}
+
+.h-8 {
+  height: 8rem;
+}
+
+.h-16 {
+  height: 16rem;
+}
+
+.h-24 {
+  height: 24rem;
+}
+
+.h-32 {
+  height: 32rem;
+}
+
+.h-48 {
+  height: 48rem;
+}
+
+.h-56 {
+  height: 56rem;
+}
+
+.h-64 {
+  height: 64rem;
+}
+
+.h-total {
+  height: 100%;
+}
+
+/* POSIÇÃO */
+.fixed {
+  position: fixed;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.-left-24 {
+  left: -24rem;
+}
+
+/* ÍNDICE Z */
+.z-10 {
+  z-index: 10;
+}
+
+/* ANIMAÇÕES */
+.transicao-base {
+  transition: all 0.2s ease-in-out;
 }
 
 /* CLASSES DINÂMICAS */

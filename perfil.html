@@ -44,14 +44,15 @@
 
          <!--menu lateral do perfil-->
          <div class="dados-pessoais">
-            <div class="flex-h">
+            <div class="flex-h alinhar-inicio">
                <i class="ri-user-4-line anel"></i>
                <div class="flex-v pt-1 pl-1 ">
-                  <p class="categoria-médio ">João Silva</p>
-                  <a href="#">Alterar foto de Perfil</a>
+                  <p class="subtítulo">João Silva</p>
+                  <a href="#" class="sublinhado">Alterar foto de Perfil</a>
                </div>
             </div>
-            <ul class="flex-v espaço-0-25 p-1">CONTA PESSOAL
+            <ul class="flex-v espaço-0-25 p-1">
+               <p class="categoria-pequeno">Conta Pessoal</p>
                <a href="#">
                   <li>Dados Pessoais</li>
                </a>
@@ -59,15 +60,17 @@
                   <li>Lista de favoritos</li>
                </a>
             </ul>
-            <ul class="flex-v espaço-0-25 p-1">PEDIDOS
+            <ul class="flex-v espaço-0-25 p-1">
+               <p class="categoria-pequeno">Pedidos</p>
                <a href="#">
-                  <li></li> Pedidos e faturas
+                  <li>Pedidos e Faturas</li>
                </a>
                <a href="#">
-                  <li>Lista Devoluções e Garantias</li>
+                  <li>Devoluções e Garantias</li>
                </a>
             </ul>
-            <ul class="flex-v espaço-0-25 p-1">PRECISA DE AJUDA
+            <ul class="flex-v espaço-0-25 p-1">
+               <p class="categoria-pequeno">Precisa de ajuda?</p>
                <a href="#">
                   <li>Perguntas frequentes</li>
                </a>
@@ -81,53 +84,143 @@
       <!--lateral opções perfil-->
       <div class="lateral-opçoes">
          <!--dados Pessoais-->
-         <div class="Dados-Pessoais">DADOS PESSOAIS
+         <!--Informação contato-->
+         <div class="Informação">
+            <p class="negrito">INFORMAÇÃO DE CONTACTO</p>
             <div class="divisória-horizontal"></div>
+            <div class="flex-h justificar-entre alinhar-centro">
+               <div class="flex-v">
+                  <p class="subtexto">João Silva</p>
+                  <p class="subtexto">joaosilva@gmail.com</p>
+               </div>
+               <a href="#"><button class="btn-primário categoria-pequeno">Editar</button></a>
+            </div>
+         </div>
+         <!--Morada envio-->
+         <div class="Morada">
+            <p class="negrito">MORADA DE ENVIO POR DEFEITO</p>
+            <div class="divisória-horizontal"></div>
+            <div class="flex-h justificar-entre alinhar-centro">
+               <div class="flex-v">
+                  <p class="subtexto">Praça Teófilo Braga, 60</p>
+                  <p class="subtexto">2665-Lisboa, Portugal</p>
+               </div>
+               <a href="#"><button class="btn-primário categoria-pequeno">Editar</button></a>
+            </div>
+         </div>
+
+         <!--Meio pagamento-->
+         <div class="Meio-Pagamento">
+            <p class="negrito">MEIO DE PAGAMENTO POR DEFEITO</p>
+            <div class="divisória-horizontal"></div>
+            <div class="flex-h justificar-entre alinhar-centro">
+               <div class="flex-h alinhar-centro">
+                  <img src="./img/pagamento-visa.png" alt="visa" class="w-4">
+                  <p class="subtexto">xxxx xxxx xxxx 5909</p>
+               </div>
+               <a href="#"><button class="btn-primário categoria-pequeno">Editar</button></a>
+            </div>
+         </div>
+
+         <!--Estado conta-->
+         <div class="Dados-Pessoais">
+            <p class="negrito">ESTADO DA CONTA</p>
+            <div class="divisória-horizontal"></div>
+            <div class="flex-h justificar-entre alinhar-centro">
+               <div class="flex-h">
+                  <i class="ri-shield-user-line"></i>
+                  <p class="subtexto sucesso">Cliente Ativo</p>
+               </div>
+               <a href="#"><button class="btn-inativo categoria-pequeno">reativar conta</button></a>
+            </div>
          </div>
 
          <!--lista de favoritos-->
-         <div class="Lista de Favoritos">LISTA DE FAVORITOS
+         <div class="Lista de Favoritos">
+            <p class="negrito">LISTA DE FAVORITOS</p>
             <div class="divisória-horizontal"></div>
-         </div>
-
-         <!--Opçao perfil-Pedidos e faturas-->
-         <div class="lista-favoritos">PEDIDOS E FATURAS
-            <div class="divisória-horizontal"></div>
-            <div class="flex-h justificar-entre">
-               <div class="flex-h justificar-entre">
-                  <p>Pedido realizado em : 18/02/2021 </p>
-                  <p>2 artigos</p>
-               </div>
-
-               <div class="flex-h">
-                  <i class="ri-file-text-line"> </i>
-                  <div> Obter fatura </div>
-               </div>
-            </div>
             <div class="flex-h flex-inicial alinhar-centro espaço-4">
                <div class="flex-h alinhar-centro">
                   <div class="w-16">
-                     <img src="./img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_2.jpg"
-                        alt="auriculares xiaomi">
+                     <img src="./img/headphones-lenovo-yoga/headphones-lenovo-yoga_1.jpg">
                   </div>
                   <div class="flex-h justificar-entre">
                      <div class="flex-v">
-                        <p class="negrito">Auriculares Xiaomi Mi Airdots</p>
-                        <div class="flex-h alinhar-centro espaço-0.25">
-                           <i class="ri-check-line sucesso"></i>
-                           <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
+                        <p class="negrito">Heaphones Lenovo Yoga</p>
+                        <p class="subtexto">Não tem melhor maneira de aquecer o seu coração que pular ao som das suas
+                           batidas favoritas e desfrutar de ligações cristalina para quem você ama</p>
+                        <div class="flex-h justificar-entre">
+                           <a href="#"><button class="btn-primário categoria-pequeno">Adicionar ao Carrinho</button></a>
+                           <a href="#"><button class="btn-remove categoria-pequeno">Remover</button></a>
                         </div>
                      </div>
-                     <a href="#"><button class="btn-primário categoria-pequeno">Avaliar</button></a>
-                     <a href="#"><button class="btn-primário categoria-pequeno">Devolver</button></a>
+                  </div>
+               </div>
+               <p>179.90€</p>
+            </div>
 
+            <!--Opçao perfil-Pedidos e faturas-->
+            <div class="lista-favoritos">
+               <p class="negrito">PEDIDOS E FATURAS
+               <div class="divisória-horizontal"></div>
+               <div class="flex-h justificar-entre">
+                  <div class="flex-v justificar-entre">
+                     <p class="subtexto">Pedido realizado em: 18/02/2021</p>
+                     <p class="subtexto">2 artigos</p>
+                  </div>
+
+                  <div class="flex-h">
+                     <i class="ri-file-text-line"> </i>
+                     <div> Obter fatura </div>
+                  </div>
+               </div>
+               <div class="flex-h flex-inicial alinhar-centro espaço-4">
+                  <div class="flex-h alinhar-centro">
+                     <div class="w-16">
+                        <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg"
+                           alt="auriculares xiaomi">
+                     </div>
+                     <div class="flex-h justificar-entre">
+                        <div class="flex-v">
+                           <p class="subtexto negrito">Auriculares Xiaomi Mi Airdots</p>
+                           <div class="flex-h alinhar-centro espaço-0.25">
+                              <i class="ri-check-line sucesso"></i>
+                              <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
+                           </div>
+                        </div>
+                        <div class="flex-h espaço-1">
+                           <a href="#"><button class="btn-primário categoria-pequeno">Avaliar</button></a>
+                           <a href="#"><button class="btn-contorno categoria-pequeno">Devolver</button></a>
+                        </div>
+                     </div>
                   </div>
 
                </div>
 
-            </div>
+               <div class="flex-h flex-inicial alinhar-centro espaço-4">
+                  <div class="flex-h alinhar-centro">
+                     <div class="w-16">
+                        <img src="./img/smartphone-samsung-galaxy-s10/smartphone-samsung-galaxy-s10_1.jpg"
+                           alt="smartphone-samsung-galaxy-s10">
+                     </div>
+                     <div class="flex-h justificar-entre">
+                        <div class="flex-v">
+                           <p class="subtexto negrito">Samsung Galaxy s10</p>
+                           <div class="flex-h alinhar-centro espaço-0.25">
+                              <i class="ri-check-line sucesso"></i>
+                              <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
+                           </div>
+                        </div>
+                        <div class="flex-h espaço-1">
+                           <a href="#"><button class="btn-primário categoria-pequeno">Avaliar</button></a>
+                           <a href="#"><button class="btn-contorno categoria-pequeno">Devolver</button></a>
+                        </div>
+                     </div>
+                  </div>
 
-            <a href="#"><button class="btn-primário categoria-pequeno">Cancelar Pedido</button></a>
+               </div>
+
+               <a href="#"><button class="btn-remove categoria-pequeno">Cancelar Pedido</button></a>
    </section>
 
    </div>

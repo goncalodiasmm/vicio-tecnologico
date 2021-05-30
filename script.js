@@ -91,11 +91,20 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
+// ALTERNAR BARRA DE NAVEGAÇÃO LATERAL
+const navegacaoLateral = document.getElementById('navegacao-lateral')
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const fecharBtn = document.getElementById('fechar-btn')
 
+hamburgerBtn.addEventListener('click', () => {
+   navegacaoLateral.classList.remove('-left-24')
+   navegacaoLateral.classList.add('left-0')
+})
 
-
-
-
+fecharBtn.addEventListener('click', () => {
+   navegacaoLateral.classList.add('-left-24')
+   navegacaoLateral.classList.remove('left-0')
+})
 
 
 // ALTERNAR SECÇÃO DE DETALHES E OPINIÕES
@@ -109,8 +118,8 @@ detalhesBtn.addEventListener('click', () => {
   seccaoDetalhes.classList.remove('ocultar')
   detalhesBtn.classList.add('borda-primária')
   detalhesBtn.classList.remove('borda-cinzento')
-  opinioesBtn.classList.remove('borda-primária')
   opinioesBtn.classList.add('borda-cinzento')
+  opinioesBtn.classList.remove('borda-primária')
 })
 
 opinioesBtn.addEventListener('click', () => {
@@ -118,6 +127,6 @@ opinioesBtn.addEventListener('click', () => {
   seccaoOpinioes.classList.remove('ocultar')
   opinioesBtn.classList.add('borda-primária')
   opinioesBtn.classList.remove('borda-cinzento')
-  detalhesBtn.classList.remove('borda-primária')
   detalhesBtn.classList.add('borda-cinzento')
+  detalhesBtn.classList.remove('borda-primária')
 })

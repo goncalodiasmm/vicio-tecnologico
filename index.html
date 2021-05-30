@@ -12,15 +12,15 @@
    <link rel="stylesheet" href="./css/global.css">
    <link rel="stylesheet" href="./css/style.css">
    <!-- JS -->
-   <script defer src="script.js"></script>
+   <script defer src="./script.js"></script>
 </head>
 
 <body>
-   <!-- NAVEGAÇÃO -->
-   <nav>
+   <!-- NAVEGAÇÃO TOPO -->
+   <nav class="navegacao-topo">
       <div class="navegação">
          <div class="nav-header">
-            <i class="ri-menu-2-line"></i>
+            <button id="hamburger-btn"><i class="ri-menu-2-line"></i></button>
             <a href="index.html"><img src="./img/logo-primário.png" alt="logo" class="logo"></a>
          </div>
          <div class="nav-items">
@@ -34,6 +34,39 @@
                <a href="pagamento-1.html"><i class="ri-shopping-cart-2-fill"></i></a>
             </div>
          </div>
+      </div>
+   </nav>
+
+   <!-- NAVEGAÇÃO LATERAL -->
+   <nav class="h-total fixed z-10 top-0 -left-24 pt-2 transicao-base bg-branco w-24" id="navegacao-lateral">
+      <div class="flex-h alinhar-inicio">
+         <div class="flex-v espaço-2 ml-2 mr-2">
+            <div class="flex-h espaço-1">
+               <button id="fechar-btn"><i class="ri-close-line texto-md"></i></button>
+               <img src="./img/logo-primário.png" alt="logo" class="logo">
+            </div>
+            <ul class="flex-v espaço-1">
+               <a href="#">
+                  <li class="categoria-pequeno">Computadores</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Mobilidade</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Componentes</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Imagem e Som</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Periféricos</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Armazenamento</li>
+               </a>
+            </ul>
+         </div>
+      </div>
       </div>
    </nav>
 
