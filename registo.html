@@ -9,7 +9,6 @@
    <!-- ICONS -->
    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
    <!-- CSS -->
-   <link rel="stylesheet" href="./css/global.css">
    <link rel="stylesheet" href="./css/style.css">
    <!-- JS -->
    <script defer src="script.js"></script>
@@ -20,26 +19,31 @@
    <section class="login-registo">
       <div class="entrar">
          <h3>Registo grátis</h3>
-         <form action="index.html" method="GET">
+         <form action="index.html" method="GET" id="registo-form">
             <div class="dados">
                <label for="nome" class="categoria-pequeno">Nome</label>
                <input type="text" name="nome" id="nome">
+               <small></small>
             </div>
             <div class="dados">
                <label for="apelido" class="categoria-pequeno">Apelido</label>
                <input type="text" name="apelido" id="apelido">
+               <small></small>
             </div>
             <div class="dados">
                <label for="email" class="categoria-pequeno">Email</label>
                <input type="email" name="email" id="email">
+               <small></small>
             </div>
             <div class="dados">
                <label for="palavra-passe" class="categoria-pequeno">Palavra-passe</label>
                <input type="password" name="palavra-passe" id="palavra-passe">
+               <small></small>
             </div>
             <div class="dados">
                <label for="confirmar-palavra-passe" class="categoria-pequeno">Confirmar palavra-passe</label>
                <input type="password" name="confirmar-palavra-passe" id="confirmar-palavra-passe">
+               <small></small>
             </div>
             <div class="condições">
                <input type="checkbox">
@@ -63,9 +67,9 @@
             <i class="ri-google-fill"></i>
             <p>Entrar com Google</p>
          </a>
-         <div class="avisos">
-            <p>Apenas usado para autenticação</p>
-            <p>Nunca iremos publicar nada no seu perfil</p>
+         <div class="avisos mt-1">
+            <p class="subtexto">Apenas usado para autenticação</p>
+            <p class="subtexto">Nunca iremos publicar nada no seu perfil</p>
          </div>
       </div>
    </section>
