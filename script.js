@@ -90,22 +90,24 @@ document.addEventListener('DOMContentLoaded', () => {
   produtos.buscarProdutos().then((produtos) => ui.mostrarNovidades(produtos))
 })
 
-
 // ALTERNAR BARRA DE NAVEGAÇÃO LATERAL
 const navegacaoLateral = document.getElementById('navegacao-lateral')
-const hamburgerBtn = document.getElementById('hamburger-btn');
+const hamburgerBtn = document.getElementById('hamburger-btn')
 const fecharBtn = document.getElementById('fechar-btn')
 
-hamburgerBtn.addEventListener('click', () => {
-   navegacaoLateral.classList.remove('-left-24')
-   navegacaoLateral.classList.add('left-0')
-})
+if (hamburgerBtn != null) {
+  hamburgerBtn.addEventListener('click', () => {
+    navegacaoLateral.classList.remove('-left-24')
+    navegacaoLateral.classList.add('left-0')
+  })
+}
 
-fecharBtn.addEventListener('click', () => {
-   navegacaoLateral.classList.add('-left-24')
-   navegacaoLateral.classList.remove('left-0')
-})
-
+if (fecharBtn != null) {
+  fecharBtn.addEventListener('click', () => {
+    navegacaoLateral.classList.add('-left-24')
+    navegacaoLateral.classList.remove('left-0')
+  })
+}
 
 // ALTERNAR SECÇÃO DE DETALHES E OPINIÕES
 const seccaoDetalhes = document.getElementById('seccao-detalhes')
@@ -113,20 +115,24 @@ const seccaoOpinioes = document.getElementById('seccao-opinioes')
 const detalhesBtn = document.getElementById('detalhes-btn')
 const opinioesBtn = document.getElementById('opinioes-btn')
 
-detalhesBtn.addEventListener('click', () => {
-  seccaoOpinioes.classList.add('ocultar')
-  seccaoDetalhes.classList.remove('ocultar')
-  detalhesBtn.classList.add('borda-primária')
-  detalhesBtn.classList.remove('borda-cinzento')
-  opinioesBtn.classList.add('borda-cinzento')
-  opinioesBtn.classList.remove('borda-primária')
-})
+if (detalhesBtn != null) {
+  detalhesBtn.addEventListener('click', () => {
+    seccaoOpinioes.classList.add('ocultar')
+    seccaoDetalhes.classList.remove('ocultar')
+    detalhesBtn.classList.add('borda-primária')
+    detalhesBtn.classList.remove('borda-cinzento')
+    opinioesBtn.classList.add('borda-cinzento')
+    opinioesBtn.classList.remove('borda-primária')
+  })
+}
 
-opinioesBtn.addEventListener('click', () => {
-  seccaoDetalhes.classList.add('ocultar')
-  seccaoOpinioes.classList.remove('ocultar')
-  opinioesBtn.classList.add('borda-primária')
-  opinioesBtn.classList.remove('borda-cinzento')
-  detalhesBtn.classList.add('borda-cinzento')
-  detalhesBtn.classList.remove('borda-primária')
-})
+if (opinioesBtn != null) {
+  opinioesBtn.addEventListener('click', () => {
+    seccaoDetalhes.classList.add('ocultar')
+    seccaoOpinioes.classList.remove('ocultar')
+    opinioesBtn.classList.add('borda-primária')
+    opinioesBtn.classList.remove('borda-cinzento')
+    detalhesBtn.classList.add('borda-cinzento')
+    detalhesBtn.classList.remove('borda-primária')
+  })
+}

@@ -153,6 +153,10 @@ p {
   font-size: 3rem;
 }
 
+.indent-1-5 {
+  text-indent: 1.5rem;
+}
+
 /* ÍCONES */
 i {
   font-size: 1.2rem;
@@ -690,6 +694,10 @@ header {
   width: 8rem;
 }
 
+.w-12 {
+  width: 12rem;
+}
+
 .w-16 {
   width: 16rem;
 }
@@ -787,12 +795,24 @@ header {
   position: fixed;
 }
 
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
 .top-0 {
   top: 0;
 }
 
 .left-0 {
   left: 0;
+}
+
+.left-0-5 {
+  left: 0.5rem;
 }
 
 .-left-24 {
