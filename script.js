@@ -96,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // ALTERNAR BARRA DE NAVEGAÇÃO LATERAL
-const body = document.querySelector('body')
 const navegacaoLateral = document.getElementById('navegacao-lateral')
 const hamburgerBtn = document.getElementById('hamburger-btn')
 const fecharBtn = document.getElementById('fechar-btn')
@@ -123,8 +122,8 @@ const opinioesBtn = document.getElementById('opinioes-btn')
 
 if (detalhesBtn != null) {
   detalhesBtn.addEventListener('click', () => {
-    seccaoOpinioes.classList.add('ocultar')
-    seccaoDetalhes.classList.remove('ocultar')
+    seccaoOpinioes.classList.add('hidden')
+    seccaoDetalhes.classList.remove('hidden')
     detalhesBtn.classList.add('borda-primária')
     detalhesBtn.classList.remove('borda-cinzento')
     opinioesBtn.classList.add('borda-cinzento')
@@ -134,8 +133,8 @@ if (detalhesBtn != null) {
 
 if (opinioesBtn != null) {
   opinioesBtn.addEventListener('click', () => {
-    seccaoDetalhes.classList.add('ocultar')
-    seccaoOpinioes.classList.remove('ocultar')
+    seccaoDetalhes.classList.add('hidden')
+    seccaoOpinioes.classList.remove('hidden')
     opinioesBtn.classList.add('borda-primária')
     opinioesBtn.classList.remove('borda-cinzento')
     detalhesBtn.classList.add('borda-cinzento')
@@ -153,11 +152,11 @@ if (loginForm != null) {
     if (email.value === '') {
       definirErro(email, 'O email é obrigatório.')
       e.preventDefault()
-    } else if (!isEmail(email.value)) {
+    } else if (!emailValido(email.value)) {
       definirErro(email, 'O email não é válido.')
       e.preventDefault()
     } else {
-      definirSucesso(email)
+      definirSucesso(email, 'Email aceite')
     }
 
     if (palavraPasse.value === '') {
@@ -167,14 +166,7 @@ if (loginForm != null) {
       definirErro(palavraPasse, 'A palavra-passe é demasiado curta.')
       e.preventDefault()
     } else {
-      definirSucesso(palavraPasse)
-    }
-
-    if (palavraPasse.Any(char.IsUpper)) {
-      definirErro(palavraPasse, 'A palavra-passe tem que conter pelo menos uma letra maiuscula, uma letra minuscula um munmero e um carater especial.')
-      e.preventDefault()
-    } else {
-      definirSucesso(palavraPasse)
+      definirSucesso(palavraPasse, 'Palavra-passe aceite')
     }
   })
 }
@@ -194,9 +186,26 @@ function definirSucesso(input, mensagem) {
   input.className = 'dados-sucesso'
 }
 
-// VALIDAÇÃO REGEX EMAIL
+// VALIDAÇÕES REGEX
 function emailValido(email) {
   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
     email
   )
+}
+
+function passwordValida(password) {
+  return /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(password)
+}
+
+// ADICIONAR AO CARRINHO
+function adicionarCarrinho() {
+  const novoProduto = document.getElementById('novo-produto')
+  const modalCarrinho = document.getElementById('modal-carrinho')
+  novoProduto.classList.remove('hidden')
+  modalCarrinho.classList.remove('hidden')
+}
+
+function fecharModalCarrinho() {
+  const modalCarrinho = document.getElementById('modal-carrinho')
+  modalCarrinho.classList.add('hidden')
 }

@@ -15,6 +15,17 @@
 </head>
 
 <body>
+   <!-- MODAL -->
+   <div id="modal-carrinho" class="hidden">
+      <div
+         class="fixed top-50p left-50p translate-50p w-32 rounded py-2 flex-v justificar-centro alinhar-centro espaço-0-5 bg-branco shadow-lg">
+         <i onclick="fecharModalCarrinho()" class="ri-close-line absolute top-1 right-1 cursor-pointer texto-md"></i>
+         <i class="ri-check-line anel p-1 sucesso texto-md"></i>
+         <p class="negrito">Produto adicionado ao Carrinho</p>
+         <a href="pagamento-1.html" class="btn-primário categoria-pequeno">Ver Carrinho de Compras</a>
+      </div>
+   </div>
+
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
       <div class="flex-h justificar-entre alinhar-centro">
@@ -30,7 +41,11 @@
             <div class="flex-h alinhar-centro espaço-1">
                <a href="perfil.html"><i class="ri-heart-line"></i></a>
                <a href="login.html"><i class="ri-user-fill"></i></a>
-               <a href="pagamento-1.html"><i class="ri-shopping-cart-2-fill"></i></a>
+               <a href="pagamento-1.html">
+                  <i class="ri-shopping-cart-2-fill relative">
+                     <span class="w-0-5 h-0-5 bg-primária rounded-full absolute hidden" id="novo-produto"></span>
+                  </i>
+               </a>
             </div>
          </div>
       </div>
@@ -114,7 +129,8 @@
                <i class="ri-subtract-line"></i>
             </div>
             <div class="flex-h alinhar-centro espaço-2">
-               <button class="btn-primário flex-h alinhar-centro espaço-0-25">
+               <button onclick="adicionarCarrinho()" class="btn-primário flex-h alinhar-centro espaço-0-25"
+                  id="adicionar-carrinho">
                   <i class="ri-shopping-cart-2-fill"></i>
                   <p class="categoria-pequeno">Adicionar ao Carrinho</p>
                </button>
@@ -213,7 +229,9 @@
                      <i class="ri-star-fill"></i>
                      <i class="ri-star-half-fill"></i>
                   </div>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt numquam ratione, tenetur nihil, adipisci quasi odio quidem odit consectetur necessitatibus blanditiis culpa deserunt atque assumenda cupiditate cumque minima reprehenderit repellendus earum placeat!</p>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt numquam ratione, tenetur nihil,
+                     adipisci quasi odio quidem odit consectetur necessitatibus blanditiis culpa deserunt atque
+                     assumenda cupiditate cumque minima reprehenderit repellendus earum placeat!</p>
                </div>
             </div>
             <!-- COMENTÁRIO -->
@@ -228,7 +246,8 @@
                      <i class="ri-star-fill"></i>
                      <i class="ri-star-half-fill"></i>
                   </div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laboriosam illum officiis, id tenetur nemo sapiente.</p>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laboriosam illum officiis, id
+                     tenetur nemo sapiente.</p>
                </div>
             </div>
             <!-- COMENTÁRIO -->
@@ -243,7 +262,12 @@
                      <i class="ri-star-fill"></i>
                      <i class="ri-star-half-fill"></i>
                   </div>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur saepe repudiandae explicabo dolorum delectus consectetur! A, iusto voluptatum qui rem iure ab placeat est porro? Dicta enim repudiandae fuga tempora! Corporis dicta asperiores et odio tempore facilis eveniet aut iste corrupti nulla? Est, iusto excepturi! Eaque rerum voluptatem sint voluptate dolor deserunt accusantium, natus ullam accusamus maiores optio, architecto a libero placeat impedit reiciendis?</p>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur saepe repudiandae explicabo
+                     dolorum delectus consectetur! A, iusto voluptatum qui rem iure ab placeat est porro? Dicta enim
+                     repudiandae fuga tempora! Corporis dicta asperiores et odio tempore facilis eveniet aut iste
+                     corrupti nulla? Est, iusto excepturi! Eaque rerum voluptatem sint voluptate dolor deserunt
+                     accusantium, natus ullam accusamus maiores optio, architecto a libero placeat impedit reiciendis?
+                  </p>
                </div>
             </div>
          </div>
