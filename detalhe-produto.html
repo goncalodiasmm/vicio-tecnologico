@@ -16,7 +16,7 @@
 
 <body>
    <!-- MODAL -->
-   <div id="modal-carrinho" class="hidden">
+   <section id="modal-carrinho" class="hidden">
       <div
          class="fixed top-50p left-50p translate-50p w-32 rounded py-2 flex-v justificar-centro alinhar-centro espaço-0-5 bg-branco shadow-lg">
          <i onclick="fecharModalCarrinho()" class="ri-close-line absolute top-1 right-1 cursor-pointer texto-md"></i>
@@ -24,7 +24,7 @@
          <p class="negrito">Produto adicionado ao Carrinho</p>
          <a href="pagamento-1.html" class="btn-primário categoria-pequeno">Ver Carrinho de Compras</a>
       </div>
-   </div>
+   </section>
 
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
@@ -50,93 +50,133 @@
          </div>
       </div>
    </nav>
+   <!-- NAVEGAÇÃO LATERAL -->
+   <nav class="h-total fixed top-0 -left-24 pt-2 transicao-base bg-branco w-24 shadow-lg" id="navegacao-lateral">
+      <div class="flex-h alinhar-inicio">
+         <div class="flex-v espaço-2 ml-2 mr-2">
+            <div class="flex-h espaço-1">
+               <button id="fechar-btn"><i class="ri-close-line texto-md"></i></button>
+               <img src="./img/logo-primário.png" alt="logo" class="logo">
+            </div>
+            <ul class="flex-v espaço-1">
+               <a href="#">
+                  <li class="categoria-pequeno">Computadores</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Mobilidade</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Componentes</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Imagem e Som</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Periféricos</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Armazenamento</li>
+               </a>
+            </ul>
+         </div>
+      </div>
+      </div>
+   </nav>
 
    <!-- BREADCRUMBS -->
-   <section class="breadcrumbs">
-      <i class="ri-home-line"></i>
-      <p class="categoria-pequeno">/ Computadores</p>
-      <p class="categoria-pequeno">/ Portáteis</p>
+   <section id="breadcrumbs">
+      <div class="flex-h alinhar-centro my-2">
+         <i class="ri-home-line"></i>
+         <p class="categoria-pequeno">/ Computadores</p>
+         <p class="categoria-pequeno">/ Portáteis</p>
+      </div>
    </section>
 
    <!-- APRESENTAÇÃO PRODUTO -->
-   <section class="apresentação-produto">
-      <div class="flex-h flex-ajustar">
-         <!-- FOTOGRAFIAS PRODUTO -->
-         <div class="flex-h">
-            <div class="flex-v espaço-1">
-               <div class="miniatura">
-                  <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_2.jpg"
-                     alt="auriculares xiaomi">
-               </div>
-               <div class="miniatura">
-                  <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_3.jpg"
-                     alt="auriculares xiaomi">
-               </div>
-               <div class="miniatura">
-                  <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_4.jpg"
-                     alt="auriculares xiaomi">
-               </div>
-            </div>
-            <div class="principal">
-               <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg" alt="">
-            </div>
-         </div>
-         <!-- INFORMAÇÃO PRODUTO -->
-         <div class="flex-v espaço-0-5">
-            <div class="flex-h espaço-2">
-               <div class="flex-h">
-                  <i class="ri-check-line sucesso"></i>
-                  <div>
-                     <p class="subtexto negrito">Produto Disponível</p>
-                     <p class="subtexto">53 restantes em stock</p>
+   <section id="apresentacao-produto">
+      <div class="mt-2 mb-4">
+         <div class="flex-h flex-ajustar">
+            <!-- FOTOGRAFIAS PRODUTO -->
+            <div class="flex-h">
+               <div class="flex-v espaço-1">
+                  <div class="w-6 border-2 border-solid border-cinzento-10 rounded">
+                     <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg"
+                        alt="auriculares xiaomi">
+                  </div>
+                  <div class="w-6 border-2 border-solid border-cinzento-10 rounded">
+                     <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_2.jpg"
+                        alt="auriculares xiaomi">
+                  </div>
+                  <div class="w-6 border-2 border-solid border-cinzento-10 rounded">
+                     <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_3.jpg"
+                        alt="auriculares xiaomi">
+                  </div>
+                  <div class="w-6 border-2 border-solid border-cinzento-10 rounded">
+                     <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_4.jpg"
+                        alt="auriculares xiaomi">
                   </div>
                </div>
-               <div class="flex-h">
-                  <i class="ri-truck-line sucesso"></i>
-                  <div>
-                     <p class="subtexto negrito">Envio Grátis</p>
-                     <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+               <div class="principal">
+                  <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg" alt="">
+               </div>
+            </div>
+            <!-- INFORMAÇÃO PRODUTO -->
+            <div class="flex-v espaço-0-5">
+               <div class="flex-h espaço-2">
+                  <div class="flex-h">
+                     <i class="ri-check-line sucesso"></i>
+                     <div>
+                        <p class="subtexto negrito">Produto Disponível</p>
+                        <p class="subtexto">53 restantes em stock</p>
+                     </div>
+                  </div>
+                  <div class="flex-h">
+                     <i class="ri-truck-line sucesso"></i>
+                     <div>
+                        <p class="subtexto negrito">Envio Grátis</p>
+                        <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+                     </div>
                   </div>
                </div>
-            </div>
-            <div class="etiqueta-primária categoria-pequeno alinhar-item-inicio mt-1 mb-1">Novidade</div>
-            <h3>HP Pavilion Gaming 15-dk1011np</h3>
-            <div class="flex-h alinhar-centro justificar-entre">
-               <h2>898,99€</h2>
-               <h3 class="cruzado cinzento-60 regular">998,99€</h3>
-            </div>
-            <div class="flex-h alinhar-centro espaço-1">
-               <div class="flex-h alinhar-centro espaço-0-25">
-                  <div class="rating">
-                     <i class="ri-star-fill"></i>
-                     <i class="ri-star-fill"></i>
-                     <i class="ri-star-fill"></i>
-                     <i class="ri-star-fill"></i>
-                     <i class="ri-star-half-fill"></i>
+               <div class="etiqueta-primária categoria-pequeno alinhar-item-inicio mt-1 mb-1">Novidade</div>
+               <h3>HP Pavilion Gaming 15-dk1011np</h3>
+               <div class="flex-h alinhar-centro justificar-entre">
+                  <h2>898,99€</h2>
+                  <h3 class="cruzado cinzento-60 regular">998,99€</h3>
+               </div>
+               <div class="flex-h alinhar-centro espaço-1">
+                  <div class="flex-h alinhar-centro espaço-0-25">
+                     <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                     </div>
+                     <p>4.5</p>
                   </div>
-                  <p>4.5</p>
+                  <div class="divisória-vertical"></div>
+                  <div class="flex-h alinhar-centro espaço-0-25">
+                     <i class="ri-user-fill"></i>
+                     <p>81 opiniões</p>
+                  </div>
                </div>
-               <div class="divisória-vertical"></div>
-               <div class="flex-h alinhar-centro espaço-0-25">
-                  <i class="ri-user-fill"></i>
-                  <p>81 opiniões</p>
+               <p class="subtexto">ID Produto: 343610</p>
+               <div class="contador-quantidade">
+                  <i class="ri-add-line"></i>
+                  <input type="text" name="quantidade" id="quantidade" value="1">
+                  <i class="ri-subtract-line"></i>
                </div>
-            </div>
-            <p class="subtexto">ID Produto: 343610</p>
-            <div class="contador-quantidade">
-               <i class="ri-add-line"></i>
-               <input type="text" name="quantidade" id="quantidade" value="1">
-               <i class="ri-subtract-line"></i>
-            </div>
-            <div class="flex-h alinhar-centro espaço-2">
-               <button onclick="adicionarCarrinho()" class="btn-primário flex-h alinhar-centro espaço-0-25"
-                  id="adicionar-carrinho">
-                  <i class="ri-shopping-cart-2-fill"></i>
-                  <p class="categoria-pequeno">Adicionar ao Carrinho</p>
-               </button>
-               <button>
-                  <i class="ri-heart-line texto-lg alerta"></i>
-               </button>
+               <div class="flex-h alinhar-centro espaço-2">
+                  <button onclick="adicionarCarrinho()" class="btn-primário flex-h alinhar-centro espaço-0-25"
+                     id="adicionar-carrinho">
+                     <i class="ri-shopping-cart-2-fill"></i>
+                     <p class="categoria-pequeno">Adicionar ao Carrinho</p>
+                  </button>
+                  <button>
+                     <i class="ri-heart-line texto-lg alerta"></i>
+                  </button>
+               </div>
             </div>
          </div>
       </div>
@@ -199,7 +239,7 @@
          </div>
       </div>
       <!-- OPINIÕES -->
-      <div class="flex-h flex-1 justificar-centro espaço-8 ocultar" id="seccao-opinioes">
+      <div class="flex-h flex-1 justificar-centro espaço-8 hidden" id="seccao-opinioes">
          <div class="flex-v espaço-0-5">
             <h1>4.5</h1>
             <div class="rating">
@@ -275,8 +315,8 @@
    </section>
 
    <!-- SECÇÃO NEWSLETTER -->
-   <section class="newsletter">
-      <div class="flex-v alinhar-centro">
+   <section id="newsletter">
+      <div class="flex-v alinhar-centro mt-2">
          <div class="divisória-horizontal mb-2"></div>
          <h3>Não perca as próximas ofertas</h3>
          <div class="flex-h alinhar-centro espaço-1">
@@ -290,10 +330,9 @@
          <div class="divisória-horizontal mt-2"></div>
       </div>
    </section>
-
    <!-- RODAPÉ -->
-   <footer class="rodapé">
-      <div class="flex-h justificar-entre">
+   <footer id="rodape">
+      <div class="flex-h justificar-entre mt-2">
          <div class="flex-v espaço-1">
             <a href="index.html"><img src="./img/logo-primário.png" alt="logo" class="logo"></a>
             <p class="subtexto">A loja de referência em Tecnologia</p>

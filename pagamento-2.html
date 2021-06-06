@@ -36,20 +36,53 @@
       </div>
    </nav>
 
-   <!-- SECCÃO DE PAGAMENTO - SEPARADOR 1 -->
-   <section class="pagamento">
-      <div class="flex-h justificar-centro">
+   <!-- NAVEGAÇÃO LATERAL -->
+   <nav class="h-total fixed top-0 -left-24 pt-2 transicao-base bg-branco w-24 shadow-lg" id="navegacao-lateral">
+      <div class="flex-h alinhar-inicio">
+         <div class="flex-v espaço-2 ml-2 mr-2">
+            <div class="flex-h espaço-1">
+               <button id="fechar-btn"><i class="ri-close-line texto-md"></i></button>
+               <img src="./img/logo-primário.png" alt="logo" class="logo">
+            </div>
+            <ul class="flex-v espaço-1">
+               <a href="#">
+                  <li class="categoria-pequeno">Computadores</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Mobilidade</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Componentes</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Imagem e Som</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Periféricos</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Armazenamento</li>
+               </a>
+            </ul>
+         </div>
+      </div>
+      </div>
+   </nav>
+
+   <!-- SECÇÃO PASSOS DE PAGAMENTO -->
+   <section id="passos-pagamento">
+      <div class="flex-h justificar-centro mt-4 mb-2">
          <!-- CARRINHO DE COMPRAS -->
-         <button class="borda-cinzento w-total">
+         <button class="borda-primária w-total">
             <p class="categoria-médio">Carrinho de compras</p>
          </button>
          <!-- CHECKOUT -->
-         <button class="borda-primária w-total">
+         <button class="borda-cinzento w-total">
             <p class="categoria-médio">Checkout</p>
          </button>
          <!-- CONFIRMAÇÃO -->
          <button class="borda-cinzento w-total">
-            <p class="categoria-médio">confirmação</p>
+            <p class="categoria-médio">Confirmação</p>
          </button>
       </div>
    </section>
@@ -58,7 +91,7 @@
    <form action="pagamento-3.html" method="GET">
       <div class="flex-h justificar-entre flex-ajustar">
          <div>
-            <header>
+            <header class="mb-1">
                <p class="categoria-pequeno cinzento-60">Detalhes de Envio</p>
                <div class="divisória-horizontal"></div>
             </header>
@@ -107,11 +140,11 @@
                <p class="subtexto">Guardar detalhes de envio para compras futuras.</p>
             </div>
             <!-- DETALHES DE PAGAMENTO -->
-            <header>
+            <header class="mb-2">
                <p class="categoria-pequeno cinzento-60">Detalhes de Pagamento</p>
                <div class="divisória-horizontal"></div>
             </header>
-            <div class="flex-h alinhar-centro espaço-2">
+            <div class="flex-h alinhar-centro espaço-2 mb-2">
                <div><img src="./img/pagamento-visa.png" alt="pagamento-visa"></div>
                <div><img src="./img/pagamento-mastercard.png" alt="pagamento-mastercard"></div>
                <div><img src="./img/pagamento-paypal.png" alt="pagamento-paypal"></div>
@@ -148,7 +181,7 @@
                <div class="divisória-horizontal"></div>
             </header>
             <div class="flex-h alinhar-centro">
-               <div class="w-16"><img src="/img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_1.jpg"
+               <div class="w-16"><img src="/img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg"
                      alt="auriculares"></div>
                <div>
                   <p class="subtítulo">HP Pavillion Gaming 15-dk1011np</p>
@@ -160,7 +193,7 @@
             </div>
             <div class="divisória-horizontal mb-2 mt-2"></div>
             <div class="flex-h alinhar-centro">
-               <div class="w-16"><img src="/img/Auriculares Xiaomi Mi Airdots/auriculares-xiaomi-mi-airdots_1.jpg"
+               <div class="w-16"><img src="/img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg"
                      alt="auriculares"></div>
                <div>
                   <p class="subtítulo">HP Pavillion Gaming 15-dk1011np</p>

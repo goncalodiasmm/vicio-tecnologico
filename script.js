@@ -2,14 +2,30 @@
 const novidadesProduto = document.getElementById('novidades-produto')
 const destaquesProduto = document.getElementById('destaques-produto')
 
+// OPINIÕES PÁGINA INICIAL
+const opinioesWebsite = document.getElementById('opinioes-website')
+
 // BUSCAR PRODUTOS
 class Produtos {
   async buscarProdutos() {
     try {
-      let resultado = await fetch('produtos.json')
+      let resultado = await fetch('data.json')
       let data = await resultado.json()
       let produtos = data.produtos
       return produtos
+    } catch (error) {
+      console.log(error)
+    }
+  }
+}
+
+class Opinioes {
+  async buscarOpinioes() {
+    try {
+      let resultado = await fetch('data.json')
+      let data = await resultado.json()
+      let opinioes = data.opinioes
+      return opinioes
     } catch (error) {
       console.log(error)
     }
@@ -82,6 +98,39 @@ class UI {
       }
     })
   }
+  mostrarOpinioes(opinioes) {
+    let resultado = ''
+    opinioes.forEach((opiniao) => {
+      resultado += `
+      <!-- CARTAO SINGULAR -->
+         <div class="flex-v justificar-redor borda-cartao p-1 espaço-1">
+            <div class="flex-h justificar-entre">
+               <div class="rating">
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+                  <i class="ri-star-fill"></i>
+               </div>
+               <div class="flex-h alinhar-centro">
+                  <i class="ri-time-line"></i>
+                  <p class="subtexto">${opiniao.tempo}</p>
+               </div>
+            </div>
+            <div>
+               <p class="categoria-pequeno">${opiniao.titulo}</p>
+               <p class="subtexto">${opiniao.comentario}</p>
+            </div>
+            <div class="flex-h alinhar-centro espaço-0-25 mt-2">
+               <img src="${opiniao.imagem}" class="w-1">
+               <p class="subtexto">${opiniao.utilizador}</p>
+            </div>
+         </div>
+      `
+      if (opinioesWebsite != null) {
+        opinioesWebsite.innerHTML = resultado
+      }
+    })
+  }
 }
 // LOCAL STORAGE
 class Storage {}
@@ -89,10 +138,12 @@ class Storage {}
 document.addEventListener('DOMContentLoaded', () => {
   const ui = new UI()
   const produtos = new Produtos()
+  const opinioes = new Opinioes()
 
   // BUSCAR PRODUTOS
   produtos.buscarProdutos().then((produtos) => ui.mostrarDestaques(produtos))
   produtos.buscarProdutos().then((produtos) => ui.mostrarNovidades(produtos))
+  opinioes.buscarOpinioes().then((opinioes) => ui.mostrarOpinioes(opinioes))
 })
 
 // ALTERNAR BARRA DE NAVEGAÇÃO LATERAL

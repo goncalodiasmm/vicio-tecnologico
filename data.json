@@ -68,5 +68,29 @@
         "stock": 89
       }
     ]
-  }
+  },
+
+  "opinioes": [
+    {
+      "tempo": "há 29 minutos",
+      "titulo": "Entregas Rápidas",
+      "comentario": "Excelente loja, muita variedade de produtos e rapidez na entrega.",
+      "imagem": "./img/utilizador-1.png",
+      "utilizador": "Ricardo Lopes"
+    },
+    {
+      "tempo": "há 46 minutos",
+      "titulo": "O Melhor Serviço",
+      "comentario": "Loja Online funciona bem, rápida nas entregas. Encontramos os produtos com valores bastante em conta, comparando com o mercado.",
+      "imagem": "./img/utilizador-2.png",
+      "utilizador": "Artur Santos"
+    },
+    {
+      "tempo": "há 1 hora",
+      "titulo": "Site Confiável",
+      "comentario": "Entrega super rápida. Produto sem dúvida perfeito. Aconselho este site para comprar on-line, profissionalismo acima de tudo.",
+      "imagem": "./img/utilizador-3.png",
+      "utilizador": "Nádia Tavares"
+    }
+  ]
 }
