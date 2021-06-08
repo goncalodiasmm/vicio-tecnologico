@@ -19,6 +19,7 @@ class Produtos {
   }
 }
 
+// BUSCAR OPINIÕES
 class Opinioes {
   async buscarOpinioes() {
     try {
@@ -132,18 +133,29 @@ class UI {
     })
   }
 }
+
 // LOCAL STORAGE
-class Storage {}
+class Storage {
+  static guardarProdutos(produtos) {
+    localStorage.setItem('produtos', JSON.stringify(produtos))
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const ui = new UI()
   const produtos = new Produtos()
   const opinioes = new Opinioes()
 
-  // BUSCAR PRODUTOS
-  produtos.buscarProdutos().then((produtos) => ui.mostrarDestaques(produtos))
-  produtos.buscarProdutos().then((produtos) => ui.mostrarNovidades(produtos))
+  // PRODUTOS
+  produtos.buscarProdutos().then((produtos) => {
+    ui.mostrarDestaques(produtos)
+    ui.mostrarNovidades(produtos)
+    Storage.guardarProdutos(produtos)
+  })
+  // OPINIÕES
   opinioes.buscarOpinioes().then((opinioes) => ui.mostrarOpinioes(opinioes))
+
+  definirUtilizador()
 })
 
 // ALTERNAR BARRA DE NAVEGAÇÃO LATERAL
@@ -218,11 +230,8 @@ if (loginForm != null) {
     if (palavraPasse.value === '') {
       definirErro(palavraPasse, 'A palavra-passe é obrigatória.')
       e.preventDefault()
-    } else if (palavraPasse.value.length < 8) {
-      definirErro(palavraPasse, 'A palavra-passe é demasiado curta.')
-      e.preventDefault()
     } else {
-      definirSucesso(palavraPasse, 'Palavra-passe aceite')
+      definirSucesso(palavraPasse, 'Palavra-passe aceite.')
     }
   })
 }
@@ -235,7 +244,8 @@ if (registoForm != null) {
       definirErro(nome, 'O nome é obrigatório.')
       e.preventDefault()
     } else {
-      definirSucesso(nome, 'O nome é válido')
+      definirSucesso(nome, 'O nome é válido.')
+      localStorage.setItem('utilizadorNome', nome.value)
     }
 
     //validar apelido
@@ -243,7 +253,8 @@ if (registoForm != null) {
       definirErro(apelido, 'O apelido é obrigatório.')
       e.preventDefault()
     } else {
-      definirSucesso(apelido, 'O apelido é válido')
+      definirSucesso(apelido, 'O apelido é válido.')
+      localStorage.setItem('utilizadorApelido', apelido.value)
     }
 
     //validar email
@@ -254,7 +265,8 @@ if (registoForm != null) {
       definirErro(email, 'O email não é válido.')
       e.preventDefault()
     } else {
-      definirSucesso(email, 'Email aceite')
+      definirSucesso(email, 'O email é válido.')
+      localStorage.setItem('utilizadorEmail', email.value)
     }
 
     //Validar tamanho da palavra passe
@@ -264,11 +276,12 @@ if (registoForm != null) {
     } else if (!passwordValida(palavraPasse.value)) {
       definirErro(
         palavraPasse,
-        'A palavra-passe tem que ter pelo menos 8 caracteres, 1 letra minuscula, 1 maiuscula, 1 caractere especial e 1 número'
+        'A palavra-passe tem que ter pelo menos 8 caracteres, 1 letra minuscula, 1 maiuscula, 1 caractere especial e 1 número.'
       )
       e.preventDefault()
     } else {
-      definirSucesso(palavraPasse)
+      definirSucesso(palavraPasse, 'A palavra-passe é válida')
+      localStorage.setItem('utilizadorPalavraPasse', palavraPasse.value)
     }
 
     //revalidar palavra-passe
@@ -276,12 +289,27 @@ if (registoForm != null) {
       definirErro(confirmarPalavraPasse, 'Confirme a palavra-passe')
       e.preventDefault()
     } else if (confirmarPalavraPasse.value != palavraPasse.value) {
-      definirErro(confirmarPalavraPasse, 'A palavra passe nao corresponde.')
+      definirErro(confirmarPalavraPasse, 'A palavra passe não corresponde.')
       e.preventDefault()
     } else {
       definirSucesso(confirmarPalavraPasse)
     }
   })
+}
+
+function definirUtilizador() {
+  const utilizadorNome = document.getElementById('utilizador-nome')
+  if (utilizadorNome != null) {
+    utilizadorNome.innerHTML = localStorage.getItem('utilizadorNome')
+  }
+}
+
+function verificarUtilizador() {
+  if (localStorage.getItem('utilizadorNome') != null) {
+    window.location.href = 'http://127.0.0.1:5500/perfil.html'
+  } else {
+    window.location.href = 'http://127.0.0.1:5500/login.html'
+  }
 }
 
 // CLASSES DE ERRO E SUCESSO
@@ -318,8 +346,6 @@ function passwordValida(palavraPasse) {
 function adicionarCarrinho() {
   const modalCarrinho = document.getElementById('modal-carrinho')
   modalCarrinho.classList.remove('hidden')
-
-  let quantidadeProduto = document.getElementById('quantidade-produto')
 }
 
 function fecharModalCarrinho() {

@@ -28,9 +28,18 @@
                <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
             </div>
             <div class="flex-h alinhar-centro espaço-1">
-               <a href="perfil.html"><i class="ri-heart-line"></i></a>
-               <a href="login.html"><i class="ri-user-fill"></i></a>
-               <a href="pagamento-1.html"><i class="ri-shopping-cart-2-fill"></i></a>
+               <a href="perfil.html" class="flex-h alinhar-centro">
+                  <i class="ri-heart-line"></i>
+                  <p class="subtexto" id="lista-favoritos"></p>
+               </a>
+               <a href="login.html" class="flex-h alinhar-centro cursor-pointer">
+                  <i class="ri-user-fill"></i>
+                  <p class="subtexto" id="utilizador-nome"></p>
+               </a>
+               <a href="pagamento-1.html" class="flex-h alinhar-centro">
+                  <i class="ri-shopping-cart-2-fill"></i>
+                  <p class="subtexto" id="lista-carrinho"></p>
+               </a>
             </div>
          </div>
       </div>
@@ -76,7 +85,7 @@
          <div class="flex-v espaço-2">
             <!-- UTILIZADOR -->
             <div class="flex-h alinhar-centro">
-               <i class="ri-user-4-line texto-xl p-1 anel"></i>
+               <i class="ri-user-fill texto-xl p-1 anel"></i>
                <div class="flex-v alinhar-centro ml-1">
                   <p class="subtítulo">João Silva</p>
                   <a href="#" class="sublinhado subtexto">Alterar foto de perfil</a>
@@ -188,68 +197,68 @@
             </div>
          </div>
 
-            <!--Opçao perfil-Pedidos e faturas-->
-            <div class="lista-favoritos">
-               <p class="negrito">PEDIDOS E FATURAS
-               <div class="divisória-horizontal"></div>
-               <div class="flex-h justificar-entre">
-                  <div class="flex-v justificar-entre">
-                     <p class="subtexto">Pedido realizado em: 18/02/2021</p>
-                     <p class="subtexto">2 artigos</p>
-                  </div>
-
-                  <div class="flex-h">
-                     <i class="ri-file-text-line"> </i>
-                     <div> Obter fatura </div>
-                  </div>
-               </div>
-               <div class="flex-h flex-inicial alinhar-centro espaço-4">
-                  <div class="flex-h alinhar-centro">
-                     <div class="w-16">
-                        <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg"
-                           alt="auriculares xiaomi">
-                     </div>
-                     <div class="flex-h justificar-entre">
-                        <div class="flex-v">
-                           <p class="subtexto negrito">Auriculares Xiaomi Mi Airdots</p>
-                           <div class="flex-h alinhar-centro espaço-0.25">
-                              <i class="ri-check-line sucesso"></i>
-                              <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
-                           </div>
-                        </div>
-                        <div class="flex-h espaço-1">
-                           <a href="#"><button class="btn-primário categoria-pequeno">Avaliar</button></a>
-                           <a href="#"><button class="btn-contorno categoria-pequeno">Devolver</button></a>
-                        </div>
-                     </div>
-                  </div>
-
+         <!--Opçao perfil-Pedidos e faturas-->
+         <div class="lista-favoritos">
+            <p class="negrito">PEDIDOS E FATURAS
+            <div class="divisória-horizontal"></div>
+            <div class="flex-h justificar-entre">
+               <div class="flex-v justificar-entre">
+                  <p class="subtexto">Pedido realizado em: 18/02/2021</p>
+                  <p class="subtexto">2 artigos</p>
                </div>
 
-               <div class="flex-h flex-inicial alinhar-centro espaço-4">
-                  <div class="flex-h alinhar-centro">
-                     <div class="w-16">
-                        <img src="./img/smartphone-samsung-galaxy-s10/smartphone-samsung-galaxy-s10_1.jpg"
-                           alt="smartphone-samsung-galaxy-s10">
+               <div class="flex-h">
+                  <i class="ri-file-text-line"> </i>
+                  <div> Obter fatura </div>
+               </div>
+            </div>
+            <div class="flex-h flex-inicial alinhar-centro espaço-4">
+               <div class="flex-h alinhar-centro">
+                  <div class="w-16">
+                     <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg"
+                        alt="auriculares xiaomi">
+                  </div>
+                  <div class="flex-h justificar-entre">
+                     <div class="flex-v">
+                        <p class="subtexto negrito">Auriculares Xiaomi Mi Airdots</p>
+                        <div class="flex-h alinhar-centro espaço-0.25">
+                           <i class="ri-check-line sucesso"></i>
+                           <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
+                        </div>
                      </div>
-                     <div class="flex-h justificar-entre">
-                        <div class="flex-v">
-                           <p class="subtexto negrito">Samsung Galaxy s10</p>
-                           <div class="flex-h alinhar-centro espaço-0.25">
-                              <i class="ri-check-line sucesso"></i>
-                              <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
-                           </div>
-                        </div>
-                        <div class="flex-h espaço-1">
-                           <a href="#"><button class="btn-primário categoria-pequeno">Avaliar</button></a>
-                           <a href="#"><button class="btn-contorno categoria-pequeno">Devolver</button></a>
-                        </div>
+                     <div class="flex-h espaço-1">
+                        <a href="#"><button class="btn-primário categoria-pequeno">Avaliar</button></a>
+                        <a href="#"><button class="btn-contorno categoria-pequeno">Devolver</button></a>
                      </div>
                   </div>
-
                </div>
 
-               <a href="#"><button class="btn-remove categoria-pequeno">Cancelar Pedido</button></a>
+            </div>
+
+            <div class="flex-h flex-inicial alinhar-centro espaço-4">
+               <div class="flex-h alinhar-centro">
+                  <div class="w-16">
+                     <img src="./img/smartphone-samsung-galaxy-s10/smartphone-samsung-galaxy-s10_1.jpg"
+                        alt="smartphone-samsung-galaxy-s10">
+                  </div>
+                  <div class="flex-h justificar-entre">
+                     <div class="flex-v">
+                        <p class="subtexto negrito">Samsung Galaxy s10</p>
+                        <div class="flex-h alinhar-centro espaço-0.25">
+                           <i class="ri-check-line sucesso"></i>
+                           <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
+                        </div>
+                     </div>
+                     <div class="flex-h espaço-1">
+                        <a href="#"><button class="btn-primário categoria-pequeno">Avaliar</button></a>
+                        <a href="#"><button class="btn-contorno categoria-pequeno">Devolver</button></a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+
+            <a href="#"><button class="btn-remove categoria-pequeno">Cancelar Pedido</button></a>
    </section>
 
    </div>

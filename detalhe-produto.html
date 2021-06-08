@@ -39,16 +39,23 @@
                <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
             </div>
             <div class="flex-h alinhar-centro espaço-1">
-               <a href="perfil.html"><i class="ri-heart-line"></i></a>
-               <a href="login.html"><i class="ri-user-fill"></i></a>
+               <a href="perfil.html" class="flex-h alinhar-centro">
+                  <i class="ri-heart-line"></i>
+                  <p class="subtexto" id="lista-favoritos"></p>
+               </a>
+               <a href="login.html" class="flex-h alinhar-centro">
+                  <i class="ri-user-fill"></i>
+                  <p class="subtexto" id="utilizador-nome"></p>
+               </a>
                <a href="pagamento-1.html" class="flex-h alinhar-centro">
-                  <i class="ri-shopping-cart-2-fill relative"></i>
-                  <p class="subtexto" id="quantidade-produto">1</p>
+                  <i class="ri-shopping-cart-2-fill"></i>
+                  <p class="subtexto" id="lista-carrinho"></p>
                </a>
             </div>
          </div>
       </div>
    </nav>
+
    <!-- NAVEGAÇÃO LATERAL -->
    <nav class="h-total fixed top-0 -left-24 pt-2 transicao-base bg-branco w-24 shadow-lg" id="navegacao-lateral">
       <div class="flex-h alinhar-inicio">
