@@ -24,25 +24,23 @@
                <form action="index.html" method="GET" id="registo-form">
                   <div class="dados">
                      <label for="nome" class="categoria-pequeno">Nome</label>
-                     <input type="text" name="nome" id="nome" required>
+                     <input type="text" name="nome" id="nome">
                      <small class="subtexto"></small>
                   </div>
                   <div class="dados">
                      <label for="apelido" class="categoria-pequeno">Apelido</label>
-                     <input type="text" name="apelido" id="apelido" required>
+                     <input type="text" name="apelido" id="apelido">
                      <small class="subtexto"></small>
                   </div>
                   <div class="dados">
                      <label for="email" class="categoria-pequeno">Email</label>
-                     <input type="email" name="email" id="email" required>
+                     <input type="text" name="email" id="email">
                      <small class="subtexto"></small>
                   </div>
                   <div class="dados">
                      <label for="palavra-passe" class="categoria-pequeno">Palavra-passe</label>
-                     <input type="password" name="palavra-passe" id="palavra-passe"
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                        Title="Deve conter pelo menos 1 numero, 1 maíuscula, 1 minuscula, 1 caractere especial e 8 caracteres"
-                        required>
+                     <input type="password" name="palavra-passe" id="palavra-passe">
+                        
                      <small class="subtexto"></small>
                   </div>
                   <div class="dados">
@@ -55,7 +53,7 @@
                      <p class="subtexto">Quero receber as últimas novidades do Vício Tecnológico</p>
                   </div>
                   <div class="condições">
-                     <input type="checkbox">
+                     <input type="checkbox" required>
                      <p class="subtexto">Compreendi o uso dos meus dados pessoais, de acordo com a Política de
                         Privacidade.</p>
                   </div>

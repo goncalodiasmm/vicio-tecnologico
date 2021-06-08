@@ -193,11 +193,16 @@ if (opinioesBtn != null) {
   })
 }
 
-// FORMULÁRIO LOGIN
+// FORMULÁRIOS
 const loginForm = document.getElementById('login-form')
+const registoForm = document.getElementById('registo-form')
 const email = document.getElementById('email')
 const palavraPasse = document.getElementById('palavra-passe')
+const nome = document.getElementById('nome')
+const apelido = document.getElementById('apelido')
+const confirmarPalavraPasse = document.getElementById('confirmar-palavra-passe')
 
+// FORMULÁRIO LOGIN
 if (loginForm != null) {
   loginForm.addEventListener('submit', (e) => {
     if (email.value === '') {
@@ -222,11 +227,69 @@ if (loginForm != null) {
   })
 }
 
+// FORMULÁRIO REGISTO
+if (registoForm != null) {
+  registoForm.addEventListener('submit', (e) => {
+    //validar nome
+    if (nome.value === '') {
+      definirErro(nome, 'O nome é obrigatório.')
+      e.preventDefault()
+    } else {
+      definirSucesso(nome, 'O nome é válido')
+    }
+
+    //validar apelido
+    if (apelido.value === '') {
+      definirErro(apelido, 'O apelido é obrigatório.')
+      e.preventDefault()
+    } else {
+      definirSucesso(apelido, 'O apelido é válido')
+    }
+
+    //validar email
+    if (email.value === '') {
+      definirErro(email, 'O email é obrigatório.')
+      e.preventDefault()
+    } else if (!emailValido(email.value)) {
+      definirErro(email, 'O email não é válido.')
+      e.preventDefault()
+    } else {
+      definirSucesso(email, 'Email aceite')
+    }
+
+    //Validar tamanho da palavra passe
+    if (palavraPasse.value === '') {
+      definirErro(palavraPasse, 'A palavra-passe é obrigatória.')
+      e.preventDefault()
+    } else if (!passwordValida(palavraPasse.value)) {
+      definirErro(
+        palavraPasse,
+        'A palavra-passe tem que ter pelo menos 8 caracteres, 1 letra minuscula, 1 maiuscula, 1 caractere especial e 1 número'
+      )
+      e.preventDefault()
+    } else {
+      definirSucesso(palavraPasse)
+    }
+
+    //revalidar palavra-passe
+    if (confirmarPalavraPasse.value === '') {
+      definirErro(confirmarPalavraPasse, 'Confirme a palavra-passe')
+      e.preventDefault()
+    } else if (confirmarPalavraPasse.value != palavraPasse.value) {
+      definirErro(confirmarPalavraPasse, 'A palavra passe nao corresponde.')
+      e.preventDefault()
+    } else {
+      definirSucesso(confirmarPalavraPasse)
+    }
+  })
+}
+
 // CLASSES DE ERRO E SUCESSO
 function definirErro(input, mensagem) {
   const dados = input.parentElement
   const small = dados.querySelector('small')
   small.innerText = mensagem
+  small.classList.add('alerta')
   input.className = 'dados-erro'
 }
 
@@ -234,6 +297,7 @@ function definirSucesso(input, mensagem) {
   const dados = input.parentElement
   const small = dados.querySelector('small')
   small.innerText = mensagem
+  small.classList.add('sucesso')
   input.className = 'dados-sucesso'
 }
 
@@ -244,16 +308,18 @@ function emailValido(email) {
   )
 }
 
-function passwordValida(password) {
-  return /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(password)
+function passwordValida(palavraPasse) {
+  return /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(
+    palavraPasse
+  )
 }
 
 // ADICIONAR AO CARRINHO
 function adicionarCarrinho() {
-  const novoProduto = document.getElementById('novo-produto')
   const modalCarrinho = document.getElementById('modal-carrinho')
-  novoProduto.classList.remove('hidden')
   modalCarrinho.classList.remove('hidden')
+
+  let quantidadeProduto = document.getElementById('quantidade-produto')
 }
 
 function fecharModalCarrinho() {

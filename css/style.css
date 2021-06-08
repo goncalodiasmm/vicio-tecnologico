@@ -108,6 +108,10 @@ p {
   max-width: 64ch;
 }
 
+small {
+  max-width: 16ch;
+}
+
 .subtítulo {
   font-size: 1.5rem;
   font-weight: bold;
