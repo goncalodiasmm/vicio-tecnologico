@@ -1,6 +1,14 @@
+function lerId() {
+  let url = new URL(window.location)
+  let id = url.searchParams.get('id')
+  console.log(id)
+  return id
+}
+
 // PRODUTOS PÁGINA INICIAL
 const novidadesProduto = document.getElementById('novidades-produto')
 const destaquesProduto = document.getElementById('destaques-produto')
+const apresentacaoProduto = document.getElementById('apresentacao-produto')
 
 // OPINIÕES PÁGINA INICIAL
 const opinioesWebsite = document.getElementById('opinioes-website')
@@ -37,10 +45,10 @@ class Opinioes {
 class UI {
   mostrarDestaques(produtos) {
     let resultado = ''
-    produtos.destaques.forEach((produto) => {
+    produtos.forEach((produto) => {
       resultado += `
       <!-- CARTÃO DE PRODUTO -->
-         <a href="detalhe-produto.html">
+         <a href="detalhe-produto.html?id=${produto.id}">
             <div class="flex-v">
                <img src=${produto.imagem} alt="${produto.nome}" class="w-16">
                <div class="flex-v">
@@ -69,10 +77,10 @@ class UI {
   }
   mostrarNovidades(produtos) {
     let resultado = ''
-    produtos.novidades.forEach((produto) => {
+    produtos.forEach((produto) => {
       resultado += `
       <!-- CARTÃO DE PRODUTO -->
-         <a href="detalhe-produto.html">
+         <a href="detalhe-produto.html?id=${produto.id}">
             <div class="flex-v">
                <img src=${produto.imagem} alt="${produto.nome}" class="w-16">
                <div class="flex-v">
@@ -98,6 +106,103 @@ class UI {
         novidadesProduto.innerHTML = resultado
       }
     })
+  }
+
+  mostrarProduto(produto) {
+    let resultado = `
+    <!-- APRESENTAÇÃO PRODUTO -->
+   <section id="apresentacao-produto">
+      <div class="mt-2 mb-4">
+         <div class="flex-h flex-ajustar">
+            <!-- FOTOGRAFIAS PRODUTO -->
+            <div class="flex-h">
+               <div class="flex-v espaço-1">
+                  <div class="w-6 border-2 border-solid border-cinzento-10 rounded">
+                     <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg"
+                        alt="auriculares xiaomi">
+                  </div>
+                  <div class="w-6 border-2 border-solid border-cinzento-10 rounded">
+                     <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_2.jpg"
+                        alt="auriculares xiaomi">
+                  </div>
+                  <div class="w-6 border-2 border-solid border-cinzento-10 rounded">
+                     <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_3.jpg"
+                        alt="auriculares xiaomi">
+                  </div>
+                  <div class="w-6 border-2 border-solid border-cinzento-10 rounded">
+                     <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_4.jpg"
+                        alt="auriculares xiaomi">
+                  </div>
+               </div>
+               <div class="principal">
+                  <img src="${produto.imagem}" alt="">
+               </div>
+            </div>
+            <!-- INFORMAÇÃO PRODUTO -->
+            <div class="flex-v espaço-0-5">
+               <div class="flex-h espaço-2">
+                  <div class="flex-h">
+                     <i class="ri-check-line sucesso"></i>
+                     <div>
+                        <p class="subtexto negrito">Produto Disponível</p>
+                        <p class="subtexto">53 restantes em stock</p>
+                     </div>
+                  </div>
+                  <div class="flex-h">
+                     <i class="ri-truck-line sucesso"></i>
+                     <div>
+                        <p class="subtexto negrito">Envio Grátis</p>
+                        <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="etiqueta-primária categoria-pequeno alinhar-item-inicio mt-1 mb-1">Novidade</div>
+               <h3>${produto.nome}</h3>
+               <div class="flex-h alinhar-centro justificar-entre">
+                  <h2>${produto.preco}€</h2>
+                  <h3 class="cruzado cinzento-60 regular">998,99€</h3>
+               </div>
+               <div class="flex-h alinhar-centro espaço-1">
+                  <div class="flex-h alinhar-centro espaço-0-25">
+                     <div class="rating">
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-fill"></i>
+                        <i class="ri-star-half-fill"></i>
+                     </div>
+                     <p>4.5</p>
+                  </div>
+                  <div class="divisória-vertical"></div>
+                  <div class="flex-h alinhar-centro espaço-0-25">
+                     <i class="ri-user-fill"></i>
+                     <p>81 opiniões</p>
+                  </div>
+               </div>
+               <p class="subtexto">ID Produto: 343610</p>
+               <div class="contador-quantidade">
+                  <i class="ri-add-line"></i>
+                  <input type="text" name="quantidade" id="quantidade" value="1">
+                  <i class="ri-subtract-line"></i>
+               </div>
+               <div class="flex-h alinhar-centro espaço-2">
+                  <button onclick="adicionarCarrinho()" class="btn-primário flex-h alinhar-centro espaço-0-25"
+                     id="adicionar-carrinho">
+                     <i class="ri-shopping-cart-2-fill"></i>
+                     <p class="categoria-pequeno">Adicionar ao Carrinho</p>
+                  </button>
+                  <button>
+                     <i class="ri-heart-line texto-lg alerta"></i>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>`
+
+    if (apresentacaoProduto != null) {
+      apresentacaoProduto.innerHTML = resultado
+    }
   }
   mostrarOpinioes(opinioes) {
     let resultado = ''
@@ -139,6 +244,18 @@ class Storage {
   static guardarProdutos(produtos) {
     localStorage.setItem('produtos', JSON.stringify(produtos))
   }
+
+  static getProduto(id) {
+    let json = localStorage.getItem('produtos')
+    let produtos = JSON.parse(json)
+    for (let i = 0; i < produtos.length; i++) {
+      console.log(produtos[i].id)
+      console.log(id)
+      console.log(produtos[i].id == id)
+      if (produtos[i].id == id) return produtos[i]
+    }
+    return null
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -146,12 +263,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const produtos = new Produtos()
   const opinioes = new Opinioes()
 
+  console.log(lerId())
   // PRODUTOS
-  produtos.buscarProdutos().then((produtos) => {
-    ui.mostrarDestaques(produtos)
-    ui.mostrarNovidades(produtos)
-    Storage.guardarProdutos(produtos)
-  })
+  produtos
+    .buscarProdutos()
+    .then((produtos) => {
+      ui.mostrarDestaques(produtos)
+      ui.mostrarNovidades(produtos)
+      Storage.guardarProdutos(produtos)
+      let produto = Storage.getProduto(lerId())
+      console.log(produto)
+      ui.mostrarProduto(produto)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
   // OPINIÕES
   opinioes.buscarOpinioes().then((opinioes) => ui.mostrarOpinioes(opinioes))
 
