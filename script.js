@@ -1,14 +1,15 @@
-function lerId() {
-  let url = new URL(window.location)
-  let id = url.searchParams.get('id')
-  console.log(id)
-  return id
-}
-
 // PRODUTOS PÁGINA INICIAL
 const novidadesProduto = document.getElementById('novidades-produto')
 const destaquesProduto = document.getElementById('destaques-produto')
+
+// DETALHE DE PRODUTO
 const apresentacaoProduto = document.getElementById('apresentacao-produto')
+
+function lerId() {
+  let url = new URL(window.location)
+  let id = url.searchParams.get('id')
+  return id
+}
 
 // OPINIÕES PÁGINA INICIAL
 const opinioesWebsite = document.getElementById('opinioes-website')
@@ -43,67 +44,72 @@ class Opinioes {
 
 // MOSTRAR PRODUTOS
 class UI {
-  mostrarDestaques(produtos) {
-    let resultado = ''
-    produtos.forEach((produto) => {
-      resultado += `
-      <!-- CARTÃO DE PRODUTO -->
-         <a href="detalhe-produto.html?id=${produto.id}">
-            <div class="flex-v">
-               <img src=${produto.imagem} alt="${produto.nome}" class="w-16">
-               <div class="flex-v">
-                  <p class="categoria-pequeno">${produto.categoria}</p>
-                  <p>${produto.nome}</p>
-               </div>
-               <div class="flex-h alinhar-centro sucesso">
-                  <i class="ri-check-line"></i>
-                  <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-               </div>
-               <div class="flex-h alinhar-centro justificar-entre">
-                  <h3>${produto.preco}€</h3>
-                  <p class="cruzado">${produto.preco}€</p>
-               </div>
-               <div class="flex-h alinhar-centro">
-                  <i class="ri-heart-line alerta"></i>
-                  <p class="subtexto">Favoritos</p>
-               </div>
-            </div>
-         </a>
-      `
-      if (destaquesProduto != null) {
-        destaquesProduto.innerHTML = resultado
-      }
-    })
-  }
   mostrarNovidades(produtos) {
     let resultado = ''
     produtos.forEach((produto) => {
-      resultado += `
-      <!-- CARTÃO DE PRODUTO -->
-         <a href="detalhe-produto.html?id=${produto.id}">
-            <div class="flex-v">
-               <img src=${produto.imagem} alt="${produto.nome}" class="w-16">
-               <div class="flex-v">
-                  <p class="categoria-pequeno">${produto.categoria}</p>
-                  <p>${produto.nome}</p>
-               </div>
-               <div class="flex-h alinhar-centro sucesso">
-                  <i class="ri-check-line"></i>
-                  <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-               </div>
-               <div class="flex-h alinhar-centro justificar-entre">
-                  <h3>${produto.preco}€</h3>
-                  <p class="cruzado">${produto.preco}€</p>
-               </div>
-               <div class="flex-h alinhar-centro">
-                  <i class="ri-heart-line alerta"></i>
-                  <p class="subtexto">Favoritos</p>
-               </div>
-            </div>
-         </a>
-      `
-      if (novidadesProduto != null) {
-        novidadesProduto.innerHTML = resultado
+      if (produto.seccao == 'Novidades') {
+        resultado += `
+        <!-- CARTÃO DE PRODUTO -->
+           <a href="detalhe-produto.html?id=${produto.id}">
+              <div class="flex-v">
+                 <img src=${produto.imagem} alt="${produto.nome}" class="w-16">
+                 <div class="flex-v">
+                    <p class="categoria-pequeno">${produto.categoria}</p>
+                    <p>${produto.nome}</p>
+                 </div>
+                 <div class="flex-h alinhar-centro sucesso">
+                    <i class="ri-check-line"></i>
+                    <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                 </div>
+                 <div class="flex-h alinhar-centro justificar-entre">
+                    <h3>${produto.preco}€</h3>
+                    <p class="cruzado">${produto.preco}€</p>
+                 </div>
+                 <div class="flex-h alinhar-centro">
+                    <i class="ri-heart-line alerta"></i>
+                    <p class="subtexto">Favoritos</p>
+                 </div>
+              </div>
+           </a>
+        `
+        if (novidadesProduto != null) {
+          novidadesProduto.innerHTML = resultado
+        }
+      }
+    })
+  }
+
+  mostrarDestaques(produtos) {
+    let resultado = ''
+    produtos.forEach((produto) => {
+      if (produto.seccao == 'Destaques') {
+        resultado += `
+        <!-- CARTÃO DE PRODUTO -->
+           <a href="detalhe-produto.html?id=${produto.id}">
+              <div class="flex-v">
+                 <img src=${produto.imagem} alt="${produto.nome}" class="w-16">
+                 <div class="flex-v">
+                    <p class="categoria-pequeno">${produto.categoria}</p>
+                    <p>${produto.nome}</p>
+                 </div>
+                 <div class="flex-h alinhar-centro sucesso">
+                    <i class="ri-check-line"></i>
+                    <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                 </div>
+                 <div class="flex-h alinhar-centro justificar-entre">
+                    <h3>${produto.preco}€</h3>
+                    <p class="cruzado">${produto.preco}€</p>
+                 </div>
+                 <div class="flex-h alinhar-centro">
+                    <i class="ri-heart-line alerta"></i>
+                    <p class="subtexto">Favoritos</p>
+                 </div>
+              </div>
+           </a>
+        `
+        if (destaquesProduto != null) {
+          destaquesProduto.innerHTML = resultado
+        }
       }
     })
   }
@@ -204,6 +210,7 @@ class UI {
       apresentacaoProduto.innerHTML = resultado
     }
   }
+
   mostrarOpinioes(opinioes) {
     let resultado = ''
     opinioes.forEach((opiniao) => {
@@ -245,13 +252,10 @@ class Storage {
     localStorage.setItem('produtos', JSON.stringify(produtos))
   }
 
-  static getProduto(id) {
+  static apresentarProduto(id) {
     let json = localStorage.getItem('produtos')
     let produtos = JSON.parse(json)
     for (let i = 0; i < produtos.length; i++) {
-      console.log(produtos[i].id)
-      console.log(id)
-      console.log(produtos[i].id == id)
       if (produtos[i].id == id) return produtos[i]
     }
     return null
@@ -263,17 +267,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const produtos = new Produtos()
   const opinioes = new Opinioes()
 
-  console.log(lerId())
   // PRODUTOS
   produtos
     .buscarProdutos()
     .then((produtos) => {
+      Storage.guardarProdutos(produtos)
+      Storage.apresentarProduto(lerId())
       ui.mostrarDestaques(produtos)
       ui.mostrarNovidades(produtos)
-      Storage.guardarProdutos(produtos)
-      let produto = Storage.getProduto(lerId())
-      console.log(produto)
-      ui.mostrarProduto(produto)
+      ui.mostrarProduto(Storage.apresentarProduto(lerId()))
     })
     .catch((error) => {
       console.log(error)
