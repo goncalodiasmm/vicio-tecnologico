@@ -14,7 +14,7 @@
    <script defer src="script.js"></script>
 </head>
 
-<body>
+<body onload="carregarPerfil()">
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
       <div class="flex-h justificar-entre alinhar-centro">
@@ -96,7 +96,7 @@
       </div>
    </section>
 
-   <form action="pagamento-3.html" method="GET">
+   <form id="detalheEnvio" action="pagamento-3.html" method="GET">
       <div class="flex-h justificar-entre flex-ajustar">
          <div>
             <!-- DETALHES ENVIO -->
@@ -140,8 +140,8 @@
                   <input type="email" name="email" id="email">
                </div>
                <div class="dados">
-                  <label for="telemovel" class="categoria-pequeno">Telemóvel</label>
-                  <input type="text" name="telemovel" id="telemovel">
+                  <label for="nif" class="categoria-pequeno">NIF</label>
+                  <input type="number" name="nif" id="nif">
                </div>
             </div>
             <div class="condições">
