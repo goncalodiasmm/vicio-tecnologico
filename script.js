@@ -556,9 +556,11 @@ function definirUtilizador() {
 
 function verificarUtilizador() {
   if (localStorage.getItem('utilizadorNome') != null) {
-    window.location.href = 'http://127.0.0.1:5500/perfil.html'
+    window.location.href =
+      'https://goncalodiasmm.github.io/vicio-tecnologico/perfil.html'
   } else {
-    window.location.href = 'http://127.0.0.1:5500/login.html'
+    window.location.href =
+      'https://goncalodiasmm.github.io/vicio-tecnologico/login.html'
   }
 }
 
