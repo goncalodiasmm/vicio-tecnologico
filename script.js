@@ -207,128 +207,6 @@ class UI {
             </div>
          </div>
       </div>
-    </section>
-    
-    <!-- SECÇÃO DETALHES E OPINIÕES -->
-    <section id="detalhes-opiniões">
-      <div class="flex-h justificar-centro mb-4">
-         <button class="borda-primária w-total" id="detalhes-btn">
-            <p class="categoria-médio mb-0-5">Detalhes</p>
-         </button>
-         <button class="borda-cinzento w-total" id="opinioes-btn">
-            <p class="categoria-médio mb-0-5">Opiniões</p>
-         </button>
-      </div>
-      <!-- DETALHES -->
-      <section id="seccao-detalhes">
-        <div class="flex-h flex-1 justificar-centro espaço-4">
-          <div class="flex-v">
-              <p class="subtítulo">${produto.descricaoTitulo}</p>
-              <p>${produto.descricaoCorpo}</p>
-          </div>
-          <div class="flex-v espaço-0-5">
-              <div class="flex-h justificar-entre espaço-8">
-                <p class="negrito">Processador</p>
-                <p>Intel® Core™ i5-10300H 2.5GHz</p>
-              </div>
-              <div class="flex-h justificar-entre">
-                <p class="negrito">Memória</p>
-                <p>16 GB DDR4 2933MHz (2 x 8 GB)</p>
-              </div>
-              <div class="flex-h justificar-entre">
-                <p class="negrito">Armazenamento</p>
-                <p>SSD 512 GB PCIe® NVMe™ M.2</p>
-              </div>
-              <div class="flex-h justificar-entre">
-                <p class="negrito">Áudio</p>
-                <p>Áudio B&O; Dois altifalantes</p>
-              </div>
-              <div class="flex-h justificar-entre">
-                <p class="negrito">Ecrã</p>
-                <p>15.6" FHD (1920 x 1080), 144 Hz</p>
-              </div>
-              <div class="flex-h justificar-entre">
-                <p class="negrito">Gráfica</p>
-                <p>NVIDIA® GeForce RTX™ 2060 Max-Q</p>
-              </div>
-              <div class="flex-h justificar-entre">
-                <p class="negrito">Teclado</p>
-                <p>Numérico, Retroiluminado</p>
-              </div>
-              <div class="flex-h justificar-entre">
-                <p class="negrito">Sistema Operativo</p>
-                <p>Não Incluído (Free DOS)</p>
-              </div>
-          </div>
-        </div>
-      </section>
-      <!-- OPINIÕES -->
-      <section id="seccao-opinioes">
-        <div class="flex-h flex-1 justificar-centro espaço-8 hidden">
-          <div class="flex-v espaço-0-5">
-              <h1>${produto.classificacaoValor}</h1>
-              <div class="rating">${produto.classificacaoEstrelas}</div>
-              <div class="flex-h alinhar-centro">
-                <i class="ri-user-fill cinzento-60"></i>
-                <p>81 opiniões</p>
-              </div>
-              <a href="#" class="btn-secundário categoria-pequeno">Adicionar opinião</a>
-          </div>
-          <!-- COMENTÁRIOS -->
-          <div class="flex-v espaço-2">
-              <!-- COMENTÁRIO -->
-              <div class="flex-h alinhar-inicio espaço-1">
-                <div class="flex-v espaço-0-25">
-                    <p class="categoria-pequeno">João Pereira</p>
-                    <div class="rating">
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-fill"></i>
-                    </div>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt numquam ratione, tenetur nihil,
-                      adipisci quasi odio quidem odit consectetur necessitatibus blanditiis culpa deserunt atque
-                      assumenda cupiditate cumque minima reprehenderit repellendus earum placeat!</p>
-                </div>
-              </div>
-              <!-- COMENTÁRIO -->
-              <div class="flex-h alinhar-inicio espaço-1">
-                <div class="flex-v espaço-0-25">
-                    <p class="categoria-pequeno">João Pereira</p>
-                    <div class="rating">
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-fill"></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi laboriosam illum officiis, id
-                      tenetur nemo sapiente.</p>
-                </div>
-              </div>
-              <!-- COMENTÁRIO -->
-              <div class="flex-h alinhar-inicio espaço-1">
-                <div class="flex-v espaço-0-25">
-                    <p class="categoria-pequeno">João Pereira</p>
-                    <div class="rating">
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-fill"></i>
-                      <i class="ri-star-half-fill"></i>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur saepe repudiandae explicabo
-                      dolorum delectus consectetur! A, iusto voluptatum qui rem iure ab placeat est porro? Dicta enim
-                      repudiandae fuga tempora! Corporis dicta asperiores et odio tempore facilis eveniet aut iste
-                      corrupti nulla? Est, iusto excepturi! Eaque rerum voluptatem sint voluptate dolor deserunt
-                      accusantium, natus ullam accusamus maiores optio, architecto a libero placeat impedit reiciendis?
-                    </p>
-                </div>
-              </div>
-          </div>
-        </div>
-      </section>
     </section>`
 
     if (apresentacaoProduto != null) {
@@ -461,6 +339,7 @@ if (opinioesBtn != null) {
 // FORMULÁRIOS
 const loginForm = document.getElementById('login-form')
 const registoForm = document.getElementById('registo-form')
+const detalheEnvio = document.getElementById('detalhe-envio')
 const email = document.getElementById('email')
 const palavraPasse = document.getElementById('palavra-passe')
 const nome = document.getElementById('nome')
@@ -471,6 +350,12 @@ const codPostal = document.getElementById('codigo-postal')
 const pais = document.getElementById('pais')
 const cidade = document.getElementById('cidade')
 const telemovel = document.getElementById('telemovel')
+const nif = document.getElementById('nif')
+const nomeCartao = document.getElementById('nome-cartao')
+const numeroCartao = document.getElementById('numero-cartao')
+const validadeCartao = document.getElementById('valido-ate')
+const cvvCartao = document.getElementById('codigo-cvv')
+const dataHoje = new Date()
 
 // FORMULÁRIO LOGIN
 if (loginForm != null) {
@@ -574,13 +459,16 @@ if (detalheEnvio != null) {
     }
 
     //validar codigo postal
-    // if (codPostal.value === '') {
-    //   definirErro(codPostal, 'Intruduza um codigo válido.')
-    //   e.preventDefault()
-    //} else {
-    //    definirSucesso(morada, 'A morada é válida.')
-    //    localStorage.setItem('utilizadorMorada', morada.value)
-    //}
+    if (codPostal.value === '') {
+      definirErro(codPostal, 'Intruduza um codigo válido.')
+      e.preventDefault()
+    } else if (!codPostalValido(codPostal.value)) {
+      definirErro(codPostal, 'Introduza um codigo valido.')
+      e.preventDefault()
+    } else {
+      definirSucesso(codPostal, 'O codigo postal é válido.')
+      localStorage.setItem('utilizadorCodPostal', codPostal.value)
+    }
 
     //validar país
 
@@ -600,13 +488,61 @@ if (detalheEnvio != null) {
       definirSucesso(pais, 'A cidade é válida.')
       localStorage.setItem('utilizadoCidade', cidade.value)
     }
+
     //validar NIF
-    if (nif.value === '') {
+    if (nif.value == '') {
+      definirErro(nif, 'Intruduza um NIF válido.')
+      e.preventDefault()
+    } else if (!nifValido(nif.value)) {
       definirErro(nif, 'Intruduza um NIF válido.')
       e.preventDefault()
     } else {
-      definirSucesso(pais, 'O NIF é válido.')
+      definirSucesso(nif, 'O NIF é válido.')
       localStorage.setItem('utilizadorNIF', nif.value)
+    }
+
+    //validar dados cartao de credito
+    //validar nome
+    if (nomeCartao.value === '') {
+      definirErro(nomeCartao, 'O nome é obrigatório.')
+      e.preventDefault()
+    } else {
+      definirSucesso(nomeCartao, 'O nome é válido.')
+      localStorage.setItem('utilizadorNomeCartao', nomeCartao.value)
+    }
+
+    //validar numero
+    if (numeroCartao.value == '') {
+      definirErro(numeroCartao, 'Intruduza um numero válido.')
+      e.preventDefault()
+    } else if (!creditoValido(numeroCartao.value)) {
+      definirErro(nuneroCartao, 'Intruduza um numero válido.')
+      e.preventDefault()
+    } else {
+      definirSucesso(numeroCartao, 'O numero do cartao é válido.')
+      localStorage.setItem('utilizadorNumeroCartao', numeroCartao.value)
+    }
+
+    //validar data
+    //if (dataCartao.value =< dataHoje) {
+    //definirErro(dataCartao, 'Intruduza um numero válido.')
+    //e.preventDefault()
+
+    // } else {
+    // definirSucesso(dataCartao, 'O numero do cartao é válido.')
+    // localStorage.setItem('utilizadorNumeroCartao', dataCartao.value)
+    // }
+
+    // codigo CVV
+    if (cvvCartao.value == '') {
+      definirErro(cvvCartao, 'Intruduza um numero válido.')
+      e.preventDefault()
+    } else if (!cvvValido(cvvCartao.value)) {
+      definirErro(cvvCartao, 'Intruduza um numero válido.')
+      e.preventDefault()
+    } else {
+      definirSucesso(cvvCartao, 'O numero do cartao é válido.')
+      localStorage.setItem('utilizadorNumeroCartao', cvvCartao.value)
     }
   })
 }
@@ -654,6 +590,20 @@ function passwordValida(palavraPasse) {
   return /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/.test(
     palavraPasse
   )
+}
+function codPostalValido(codPostal) {
+  return /^\d{4}-\d{3}?$/.test(codPostal)
+}
+function nifValido(nif) {
+  return /^[0-9]\d{8}$/.test(nif)
+}
+
+function creditoValido(numeroCartao) {
+  return /^[0-9]\d{15}$/.test(numeroCartao)
+}
+
+function cvvValido(cvvCartao) {
+  return /^[0-9]\d{2}$/.test(cvvCartao)
 }
 
 // ADICIONAR AO CARRINHO

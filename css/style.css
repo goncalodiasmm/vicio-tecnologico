@@ -78,6 +78,10 @@ body {
   background-color: transparent;
 }
 
+.branco {
+  color: var(--cor-branco);
+}
+
 .bg-branco {
   background-color: var(--cor-branco);
 }
@@ -203,7 +207,7 @@ i {
 
 /* BOTÕES */
 button {
-  border: none;
+  border: 0.125rem solid transparent;
   background-color: transparent;
   cursor: pointer;
 }
@@ -219,18 +223,17 @@ a {
 
 .btn-primário {
   display: block;
-  border: none;
+  border: 0.125rem solid transparent;
   border-radius: 0.25rem;
   background-color: var(--cor-primária);
   color: #fff;
   padding: 0.75rem 1.25rem;
   cursor: pointer;
-  margin: 1rem 0;
 }
 
 .btn-secundário {
   display: block;
-  border: none;
+  border: 0.125rem solid transparent;
   border-radius: 0.25rem;
   background-color: var(--cor-rating);
   color: #fff;
@@ -245,7 +248,6 @@ a {
   color: #000;
   padding: 0.75rem 1.25rem;
   cursor: pointer;
-  margin: 1rem 0;
 }
 .btn-inativo {
   display: block;
@@ -255,9 +257,9 @@ a {
   color: var(--cor-cinzento-60);
   padding: 0.75rem 1.25rem;
   cursor: pointer;
-  margin: 1rem 0;
 }
-.btn-remove {
+
+.btn-alerta {
   display: block;
   border: 0.125rem solid var(--cor-alerta);
   border-radius: 0.25rem;
@@ -265,7 +267,6 @@ a {
   color: var(--cor-alerta);
   padding: 0.75rem 1.25rem;
   cursor: pointer;
-  margin: 1rem 0;
 }
 
 .btn-social {
@@ -571,6 +572,9 @@ img {
   margin-bottom: 4rem;
 }
 
+.mt-0-5 {
+  margin-top: 0.5rem;
+}
 .mt-1 {
   margin-top: 1rem;
 }
@@ -943,8 +947,17 @@ img {
   left: -24rem;
 }
 
+.bottom-0 {
+  bottom: 0;
+}
+
 .translate-50p {
   transform: translate(-50%, -50%);
+}
+
+/* OVERFLOW */
+.overflow-hidden {
+  overflow: hidden;
 }
 
 /* SOMBREADOS */

@@ -96,7 +96,7 @@
       </div>
    </section>
 
-   <form id="detalheEnvio" action="pagamento-3.html" method="GET">
+   <form action="pagamento-3.html" method="GET" id="detalhe-envio">
       <div class="flex-h justificar-entre flex-ajustar">
          <div>
             <!-- DETALHES ENVIO -->
@@ -108,40 +108,48 @@
                <div class="dados">
                   <label for="nome" class="categoria-pequeno">Nome</label>
                   <input type="text" name="nome" id="nome">
+                  <small class="subtexto"></small>
                </div>
                <div class="dados">
                   <label for="apelido" class="categoria-pequeno">Apelido</label>
                   <input type="text" name="apelido" id="apelido">
+                  <small class="subtexto"></small>
                </div>
             </div>
             <div class="flex-h espaço-2">
                <div class="dados">
                   <label for="morada" class="categoria-pequeno">Morada</label>
                   <input type="text" name="morada" id="morada">
+                  <small class="subtexto"></small>
                </div>
                <div class="dados">
                   <label for="codigo-postal" class="categoria-pequeno">Código Postal</label>
-                  <input type="text" name="codigo-postal" id="codigo-postal">
+                  <input type="text" name="codigo-postal" id="codigo-postal" placeholder="0000-000">
+                  <small class=" subtexto"></small>
                </div>
             </div>
             <div class="flex-h espaço-2">
                <div class="dados">
                   <label for="pais" class="categoria-pequeno">País</label>
                   <input type="text" name="pais" id="pais">
+                  <small class="subtexto"></small>
                </div>
                <div class="dados">
                   <label for="cidade" class="categoria-pequeno">Cidade</label>
                   <input type="text" name="cidade" id="cidade">
+                  <small class="subtexto"></small>
                </div>
             </div>
             <div class="flex-h espaço-2">
                <div class="dados">
                   <label for="email" class="categoria-pequeno">Email</label>
                   <input type="email" name="email" id="email">
+                  <small class="subtexto"></small>
                </div>
                <div class="dados">
                   <label for="nif" class="categoria-pequeno">NIF</label>
-                  <input type="number" name="nif" id="nif">
+                  <input type="text" name="nif" id="nif">
+                  <small class="subtexto"></small>
                </div>
             </div>
             <div class="condições">
@@ -162,20 +170,24 @@
                <div class="dados">
                   <label for="nome-cartao" class="categoria-pequeno">Nome Cartão</label>
                   <input type="text" name="nome-cartao" id="nome-cartao">
+                  <small class=" subtexto"></small>
                </div>
                <div class="dados">
                   <label for="numero-cartao" class="categoria-pequeno">Número Cartão</label>
                   <input type="number" name="numero-cartao" id="numero-cartao">
+                  <small class=" subtexto"></small>
                </div>
             </div>
             <div class="flex-h espaço-2">
                <div class="dados">
                   <label for="valido-ate" class="categoria-pequeno">Válido até</label>
                   <input type="date" name="valido-ate" id="valido-ate">
+                  <small class=" subtexto"></small>
                </div>
                <div class="dados">
-                  <label for="codigo-cvc" class="categoria-pequeno">Código CVC</label>
-                  <input type="number" name="codigo-cvc" id="codigo-cvc">
+                  <label for="codigo-cvv" class="categoria-pequeno">Código CVV</label>
+                  <input type="number" name="codigo-cvv" id="codigo-cvv">
+                  <small class=" subtexto"></small>
                </div>
             </div>
             <div class="condições">

@@ -11,7 +11,7 @@
    <!-- CSS -->
    <link rel="stylesheet" href="./css/style.css">
    <!-- JS -->
-   <script defer src="script.js"></script>
+   <script defer src="seccoes-perfil.js"></script>
 </head>
 
 <body>
@@ -80,12 +80,18 @@
 
    <!-- SECÇÃO DE PERFIL -->
    <section id="perfil" class="flex-h espaço-4 mt-2">
-      <div>
+      <aside>
          <!-- MENU LATERAL -->
          <div class="flex-v espaço-2">
             <!-- UTILIZADOR -->
             <div class="flex-h alinhar-centro">
-               <i class="ri-user-fill texto-xl p-1 anel"></i>
+               <div class="flex-v alinhar-centro relative rounded-full overflow-hidden" id="utilizador-contentor">
+                  <i class="ri-user-fill texto-xl p-1 anel" id="utilizador-foto"></i>
+                  <input type="file" id="upload-foto-input" class="hidden">
+                  <label for="file" id="upload-foto-btn"
+                     class="absolute bottom-0 bg-overlay w-total rounded-full texto-centro pt-4 cursor-pointer hidden"><i
+                        class="ri-camera-line branco"></i></label>
+               </div>
                <div class="flex-v alinhar-centro ml-1">
                   <p class="subtítulo">João Silva</p>
                   <a href="#" class="sublinhado subtexto">Alterar foto de perfil</a>
@@ -95,258 +101,236 @@
             <div class="flex-v espaço-1">
                <ul class="flex-v espaço-0-25">
                   <p class="categoria-pequeno">Conta Pessoal</p>
-                  <a href="#">
-                     <li>Dados Pessoais</li>
-                  </a>
-                  <a href="#">
-                     <li>Lista de Favoritos</li>
-                  </a>
+                  <li id="dados-pessoais-btn" class="primária negrito cursor-pointer">Dados Pessoais</li>
+                  <li id="lista-favoritos-btn" class="cursor-pointer">Lista de Favoritos</li>
                </ul>
                <ul class="flex-v espaço-0-25">
                   <p class="categoria-pequeno">Pedidos</p>
-                  <a href="#">
-                     <li>Pedidos e Faturas</li>
-                  </a>
-                  <a href="#">
-                     <li>Devoluções e Garantias</li>
-                  </a>
+                  <li id="pedidos-faturas-btn" class="cursor-pointer">Pedidos e Faturas</li>
+                  <li>Devoluções e Garantias</li>
                </ul>
                <ul class="flex-v espaço-0-25">
                   <p class="categoria-pequeno">Precisa de ajuda?</p>
-                  <a href="#">
-                     <li>Perguntas frequentes</li>
-                  </a>
-                  <a href="#">
-                     <li>Contactos</li>
-                  </a>
+                  <li>Perguntas Frequentes</li>
+                  <li>Contactos</li>
                </ul>
             </div>
          </div>
-      </div>
+      </aside>
       <!-- SHOWCASE SECÇÕES -->
-      <div class="flex-v espaço-1">
-         <!-- DADOS PESSOAIS -->
-         <div id="dados-pessoais">
+      <main class="flex-1" id="showcase-seccoes">
+         <!-- SECCÃO DADOS PESSOAIS -->
+         <section id="dados-pessoais-seccao" class="flex-v espaço-1">
             <div>
-               <p class="negrito categoria-médio">Informação de Contacto</p>
+               <p class="categoria-médio mb-0-5">Informação de Contacto</p>
                <div class="divisória-horizontal"></div>
                <div class="flex-h justificar-entre alinhar-centro">
                   <div class="flex-v">
                      <p class="subtexto">João Silva</p>
                      <p class="subtexto">joaosilva@gmail.com</p>
                   </div>
-                  <a href="#"><button class="btn-primário categoria-pequeno">Editar</button></a>
+                  <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Editar</button></a>
                </div>
             </div>
             <div>
-               <p class="negrito categoria-médio">Morada de Envio por Defeito</p>
+               <p class="categoria-médio mb-0-5">Morada de Envio por Defeito</p>
                <div class="divisória-horizontal"></div>
                <div class="flex-h justificar-entre alinhar-centro">
                   <div class="flex-v">
                      <p class="subtexto">Praça Teófilo Braga, 60</p>
                      <p class="subtexto">2665-Lisboa, Portugal</p>
                   </div>
-                  <a href="#"><button class="btn-primário categoria-pequeno">Editar</button></a>
+                  <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Editar</button></a>
                </div>
             </div>
             <div>
-               <p class="negrito categoria-médio">Meio de Pagamento por Defeito</p>
+               <p class="categoria-médio mb-0-5">Meio de Pagamento por Defeito</p>
                <div class="divisória-horizontal"></div>
                <div class="flex-h justificar-entre alinhar-centro">
                   <div class="flex-h alinhar-centro espaço-0-5">
-                     <img src="./img/pagamento-visa.png" alt="visa" class="w-4">
-                     <p class="subtexto">xxxx xxxx xxxx 5909</p>
+                     <img src="./img/pagamento-visa.png" alt="visa"
+                        class="w-4 border-2 border-solid border-cinzento-10 p-0-25 rounded">
+                     <p class="subtexto">XXXX XXXX XXXX 5909</p>
                   </div>
-                  <a href="#"><button class="btn-primário categoria-pequeno">Editar</button></a>
+                  <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Editar</button></a>
                </div>
             </div>
             <div>
-               <p class="negrito categoria-médio">Estado da Conta</p>
+               <p class="categoria-médio mb-0-5">Estado da Conta</p>
                <div class="divisória-horizontal"></div>
                <div class="flex-h justificar-entre alinhar-centro">
                   <div class="flex-h alinhar-centro">
                      <i class="ri-shield-user-line sucesso"></i>
                      <p class="subtexto">Cliente Ativo</p>
                   </div>
-                  <a href="#"><button class="btn-inativo categoria-pequeno">Reativar Conta</button></a>
+                  <a href="#"><button class="btn-inativo mt-1 categoria-pequeno">Reativar Conta</button></a>
                </div>
             </div>
-         </div>
-         <!-- LISTA DE FAVORITOS-->
-         <div id="lista-favoritos">
-            <p class="negrito categoria-médio">Lista de Favoritos</p>
+         </section>
+         <!-- SECCÃO LISTA DE FAVORITOS-->
+         <section id="lista-favoritos-seccao" class="hidden">
+            <p class="categoria-médio mb-0-5">Lista de Favoritos</p>
             <div class="divisória-horizontal"></div>
-            <div class="flex-h flex-inicial alinhar-centro espaço-4">
-               <div class="flex-h alinhar-centro">
-                  <div class="w-16">
-                     <img src="./img/headphones-lenovo-yoga/headphones-lenovo-yoga_1.jpg">
-                  </div>
+            <div class="flex-h flex-inicial alinhar-centro espaço-4 mt-2">
+               <div class="flex-h alinhar-inicio">
+                  <img src="./img/headphones-lenovo-yoga/headphones-lenovo-yoga_1.jpg" class="w-12">
                   <div class="flex-h justificar-entre">
                      <div class="flex-v">
                         <p class="negrito">Headphones Lenovo Yoga</p>
                         <p class="subtexto">Não tem melhor maneira de aquecer o seu coração que pular ao som das suas
                            batidas favoritas e desfrutar de ligações cristalina para quem você ama</p>
-                        <div class="flex-h justificar-entre">
-                           <a href="#"><button class="btn-primário categoria-pequeno">Adicionar ao Carrinho</button></a>
-                           <a href="#"><button class="btn-remove categoria-pequeno">Remover</button></a>
+                        <div class="flex-h espaço-0-5">
+                           <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Adicionar ao
+                                 Carrinho</button></a>
+                           <a href="#"><button class="btn-alerta mt-1 categoria-pequeno">Remover</button></a>
                         </div>
                      </div>
                   </div>
+                  <p class="negrito">179.90€</p>
                </div>
-               <p>179.90€</p>
             </div>
-         </div>
-
-         <!--Opçao perfil-Pedidos e faturas-->
-         <div class="lista-favoritos">
-            <p class="negrito">PEDIDOS E FATURAS
+         </section>
+         <!-- SECCÃO PEDIDOS E FATURAS -->
+         <section id="pedidos-faturas-seccao" class="hidden">
+            <p class="categoria-médio mb-0-5">Pedidos e Faturas</p>
             <div class="divisória-horizontal"></div>
-            <div class="flex-h justificar-entre">
-               <div class="flex-v justificar-entre">
-                  <p class="subtexto">Pedido realizado em: 18/02/2021</p>
-                  <p class="subtexto">2 artigos</p>
+            <div class="flex-h justificar-entre mt-0-5">
+               <div class="flex-h justificar-entre espaço-2">
+                  <p class="subtexto">Pedido realizado em: <span>18/02/2021</span></p>
+                  <p class="subtexto"><span>2</span> artigos</p>
                </div>
-
-               <div class="flex-h">
-                  <i class="ri-file-text-line"> </i>
-                  <div> Obter fatura </div>
+               <div class="flex-h alinhar-centro">
+                  <i class="ri-file-text-line"></i>
+                  <p class="categoria-pequeno">Obter fatura</p>
                </div>
             </div>
-            <div class="flex-h flex-inicial alinhar-centro espaço-4">
-               <div class="flex-h alinhar-centro">
-                  <div class="w-16">
-                     <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg"
-                        alt="auriculares xiaomi">
-                  </div>
-                  <div class="flex-h justificar-entre">
-                     <div class="flex-v">
-                        <p class="subtexto negrito">Auriculares Xiaomi Mi Airdots</p>
-                        <div class="flex-h alinhar-centro espaço-0.25">
-                           <i class="ri-check-line sucesso"></i>
-                           <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
+            <div class="flex-v espaço-1 mt-1">
+               <div class="flex-h alinhar-centro justificar-entre">
+                  <div class="flex-h alinhar-centro">
+                     <div class="w-12">
+                        <img src="./img/gamepad-microsoft-xbox/gamepad-microsoft-xbox_1.jpg" alt="gamepad microsoft">
+                     </div>
+                     <div class="flex-h justificar-entre">
+                        <div class="flex-v">
+                           <p class="negrito">Gamepad Microsoft Xbox</p>
+                           <div class="flex-h alinhar-centro espaço-0.25">
+                              <i class="ri-check-line sucesso"></i>
+                              <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
+                           </div>
                         </div>
                      </div>
-                     <div class="flex-h espaço-1">
-                        <a href="#"><button class="btn-primário categoria-pequeno">Avaliar</button></a>
-                        <a href="#"><button class="btn-contorno categoria-pequeno">Devolver</button></a>
-                     </div>
+                  </div>
+                  <div class="flex-h espaço-1">
+                     <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Avaliar</button></a>
+                     <a href="#"><button class="btn-contorno mt-1 categoria-pequeno">Devolver</button></a>
                   </div>
                </div>
-
-            </div>
-
-            <div class="flex-h flex-inicial alinhar-centro espaço-4">
-               <div class="flex-h alinhar-centro">
-                  <div class="w-16">
-                     <img src="./img/smartphone-samsung-galaxy-s10/smartphone-samsung-galaxy-s10_1.jpg"
-                        alt="smartphone-samsung-galaxy-s10">
-                  </div>
-                  <div class="flex-h justificar-entre">
-                     <div class="flex-v">
-                        <p class="subtexto negrito">Samsung Galaxy s10</p>
-                        <div class="flex-h alinhar-centro espaço-0.25">
-                           <i class="ri-check-line sucesso"></i>
-                           <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
+               <div class="flex-h alinhar-centro justificar-entre">
+                  <div class="flex-h alinhar-centro">
+                     <div class="w-12">
+                        <img src="./img/gamepad-microsoft-xbox/gamepad-microsoft-xbox_1.jpg" alt="gamepad microsoft">
+                     </div>
+                     <div class="flex-h justificar-entre">
+                        <div class="flex-v">
+                           <p class="negrito">Gamepad Microsoft Xbox</p>
+                           <div class="flex-h alinhar-centro espaço-0.25">
+                              <i class="ri-check-line sucesso"></i>
+                              <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
+                           </div>
                         </div>
                      </div>
-                     <div class="flex-h espaço-1">
-                        <a href="#"><button class="btn-primário categoria-pequeno">Avaliar</button></a>
-                        <a href="#"><button class="btn-contorno categoria-pequeno">Devolver</button></a>
-                     </div>
+                  </div>
+                  <div class="flex-h espaço-1">
+                     <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Avaliar</button></a>
+                     <a href="#"><button class="btn-contorno mt-1 categoria-pequeno">Devolver</button></a>
                   </div>
                </div>
-
             </div>
-
-            <a href="#"><button class="btn-remove categoria-pequeno">Cancelar Pedido</button></a>
+            <a href="#"><button class="btn-alerta mt-1 categoria-pequeno">Cancelar Pedido<button></a>
+         </section>
+      </main>
    </section>
 
-   </div>
-   <dic class="separador">
-
+   <!-- SECÇÃO NEWSLETTER -->
+   <section id="newsletter">
+      <div class="flex-v alinhar-centro mt-2">
+         <div class="divisória-horizontal mb-2"></div>
+         <h3>Não perca as próximas ofertas</h3>
+         <div class="flex-h alinhar-centro espaço-1 mt-1">
+            <input type="email" placeholder="Email">
+            <a href="#"><button class="btn-primário categoria-pequeno">Subscrever-me</button></a>
+         </div>
+         <div class="condições mt-0-5">
+            <input type="checkbox">
+            <p class="subtexto">Li e aceito as condições gerais e a política de privacidade do Vício Tecnológico</p>
+         </div>
+         <div class="divisória-horizontal mt-2"></div>
       </div>
-      </section>
+   </section>
 
-      <!-- SECÇÃO NEWSLETTER -->
-      <section class="newsletter">
-         <div class="flex-v alinhar-centro">
-            <div class="divisória-horizontal mb-2"></div>
-            <h3>Não perca as próximas ofertas</h3>
+   <!-- RODAPÉ -->
+   <footer id="rodape">
+      <div class="flex-h justificar-entre mt-2">
+         <div class="flex-v espaço-1">
+            <a href="index.html"><img src="./img/logo-primário.png" alt="logo" class="logo"></a>
+            <p class="subtexto">A loja de referência em Tecnologia</p>
+            <div class="flex-h espaço-1">
+               <i class="ri-facebook-circle-fill"></i>
+               <i class="ri-instagram-line"></i>
+               <i class="ri-twitter-fill"></i>
+            </div>
+         </div>
+         <div class="flex-h alinhar-inicio justificar-entre espaço-2">
+            <!-- APOIO AO CLIENTE -->
+            <ul>
+               <li class="categoria-pequeno">Apoio ao Cliente</li>
+               <a href="#">
+                  <li class="subtexto">Perguntas Frequentes</li>
+               </a>
+               <a href="#">
+                  <li class="subtexto">Contactos</li>
+               </a>
+               <a href="#">
+                  <li class="subtexto">Devoluções</li>
+               </a>
+               <a href="#">
+                  <li class="subtexto">Garantias</li>
+               </a>
+            </ul>
+            <!-- QUEM SOMOS -->
+            <ul>
+               <li class="categoria-pequeno">Quem Somos</li>
+               <a href="#">
+                  <li class="subtexto">Quem Somos</li>
+               </a>
+               <a href="#">
+                  <li class="subtexto">Parcerias</li>
+               </a>
+            </ul>
+            <!-- SERVIÇOS -->
+            <ul>
+               <li class="categoria-pequeno">Serviços</li>
+               <a href="#">
+                  <li class="subtexto">Suporte Técnico</li>
+               </a>
+               <a href="#">
+                  <li class="subtexto">Marcação de Assistência Técnica</li>
+               </a>
+            </ul>
+         </div>
+         <div class="flex-v alinhar-fim justificar-entre">
             <div class="flex-h alinhar-centro espaço-1">
-               <input type="email" placeholder="Email">
-               <a href="#"><button class="btn-primário categoria-pequeno">Subscrever-me</button></a>
+               <img src="./img/pagamento-visa.png" alt="visa">
+               <img src="./img/pagamento-mastercard.png" alt="mastercard">
+               <img src="./img/pagamento-paypal.png" alt="paypal">
             </div>
-            <div class="condições">
-               <input type="checkbox">
-               <p class="subtexto">Li e aceito as condições gerais e a política de privacidade do Vício Tecnológico</p>
-            </div>
-            <div class="divisória-horizontal mt-2"></div>
-         </div>
-      </section>
-
-      <!-- RODAPÉ -->
-      <footer class="rodapé">
-         <div class="flex-h justificar-entre">
-            <div class="flex-v espaço-1">
-               <a href="index.html"><img src="./img/logo-primário.png" alt="logo" class="logo"></a>
-               <p class="subtexto">A loja de referência em Tecnologia</p>
-               <div class="flex-h espaço-1">
-                  <i class="ri-facebook-circle-fill"></i>
-                  <i class="ri-instagram-line"></i>
-                  <i class="ri-twitter-fill"></i>
-               </div>
-            </div>
-            <div class="flex-h alinhar-inicio justificar-entre espaço-2">
-               <!-- APOIO AO CLIENTE -->
-               <ul>
-                  <li class="categoria-pequeno">Apoio ao Cliente</li>
-                  <a href="#">
-                     <li class="subtexto">Perguntas Frequentes</li>
-                  </a>
-                  <a href="#">
-                     <li class="subtexto">Contactos</li>
-                  </a>
-                  <a href="#">
-                     <li class="subtexto">Devoluções</li>
-                  </a>
-                  <a href="#">
-                     <li class="subtexto">Garantias</li>
-                  </a>
-               </ul>
-               <!-- QUEM SOMOS -->
-               <ul>
-                  <li class="categoria-pequeno">Quem Somos</li>
-                  <a href="#">
-                     <li class="subtexto">Quem Somos</li>
-                  </a>
-                  <a href="#">
-                     <li class="subtexto">Parcerias</li>
-                  </a>
-               </ul>
-               <!-- SERVIÇOS -->
-               <ul>
-                  <li class="categoria-pequeno">Serviços</li>
-                  <a href="#">
-                     <li class="subtexto">Suporte Técnico</li>
-                  </a>
-                  <a href="#">
-                     <li class="subtexto">Marcação de Assistência Técnica</li>
-                  </a>
-               </ul>
-            </div>
-            <div class="flex-v alinhar-fim justificar-entre">
-               <div class="flex-h alinhar-centro espaço-1">
-                  <img src="./img/pagamento-visa.png" alt="visa">
-                  <img src="./img/pagamento-mastercard.png" alt="mastercard">
-                  <img src="./img/pagamento-paypal.png" alt="paypal">
-               </div>
-               <div>
-                  <p class="categoria-pequeno">&copy; Vício Tecnológico</p>
-                  <p class="subtexto">Todos os direitos reservados</p>
-               </div>
+            <div>
+               <p class="categoria-pequeno">&copy; Vício Tecnológico</p>
+               <p class="subtexto">Todos os direitos reservados</p>
             </div>
          </div>
-      </footer>
+      </div>
+   </footer>
 </body>
 
 </html>
