@@ -618,3 +618,73 @@ function fecharModalCarrinho() {
   const modalCarrinho = document.getElementById('modal-carrinho')
   modalCarrinho.classList.add('hidden')
 }
+
+// ALTERNAR SECÇÕES PERFIL
+const dadosPessoaisSeccao = document.getElementById('dados-pessoais-seccao')
+const listaFavoritosSeccao = document.getElementById('lista-favoritos-seccao')
+const pedidosFaturasSeccao = document.getElementById('pedidos-faturas-seccao')
+const dadosPessoaisBtn = document.getElementById('dados-pessoais-btn')
+const listaFavoritosBtn = document.getElementById('lista-favoritos-btn')
+const pedidosFaturasBtn = document.getElementById('pedidos-faturas-btn')
+
+if (dadosPessoaisBtn != null) {
+  dadosPessoaisBtn.addEventListener('click', () => {
+    pedidosFaturasBtn.classList.remove('negrito')
+    pedidosFaturasBtn.classList.remove('primária')
+    listaFavoritosBtn.classList.remove('negrito')
+    listaFavoritosBtn.classList.remove('primária')
+    dadosPessoaisBtn.classList.add('negrito')
+    dadosPessoaisBtn.classList.add('primária')
+    dadosPessoaisSeccao.classList.remove('hidden')
+    listaFavoritosSeccao.classList.add('hidden')
+    pedidosFaturasSeccao.classList.add('hidden')
+  })
+}
+
+if (listaFavoritosBtn != null) {
+  listaFavoritosBtn.addEventListener('click', () => {
+    pedidosFaturasBtn.classList.remove('negrito')
+    pedidosFaturasBtn.classList.remove('primária')
+    listaFavoritosBtn.classList.add('negrito')
+    listaFavoritosBtn.classList.add('primária')
+    dadosPessoaisBtn.classList.remove('negrito')
+    dadosPessoaisBtn.classList.remove('primária')
+    dadosPessoaisSeccao.classList.add('hidden')
+    listaFavoritosSeccao.classList.remove('hidden')
+    pedidosFaturasSeccao.classList.add('hidden')
+  })
+}
+
+if (pedidosFaturasBtn != null) {
+  pedidosFaturasBtn.addEventListener('click', () => {
+    pedidosFaturasBtn.classList.add('negrito')
+    pedidosFaturasBtn.classList.add('primária')
+    listaFavoritosBtn.classList.remove('negrito')
+    listaFavoritosBtn.classList.remove('primária')
+    dadosPessoaisBtn.classList.remove('negrito')
+    dadosPessoaisBtn.classList.remove('primária')
+    dadosPessoaisSeccao.classList.add('hidden')
+    listaFavoritosSeccao.classList.add('hidden')
+    pedidosFaturasSeccao.classList.remove('hidden')
+  })
+}
+
+// UPLOAD FOTO DE UTILIZADOR
+const utilizadorContentor = document.getElementById('utilizador-contentor')
+const utilizadorFoto = document.getElementById('utilizador-foto')
+const uploadInput = document.getElementById('upload-input')
+const uploadBtn = document.getElementById('upload-btn')
+
+uploadInput.addEventListener('change', () => {
+  const upload = uploadInput.files[0]
+  const tipoUpload = /image.*/
+
+  if (upload.type.match(tipoUpload)) {
+    const reader = new FileReader()
+    reader.addEventListener('load', () => {
+      utilizadorFoto.setAttribute('src', reader.result)
+    })
+
+    reader.readAsDataURL(upload)
+  }
+})
