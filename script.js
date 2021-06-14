@@ -5,34 +5,6 @@ const destaquesProduto = document.getElementById('destaques-produto')
 // DETALHE DE PRODUTO
 const apresentacaoProduto = document.getElementById('apresentacao-produto')
 
-// ALTERNAR SECÇÃO DE DETALHES E OPINIÕES
-const seccaoDetalhes = document.getElementById('seccao-detalhes')
-const seccaoOpinioes = document.getElementById('seccao-opinioes')
-const detalhesBtn = document.getElementById('detalhes-btn')
-const opinioesBtn = document.getElementById('opinioes-btn')
-
-if (detalhesBtn != null) {
-  detalhesBtn.addEventListener('click', () => {
-    seccaoOpinioes.classList.add('hidden')
-    seccaoDetalhes.classList.remove('hidden')
-    detalhesBtn.classList.add('borda-primária')
-    detalhesBtn.classList.remove('borda-cinzento')
-    opinioesBtn.classList.add('borda-cinzento')
-    opinioesBtn.classList.remove('borda-primária')
-  })
-}
-
-if (opinioesBtn != null) {
-  opinioesBtn.addEventListener('click', () => {
-    seccaoDetalhes.classList.add('hidden')
-    seccaoOpinioes.classList.remove('hidden')
-    opinioesBtn.classList.add('borda-primária')
-    opinioesBtn.classList.remove('borda-cinzento')
-    detalhesBtn.classList.add('borda-cinzento')
-    detalhesBtn.classList.remove('borda-primária')
-  })
-}
-
 function lerId() {
   let url = new URL(window.location)
   let id = url.searchParams.get('id')
@@ -235,6 +207,52 @@ class UI {
             </div>
          </div>
       </div>
+    </section>
+    
+    <!-- OPINIÕES -->
+    <button class="flex-v alinhar-centro borda-primária w-total mb-4 mx-auto">
+      <p class="categoria-médio mb-0-5">Opiniões</p>
+    </button>
+    <section id="seccao-opinioes">
+      <div class="flex-h justificar-centro espaço-8 ml-4">
+         <!-- CLASSIFICAÇÃO GERAL -->
+         <div class="flex-v espaço-0-5">
+            <h1>${produto.classificacaoValor}</h1>
+            <div class="rating">${produto.classificacaoEstrelas}</div>
+            <div class="flex-h alinhar-centro">
+               <i class="ri-user-fill cinzento-60"></i>
+               <p>${produto.opinioes} opiniões</p>
+            </div>
+            <a href="#" class="btn-secundário categoria-pequeno">Adicionar opinião</a>
+         </div>
+         <!-- COMENTÁRIOS -->
+         <div class="flex-v espaço-2 w-50p">
+            <!-- COMENTÁRIO -->
+            <div class="flex-h alinhar-inicio espaço-1">
+               <div class="flex-v espaço-0-25">
+                  <p class="categoria-pequeno">${produto.comentario1Utilizador}</p>
+                  <div class="rating">${produto.comentario1Estrelas}</div>
+                  <p>${produto.comentario1Descricao}</p>
+               </div>
+            </div>
+            <!-- COMENTÁRIO -->
+            <div class="flex-h alinhar-inicio espaço-1">
+               <div class="flex-v espaço-0-25">
+                  <p class="categoria-pequeno">${produto.comentario2Utilizador}</p>
+                  <div class="rating">${produto.comentario2Estrelas}</div>
+                  <p>${produto.comentario2Descricao}</p>
+               </div>
+            </div>
+            <!-- COMENTÁRIO -->
+            <div class="flex-h alinhar-inicio espaço-1">
+               <div class="flex-v espaço-0-25">
+                  <p class="categoria-pequeno">${produto.comentario3Utilizador}</p>
+                  <div class="rating">${produto.comentario3Estrelas}</div>
+                  <p>${produto.comentario3Descricao}</p>
+               </div>
+            </div>
+         </div>
+      </div>
     </section>`
 
     if (apresentacaoProduto != null) {
@@ -353,9 +371,9 @@ const telemovel = document.getElementById('telemovel')
 const nif = document.getElementById('nif')
 const nomeCartao = document.getElementById('nome-cartao')
 const numeroCartao = document.getElementById('numero-cartao')
-const validadeCartao = document.getElementById('valido-ate')
+const dataCartao = document.getElementById('valido-ate')
 const cvvCartao = document.getElementById('codigo-cvv')
-const dataHoje = new Date()
+const dataHoje = new Date().toLocaleDateString('en-CA')
 
 // FORMULÁRIO LOGIN
 if (loginForm != null) {
@@ -485,8 +503,8 @@ if (detalheEnvio != null) {
       definirErro(cidade, 'Intruduza a cidade para envio.')
       e.preventDefault()
     } else {
-      definirSucesso(pais, 'A cidade é válida.')
-      localStorage.setItem('utilizadoCidade', cidade.value)
+      definirSucesso(cidade, 'A cidade é válida.')
+      localStorage.setItem('utilizadorCidade', cidade.value)
     }
 
     //validar NIF
@@ -516,22 +534,12 @@ if (detalheEnvio != null) {
       definirErro(numeroCartao, 'Intruduza um numero válido.')
       e.preventDefault()
     } else if (!creditoValido(numeroCartao.value)) {
-      definirErro(nuneroCartao, 'Intruduza um numero válido.')
+      definirErro(numeroCartao, 'Intruduza um numero válido.')
       e.preventDefault()
     } else {
       definirSucesso(numeroCartao, 'O numero do cartao é válido.')
       localStorage.setItem('utilizadorNumeroCartao', numeroCartao.value)
     }
-
-    //validar data
-    //if (dataCartao.value =< dataHoje) {
-    //definirErro(dataCartao, 'Intruduza um numero válido.')
-    //e.preventDefault()
-
-    // } else {
-    // definirSucesso(dataCartao, 'O numero do cartao é válido.')
-    // localStorage.setItem('utilizadorNumeroCartao', dataCartao.value)
-    // }
 
     // codigo CVV
     if (cvvCartao.value == '') {
@@ -543,6 +551,21 @@ if (detalheEnvio != null) {
     } else {
       definirSucesso(cvvCartao, 'O numero do cartao é válido.')
       localStorage.setItem('utilizadorNumeroCartao', cvvCartao.value)
+    }
+
+    //validar data
+    if (dataCartao.value == '') {
+      definirErro(dataCartao, 'A data não é válida.')
+      e.preventDefault()
+    } else if (!validarData(dataCartao.value)) {
+      definirErro(dataCartao, 'A data não é válida.')
+      e.preventDefault()
+    } else if (dataHoje > dataCartao.value) {
+      definirErro(dataCartao, 'A data não é válida.')
+      e.preventDefault()
+    } else {
+      definirSucesso(dataCartao, 'Data validada.')
+      localStorage.setItem('utilizadorDataCartao', dataCartao.value)
     }
   })
 }
@@ -606,6 +629,12 @@ function creditoValido(numeroCartao) {
 
 function cvvValido(cvvCartao) {
   return /^[0-9]\d{2}$/.test(cvvCartao)
+}
+
+function validarData(dataCartao) {
+  return /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.test(
+    dataCartao
+  )
 }
 
 // ADICIONAR AO CARRINHO
@@ -685,6 +714,7 @@ if (uploadInput) {
       reader.addEventListener('load', () => {
         utilizadorFoto.setAttribute('src', reader.result)
         localStorage.setItem('utilizadorFoto', utilizadorFoto)
+        console.log(utilizadorFoto)
       })
 
       reader.readAsDataURL(upload)

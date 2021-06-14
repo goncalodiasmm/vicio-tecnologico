@@ -45,6 +45,38 @@
       </div>
    </nav>
 
+   <!-- NAVEGAÇÃO LATERAL -->
+   <nav class="h-total fixed top-0 -left-24 pt-2 transicao-base bg-branco w-24 shadow-lg" id="navegacao-lateral">
+      <div class="flex-h alinhar-inicio">
+         <div class="flex-v espaço-2 ml-2 mr-2">
+            <div class="flex-h espaço-1">
+               <button id="fechar-btn"><i class="ri-close-line texto-md"></i></button>
+               <img src="./img/logo-primário.png" alt="logo" class="logo">
+            </div>
+            <ul class="flex-v espaço-1">
+               <a href="#">
+                  <li class="categoria-pequeno">Computadores</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Mobilidade</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Componentes</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Imagem e Som</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Periféricos</li>
+               </a>
+               <a href="#">
+                  <li class="categoria-pequeno">Armazenamento</li>
+               </a>
+            </ul>
+         </div>
+      </div>
+   </nav>
+
    <!-- BREADCRUMBS -->
    <section id="breadcrumbs">
       <div class="flex-h alinhar-centro my-2">
@@ -58,12 +90,12 @@
       <!-- FILTRAGEM DE PRODUTOS -->
       <aside class="filtragem-produtos">
          <!-- TÍTULO -->
-         <div class="flex-v">
+         <div class="flex-v mb-1">
             <p class="categoria-grande">Smartphones</p>
             <div class="sublinhado-título"></div>
          </div>
-         <!-- FILTRO -->
-         <div class="flex-v">
+         <div class="flex-v espaço-0-5">
+            <!-- FILTRO -->
             <div class="flex-v pt-1">
                <div class="mb-0-5">
                   <div class="flex-h justificar-entre">
@@ -172,135 +204,33 @@
                <div class="flex-v pt-1">
                   <div class="mb-0-5">
                      <div class="flex-h justificar-entre">
-                        <p class="categoria-pequeno">Processador</p>
+                        <p class="categoria-pequeno">Classificação</p>
                         <i class="ri-arrow-down-s-line primária"></i>
                      </div>
                      <div class="divisória-horizontal"></div>
                   </div>
                   <!-- ITEM FILTRO -->
                   <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="octa-core" id="octa-core">
-                     <p>Octa-Core</p>
+                     <input type="checkbox" name="rating-1" id="rating-1">
+                     <p>> 4.5</p>
                      <p class="cinzento-60">(74)</p>
                   </div>
                   <!-- ITEM FILTRO -->
                   <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="hexa-core" id="hexa-core">
-                     <p>Hexa-Core</p>
+                     <input type="checkbox" name="rating-2" id="rating-2">
+                     <p>4.0 - 4.5</p>
                      <p class="cinzento-60">(32)</p>
                   </div>
                   <!-- ITEM FILTRO -->
                   <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="quad-core" id="quad-core">
-                     <p>Quad-Core</p>
+                     <input type="checkbox" name="rating-3" id="rating-3">
+                     <p>3.0 - 4.0</p>
                      <p class="cinzento-60">(48)</p>
                   </div>
                   <!-- ITEM FILTRO -->
                   <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="dual-core" id="dual-core">
-                     <p>Dual-Core</p>
-                     <p class="cinzento-60">(18)</p>
-                  </div>
-               </div>
-            </div>
-            <!-- FILTRO -->
-            <div class="flex-v">
-               <div class="flex-v pt-1">
-                  <div class="mb-0-5">
-                     <div class="flex-h justificar-entre">
-                        <p class="categoria-pequeno">Armazenamento</p>
-                        <i class="ri-arrow-down-s-line primária"></i>
-                     </div>
-                     <div class="divisória-horizontal"></div>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="16gb" id="16gb">
-                     <p>16GB</p>
-                     <p class="cinzento-60">(74)</p>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="32gb" id="32gb">
-                     <p>32GB</p>
-                     <p class="cinzento-60">(32)</p>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="64gb" id="64gb">
-                     <p>64GB</p>
-                     <p class="cinzento-60">(48)</p>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="128gb" id="128gb">
-                     <p>128GB</p>
-                     <p class="cinzento-60">(18)</p>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="256gb" id="256gb">
-                     <p>256GB</p>
-                     <p class="cinzento-60">(18)</p>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="512gb" id="512gb">
-                     <p>512GB</p>
-                     <p class="cinzento-60">(18)</p>
-                  </div>
-               </div>
-            </div>
-            <!-- FILTRO -->
-            <div class="flex-v">
-               <div class="flex-v pt-1">
-                  <div class="mb-0-5">
-                     <div class="flex-h justificar-entre">
-                        <p class="categoria-pequeno">Memória RAM</p>
-                        <i class="ri-arrow-down-s-line primária"></i>
-                     </div>
-                     <div class="divisória-horizontal"></div>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="2gb" id="2gb">
-                     <p>2GB</p>
-                     <p class="cinzento-60">(74)</p>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="3gb" id="3gb">
-                     <p>3GB</p>
-                     <p class="cinzento-60">(32)</p>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="4gb" id="4gb">
-                     <p>4GB</p>
-                     <p class="cinzento-60">(48)</p>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="6gb" id="6gb">
-                     <p>6GB</p>
-                     <p class="cinzento-60">(18)</p>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="8gb" id="8gb">
-                     <p>8GB</p>
-                     <p class="cinzento-60">(18)</p>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="12gb" id="12gb">
-                     <p>12GB</p>
-                     <p class="cinzento-60">(18)</p>
-                  </div>
-                  <!-- ITEM FILTRO -->
-                  <div class="flex-h alinhar-centro espaço-0-5">
-                     <input type="checkbox" name="16gb" id="16gb">
-                     <p>16GB</p>
+                     <input type="checkbox" name="rating-4" id="rating-4">
+                     <p>< 3.0</p>
                      <p class="cinzento-60">(18)</p>
                   </div>
                </div>
@@ -586,11 +516,11 @@
       <div class="flex-v alinhar-centro mt-2">
          <div class="divisória-horizontal mb-2"></div>
          <h3>Não perca as próximas ofertas</h3>
-         <div class="flex-h alinhar-centro espaço-1">
+         <div class="flex-h alinhar-centro espaço-1 mt-1">
             <input type="email" placeholder="Email">
             <a href="#"><button class="btn-primário categoria-pequeno">Subscrever-me</button></a>
          </div>
-         <div class="condições">
+         <div class="condições mt-0-5">
             <input type="checkbox">
             <p class="subtexto">Li e aceito as condições gerais e a política de privacidade do Vício Tecnológico</p>
          </div>
