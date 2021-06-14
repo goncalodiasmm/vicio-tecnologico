@@ -5,6 +5,34 @@ const destaquesProduto = document.getElementById('destaques-produto')
 // DETALHE DE PRODUTO
 const apresentacaoProduto = document.getElementById('apresentacao-produto')
 
+// ALTERNAR SECÇÃO DE DETALHES E OPINIÕES
+const seccaoDetalhes = document.getElementById('seccao-detalhes')
+const seccaoOpinioes = document.getElementById('seccao-opinioes')
+const detalhesBtn = document.getElementById('detalhes-btn')
+const opinioesBtn = document.getElementById('opinioes-btn')
+
+if (detalhesBtn != null) {
+  detalhesBtn.addEventListener('click', () => {
+    seccaoOpinioes.classList.add('hidden')
+    seccaoDetalhes.classList.remove('hidden')
+    detalhesBtn.classList.add('borda-primária')
+    detalhesBtn.classList.remove('borda-cinzento')
+    opinioesBtn.classList.add('borda-cinzento')
+    opinioesBtn.classList.remove('borda-primária')
+  })
+}
+
+if (opinioesBtn != null) {
+  opinioesBtn.addEventListener('click', () => {
+    seccaoDetalhes.classList.add('hidden')
+    seccaoOpinioes.classList.remove('hidden')
+    opinioesBtn.classList.add('borda-primária')
+    opinioesBtn.classList.remove('borda-cinzento')
+    detalhesBtn.classList.add('borda-cinzento')
+    detalhesBtn.classList.remove('borda-primária')
+  })
+}
+
 function lerId() {
   let url = new URL(window.location)
   let id = url.searchParams.get('id')
@@ -305,34 +333,6 @@ if (fecharBtn != null) {
   fecharBtn.addEventListener('click', () => {
     navegacaoLateral.classList.add('-left-24')
     navegacaoLateral.classList.remove('left-0')
-  })
-}
-
-// ALTERNAR SECÇÃO DE DETALHES E OPINIÕES
-const seccaoDetalhes = document.getElementById('seccao-detalhes')
-const seccaoOpinioes = document.getElementById('seccao-opinioes')
-const detalhesBtn = document.getElementById('detalhes-btn')
-const opinioesBtn = document.getElementById('opinioes-btn')
-
-if (detalhesBtn != null) {
-  detalhesBtn.addEventListener('click', () => {
-    seccaoOpinioes.classList.add('hidden')
-    seccaoDetalhes.classList.remove('hidden')
-    detalhesBtn.classList.add('borda-primária')
-    detalhesBtn.classList.remove('borda-cinzento')
-    opinioesBtn.classList.add('borda-cinzento')
-    opinioesBtn.classList.remove('borda-primária')
-  })
-}
-
-if (opinioesBtn != null) {
-  opinioesBtn.addEventListener('click', () => {
-    seccaoDetalhes.classList.add('hidden')
-    seccaoOpinioes.classList.remove('hidden')
-    opinioesBtn.classList.add('borda-primária')
-    opinioesBtn.classList.remove('borda-cinzento')
-    detalhesBtn.classList.add('borda-cinzento')
-    detalhesBtn.classList.remove('borda-primária')
   })
 }
 
@@ -675,16 +675,19 @@ const utilizadorFoto = document.getElementById('utilizador-foto')
 const uploadInput = document.getElementById('upload-input')
 const uploadBtn = document.getElementById('upload-btn')
 
-uploadInput.addEventListener('change', () => {
-  const upload = uploadInput.files[0]
-  const tipoUpload = /image.*/
+if (uploadInput) {
+  uploadInput.addEventListener('change', () => {
+    const upload = uploadInput.files[0]
+    const tipoUpload = /image.*/
 
-  if (upload.type.match(tipoUpload)) {
-    const reader = new FileReader()
-    reader.addEventListener('load', () => {
-      utilizadorFoto.setAttribute('src', reader.result)
-    })
+    if (upload.type.match(tipoUpload)) {
+      const reader = new FileReader()
+      reader.addEventListener('load', () => {
+        utilizadorFoto.setAttribute('src', reader.result)
+        localStorage.setItem('utilizadorFoto', utilizadorFoto)
+      })
 
-    reader.readAsDataURL(upload)
-  }
-})
+      reader.readAsDataURL(upload)
+    }
+  })
+}
