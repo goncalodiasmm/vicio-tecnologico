@@ -1,2 +1,7 @@
-- Página de Pesquisar Produto dinâmica consoante categoria escolhida
-- Conseguir adicionar produto em detalhes de produto ao Local storage
+- Processo de Pesquisa:
+   - Utilizador abre a navegação lateral;
+   - Utilizador clica na categoria pretendida;
+   - pesquisa-produto.html abre com a categoria dos produtos filtrada
+
+- Processo de Compra:
+   -  

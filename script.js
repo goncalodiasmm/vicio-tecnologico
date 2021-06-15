@@ -2,17 +2,20 @@
 const novidadesProduto = document.getElementById('novidades-produto')
 const destaquesProduto = document.getElementById('destaques-produto')
 
+// OPINIÕES PÁGINA INICIAL
+const opinioesWebsite = document.getElementById('opinioes-website')
+
 // DETALHE DE PRODUTO
 const apresentacaoProduto = document.getElementById('apresentacao-produto')
+
+// CARRINHO
+let carrinho = []
 
 function lerId() {
   let url = new URL(window.location)
   let id = url.searchParams.get('id')
   return id
 }
-
-// OPINIÕES PÁGINA INICIAL
-const opinioesWebsite = document.getElementById('opinioes-website')
 
 // BUSCAR PRODUTOS
 class Produtos {
@@ -195,7 +198,7 @@ class UI {
                   <i class="ri-add-line"></i>
                </div>
                <div class="flex-h alinhar-centro espaço-2">
-                  <button onclick="adicionarCarrinho()" class="btn-primário flex-h alinhar-centro espaço-0-25"
+                  <button onclick="adicionarCarrinho()" class="btn-primário flex-h alinhar-centro espaço-0-25" data-id=${produto.id}
                      id="adicionar-carrinho">
                      <i class="ri-shopping-cart-2-fill"></i>
                      <p class="categoria-pequeno">Adicionar ao Carrinho</p>
@@ -260,6 +263,28 @@ class UI {
     }
   }
 
+  adicionarProduto() {
+    const adicionarCarrinhoBtn = document.getElementById('adicionar-carrinho')
+    let id = adicionarCarrinhoBtn.dataset.id
+    let inCart = carrinho.find((item) => item.id === id)
+    if (inCart) {
+      adicionarCarrinhoBtn.innerHTML = 'Produto Adicionado'
+      adicionarCarrinhoBtn.disabled = true
+      console.log(adicionarCarrinhoBtn)
+    } else {
+      adicionarCarrinhoBtn.addEventListener('click', (e) => {
+        e.target.innerHTML = 'Produto Adicionado'
+        e.target.disabled = true
+        let produtoCarrinho = {
+          ...Storage.apresentarProduto(id),
+          quantidade: 1,
+        }
+        carrinho = [...carrinho, produtoCarrinho]
+        Storage.guardarCarrinho(carrinho)
+      })
+    }
+  }
+
   mostrarOpinioes(opinioes) {
     let resultado = ''
     opinioes.forEach((opiniao) => {
@@ -302,12 +327,12 @@ class Storage {
   }
 
   static apresentarProduto(id) {
-    let json = localStorage.getItem('produtos')
-    let produtos = JSON.parse(json)
-    for (let i = 0; i < produtos.length; i++) {
-      if (produtos[i].id == id) return produtos[i]
-    }
-    return null
+    let produtos = JSON.parse(localStorage.getItem('produtos'))
+    return produtos.find((produto) => produto.id == id)
+  }
+
+  static guardarCarrinho(carrinho) {
+    localStorage.setItem('carrinho', JSON.stringify(carrinho))
   }
 }
 
@@ -325,6 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ui.mostrarDestaques(produtos)
       ui.mostrarNovidades(produtos)
       ui.mostrarProduto(Storage.apresentarProduto(lerId()))
+      ui.adicionarProduto()
     })
     .catch((error) => {
       console.log(error)
@@ -378,24 +404,26 @@ const dataHoje = new Date().toLocaleDateString('en-CA')
 // FORMULÁRIO LOGIN
 if (loginForm != null) {
   loginForm.addEventListener('submit', (e) => {
-    if (email.value === '') {
-      definirErro(email, 'O email é obrigatório.')
-      e.preventDefault()
-    } else if (!emailValido(email.value)) {
-      definirErro(email, 'O email não é válido.')
+    if (email.value != localStorage.getItem('utilizadorEmail')) {
+      definirErro(
+        email,
+        'Algo nao correu bem. O username ou palavra-passe nao estao correctos.'
+      )
       e.preventDefault()
     } else {
       definirSucesso(email, 'Email aceite')
     }
 
-    if (palavraPasse.value === '') {
-      definirErro(palavraPasse, 'A palavra-passe é obrigatória.')
+    if (palavraPasse.value != localStorage.getItem('utilizadorPalavraPasse')) {
+      definirErro(palavraPasse, 'A palavra-passe não está correcta.')
       e.preventDefault()
     } else {
       definirSucesso(palavraPasse, 'Palavra-passe aceite.')
     }
   })
 }
+
+//email.value =
 
 // FORMULÁRIO REGISTO
 if (registoForm != null) {
@@ -579,13 +607,13 @@ function definirUtilizador() {
 
 function verificarUtilizador() {
   if (localStorage.getItem('utilizadorNome') != null) {
-    window.location.href =
-      'https://goncalodiasmm.github.io/vicio-tecnologico/perfil.html'
+    window.location.href = 'http://127.0.0.1:5500/perfil.html'
   } else {
-    window.location.href =
-      'https://goncalodiasmm.github.io/vicio-tecnologico/login.html'
+    window.location.href = 'http://127.0.0.1:5500/login.html'
   }
 }
+
+function entrarUtilizador() {}
 
 // CLASSES DE ERRO E SUCESSO
 function definirErro(input, mensagem) {
@@ -714,10 +742,16 @@ if (uploadInput) {
       reader.addEventListener('load', () => {
         utilizadorFoto.setAttribute('src', reader.result)
         localStorage.setItem('utilizadorFoto', utilizadorFoto)
-        console.log(utilizadorFoto)
       })
 
       reader.readAsDataURL(upload)
     }
   })
+}
+
+//Download factura
+
+function obterFactura() {
+  nomeCliente = localStorage.getItem('utilizadorNome', nome.value)
+  moradaCliente = localStorage.getItem('utilizadorMorada', apelido.value)
 }
