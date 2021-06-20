@@ -8,6 +8,13 @@ const opinioesWebsite = document.getElementById('opinioes-website')
 // DETALHE DE PRODUTO
 const apresentacaoProduto = document.getElementById('apresentacao-produto')
 
+// LISTA DE COMPRAS
+const adicionarCarrinhoBtn = document.getElementById('adicionar-carrinho-btn')
+const listaCompras = document.getElementById('lista-compras')
+const listaCarrinhoNumero = document.getElementById('lista-carrinho-numero')
+const rodapeCompras = document.getElementById('rodape-compras')
+const carrinhoTotal = document.getElementById('carrinho-total')
+
 // CARRINHO
 let carrinho = []
 
@@ -66,7 +73,7 @@ class UI {
                  </div>
                  <div class="flex-h alinhar-centro justificar-entre">
                     <h3>${produto.preco}€</h3>
-                    <p class="cruzado">${produto.preco}€</p>
+                    <p class="cruzado">${(produto.preco * 1.5).toFixed(2)}€</p>
                  </div>
                  <div class="flex-h alinhar-centro">
                     <i class="ri-heart-line alerta"></i>
@@ -101,7 +108,7 @@ class UI {
                  </div>
                  <div class="flex-h alinhar-centro justificar-entre">
                     <h3>${produto.preco}€</h3>
-                    <p class="cruzado">${produto.preco}€</p>
+                    <p class="cruzado">${(produto.preco * 1.5).toFixed(2)}€</p>
                  </div>
                  <div class="flex-h alinhar-centro">
                     <i class="ri-heart-line alerta"></i>
@@ -163,7 +170,9 @@ class UI {
                      <i class="ri-check-line sucesso"></i>
                      <div>
                         <p class="subtexto negrito">Produto Disponível</p>
-                        <p class="subtexto">${produto.stock} restantes em stock</p>
+                        <p class="subtexto">${
+                          produto.stock
+                        } restantes em stock</p>
                      </div>
                   </div>
                   <div class="flex-h">
@@ -178,7 +187,9 @@ class UI {
                <h3>${produto.nome}</h3>
                <div class="flex-h alinhar-centro justificar-entre">
                   <h2>${produto.preco}€</h2>
-                  <h3 class="cruzado cinzento-60 regular">${produto.preco}€</h3>
+                  <h3 class="cruzado cinzento-60 regular">${(
+                    produto.preco * 1.5
+                  ).toFixed(2)}€</h3>
                </div>
                <div class="flex-h alinhar-centro espaço-1">
                   <div class="flex-h alinhar-centro espaço-0-25">
@@ -198,8 +209,10 @@ class UI {
                   <i class="ri-add-line"></i>
                </div>
                <div class="flex-h alinhar-centro espaço-2">
-                  <button onclick="adicionarCarrinho()" class="btn-primário flex-h alinhar-centro espaço-0-25" data-id=${produto.id}
-                     id="adicionar-carrinho">
+                  <button onclick="adicionarCarrinho()" class="btn-primário flex-h alinhar-centro espaço-0-25" data-id=${
+                    produto.id
+                  }
+                     id="adicionar-carrinho-btn">
                      <i class="ri-shopping-cart-2-fill"></i>
                      <p class="categoria-pequeno">Adicionar ao Carrinho</p>
                   </button>
@@ -233,7 +246,9 @@ class UI {
             <!-- COMENTÁRIO -->
             <div class="flex-h alinhar-inicio espaço-1">
                <div class="flex-v espaço-0-25">
-                  <p class="categoria-pequeno">${produto.comentario1Utilizador}</p>
+                  <p class="categoria-pequeno">${
+                    produto.comentario1Utilizador
+                  }</p>
                   <div class="rating">${produto.comentario1Estrelas}</div>
                   <p>${produto.comentario1Descricao}</p>
                </div>
@@ -241,7 +256,9 @@ class UI {
             <!-- COMENTÁRIO -->
             <div class="flex-h alinhar-inicio espaço-1">
                <div class="flex-v espaço-0-25">
-                  <p class="categoria-pequeno">${produto.comentario2Utilizador}</p>
+                  <p class="categoria-pequeno">${
+                    produto.comentario2Utilizador
+                  }</p>
                   <div class="rating">${produto.comentario2Estrelas}</div>
                   <p>${produto.comentario2Descricao}</p>
                </div>
@@ -249,7 +266,9 @@ class UI {
             <!-- COMENTÁRIO -->
             <div class="flex-h alinhar-inicio espaço-1">
                <div class="flex-v espaço-0-25">
-                  <p class="categoria-pequeno">${produto.comentario3Utilizador}</p>
+                  <p class="categoria-pequeno">${
+                    produto.comentario3Utilizador
+                  }</p>
                   <div class="rating">${produto.comentario3Estrelas}</div>
                   <p>${produto.comentario3Descricao}</p>
                </div>
@@ -264,25 +283,22 @@ class UI {
   }
 
   adicionarProduto() {
-    const adicionarCarrinhoBtn = document.getElementById('adicionar-carrinho')
+    const adicionarCarrinhoBtn = document.getElementById(
+      'adicionar-carrinho-btn'
+    )
     let id = adicionarCarrinhoBtn.dataset.id
-    let inCart = carrinho.find((item) => item.id === id)
-    if (inCart) {
+    let inCarrinho = carrinho.find((item) => item.id === id)
+    if (inCarrinho) {
       adicionarCarrinhoBtn.innerHTML = 'Produto Adicionado'
       adicionarCarrinhoBtn.disabled = true
-      console.log(adicionarCarrinhoBtn)
-    } else {
-      adicionarCarrinhoBtn.addEventListener('click', (e) => {
-        e.target.innerHTML = 'Produto Adicionado'
-        e.target.disabled = true
-        let produtoCarrinho = {
-          ...Storage.apresentarProduto(id),
-          quantidade: 1,
-        }
-        carrinho = [...carrinho, produtoCarrinho]
-        Storage.guardarCarrinho(carrinho)
-      })
     }
+    adicionarCarrinhoBtn.addEventListener('click', (e) => {
+      e.target.innerHTML = 'Produto Adicionado'
+      e.target.disabled = true
+      let produtoCarrinho = { ...Storage.apresentarProduto(id), quantidade: 1 }
+      carrinho = [...carrinho, produtoCarrinho]
+      Storage.guardarCarrinho(carrinho)
+    })
   }
 
   mostrarOpinioes(opinioes) {
@@ -598,6 +614,17 @@ if (detalheEnvio != null) {
   })
 }
 
+//confirmação de envio
+
+function confirmaEntrega() {
+  const nomeConfirma = document.getElementById('confirma-Entrega')
+  const moradaConfirma = document.getElementById('confirma-Entrega')
+
+  nomeConfirma.innerHTML = localStorage.getItem('utilizadorNome')
+  moradaConfirma.innerHTML = localStorage.getItem('utilizadorMorada')
+  email.innerHTML = localStorage.getItem('utilizadorEmail')
+}
+
 function definirUtilizador() {
   const utilizadorNome = document.getElementById('utilizador-nome')
   if (utilizadorNome != null) {
@@ -749,9 +776,24 @@ if (uploadInput) {
   })
 }
 
+//Dados perfil do cliente
+// morada.value = localStorage.getItem('utilizadorMorada', morada.value)
+
 //Download factura
 
-function obterFactura() {
-  nomeCliente = localStorage.getItem('utilizadorNome', nome.value)
-  moradaCliente = localStorage.getItem('utilizadorMorada', apelido.value)
+// function obterFactura() {
+//   nomeCliente = localStorage.getItem('utilizadorNome', nome.value)
+//   moradaCliente = localStorage.getItem('utilizadorMorada', morada.value)
+//   apelidoCliente = localStorage.getItem('utilizadorApelido', apelido.value)
+//   emailCliente = localStorage.getItem('utilizadorEmail', email.value)
+// }
+
+
+function obterFatura() {
+  var pdf = new jsPDF()
+  window.html2canvas = html2canvas
+  const doc = document.getElementById('fatura')
+  if (doc) {
+    pdf.html(doc).then(() => pdf.save('fatura.pdf'))
+  }
 }

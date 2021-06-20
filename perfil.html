@@ -11,8 +11,10 @@
    <!-- CSS -->
    <link rel="stylesheet" href="./css/style.css">
    <!-- JS -->
-   <script defer src="script.js"></script>
-   <script defer src="temp.js"></script>
+   <script defer src="./script.js"></script>
+   <script type="text/javascript" src="html2canvas.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+      integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -34,8 +36,7 @@
                   <p class="subtexto" id="lista-favoritos"></p>
                </a>
                <a href="login.html" class="flex-h alinhar-centro cursor-pointer">
-                  <img src="./img/perfil-default.png" alt="foto utilizador"
-                     class="border-2 border-solid border-cinzento-10 rounded-full w-2 h-2" id="utilizador-foto-nav">
+                  <i class="ri-user-fill"></i>
                   <p class="subtexto" id="utilizador-nome"></p>
                </a>
                <a href="pagamento-1.html" class="flex-h alinhar-centro">
@@ -88,7 +89,8 @@
             <!-- UTILIZADOR -->
             <div class="flex-h alinhar-centro">
                <div class="flex-v alinhar-centro relative rounded-full w-6 h-6" id="utilizador-contentor">
-                  <img src="./img/perfil-default.png" alt="foto utilizador" class="border-2 border-solid border-cinzento-10 rounded-full w-total h-total" id="utilizador-foto">
+                  <img src="./img/perfil-default.png" alt="foto utilizador"
+                     class="border-2 border-solid border-cinzento-10 rounded-full w-total h-total" id="utilizador-foto">
                   <input type="file" id="upload-input" class="hidden">
                   <label for="upload-input" id="upload-btn" class="absolute bottom-0 right-0 cursor-pointer">
                      <i class="ri-camera-fill branco bg-primária rounded-full p-0-5"></i>
@@ -128,8 +130,8 @@
                <div class="divisória-horizontal"></div>
                <div class="flex-h justificar-entre alinhar-centro">
                   <div class="flex-v">
-                     <p class="subtexto">João Silva</p>
-                     <p class="subtexto">joaosilva@gmail.com</p>
+                     <p class="subtexto" id="nome">João Silva</p>
+                     <p class="subtexto" id="email">joaosilva@gmail.com</p>
                   </div>
                   <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Editar</button></a>
                </div>
@@ -201,13 +203,15 @@
                   <p class="subtexto">Pedido realizado em: <span>18/02/2021</span></p>
                   <p class="subtexto"><span>2</span> artigos</p>
                </div>
-               <div class="flex-h alinhar-centro">
-                  <i class="ri-file-text-line" onclick="obterFactura()"></i>
-                  <p class="categoria-pequeno">Obter fatura</p>
+               <div class="flex-h alinhar-centro cursor-pointer" onclick="obterFatura()">
+                  <i class="ri-file-text-line"></i>
+                  <button>
+                     <p class="categoria-pequeno">Obter fatura</p>
+                  </button>
                </div>
             </div>
             <div class="flex-v espaço-1 mt-1">
-               <div class="flex-h alinhar-centro justificar-entre">
+               <div class="flex-h alinhar-centro justificar-entre" id="fatura">
                   <div class="flex-h alinhar-centro">
                      <div class="w-12">
                         <img src="./img/gamepad-microsoft-xbox/gamepad-microsoft-xbox_1.jpg" alt="gamepad microsoft">
