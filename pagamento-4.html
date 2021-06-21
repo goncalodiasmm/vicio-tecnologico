@@ -14,7 +14,7 @@
    <script defer src="script.js"></script>
 </head>
 
-<body>
+<body onload="rastoEntrega()">
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
       <div class="flex-h justificar-entre alinhar-centro">
@@ -23,7 +23,7 @@
             <a href="index.html"><img src="./img/logo-primário.png" alt="logo primário" class="w-12"></a>
          </div>
          <div class="flex-h alinhar-centro espaço-2">
-            <div class="flex-h alinhar-centro relative">
+            <div class="flex-h alinhar-centro relative" id="motor-pesquisa">
                <i class="ri-search-line absolute left-0-5"></i>
                <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
             </div>
@@ -82,7 +82,7 @@
    <div class="flex-v alinhar-centro justificar-centro">
       <i class="ri-check-line anel p-1 sucesso texto-xl"></i>
       <h2>O seu pedido vai a caminho</h2>
-      <p class="subtítulo mt-0-5">Entrega prevista a 30 de fevereiro</p>
+      <p class="subtítulo mt-0-5">Entrega entre 3 a 5 dias</p>
       <div class="divisória-horizontal mb-2 mt-2"></div>
       <div class="flex-h alinhar-inicio">
          <div class="flex-v alinhar-centro texto-centro texto-estender">
@@ -94,9 +94,9 @@
          <div class="divisória-horizontal w-16"></div>
          <div class="flex-v alinhar-centro texto-centro texto-estender">
             <i class="ri-map-pin-user-line"></i>
-            <p class="categoria-pequeno">João Silva</p>
-            <p>Praça Teófilo Braga 60</p>
-            <p>2665-620 Lisboa, Portugal</p>
+            <p id="nome-Rasto" class="categoria-pequeno">João Silva</p>
+            <p id= "morada-Rasto">Praça Teófilo Braga 60</p>
+            <p id="codPostal-Rasto">2665-620 Lisboa, Portugal</p>
          </div>
       </div>
       <div class="flex-h alinhar-centro espaço-2 mt-2">

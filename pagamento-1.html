@@ -12,9 +12,10 @@
    <link rel="stylesheet" href="./css/style.css">
    <!-- JS -->
    <script defer src="script.js"></script>
+   <script defer src="temp.js"></script>
 </head>
 
-<body>
+<body onload="mostrarCarrinho()">
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
       <div class="flex-h justificar-entre alinhar-centro">
@@ -23,7 +24,7 @@
             <a href="index.html"><img src="./img/logo-primário.png" alt="logo primário" class="w-12"></a>
          </div>
          <div class="flex-h alinhar-centro espaço-2">
-            <div class="flex-h alinhar-centro relative">
+            <div class="flex-h alinhar-centro relative" id="motor-pesquisa">
                <i class="ri-search-line absolute left-0-5"></i>
                <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
             </div>
@@ -98,32 +99,15 @@
    </section>
 
    <!--SECÇÃO LISTA CARRINHO DE COMPRAS-->
-   <section id="lista-compras">
-      <div class="flex-h flex-inicial alinhar-centro espaço-4">
-         <div class="flex-h alinhar-centro">
-            <div class="w-16">
-               <img src="./img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg"
-                  alt="auriculares xiaomi">
-            </div>
-            <div class="flex-v">
-               <p class="negrito">HP Pavilion Gaming 15-dk1011np</p>
-               <div class="flex-h alinhar-centro espaço-0.25">
-                  <i class="ri-check-line sucesso"></i>
-                  <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
-               </div>
-            </div>
-         </div>
-         <div class="contador-quantidade">
-            <i class="ri-add-line"></i>
-            <input type="text" name="quantidade" id="quantidade" value="1">
-            <i class="ri-subtract-line"></i>
-         </div>
-         <p class="subtítulo">14,90€</h3>
-         <div class="confirmação">
-            <i class="ri-close-line texto-md"></i>
-         </div>
+   <div class="flex-h alinhar-centro espaço-4">
+      <section id="lista-compras"></section>
+      <div class="contador-quantidade">
+         <i class="ri-subtract-line cursor-pointer" id="subtrair-quantidade"></i>
+         <input type="text" name="produto-quantidade" id="produto-quantidade" value="1">
+          <i class="ri-add-line cursor-pointer" id="adicionar-quantidade"></i>
       </div>
-   </section>
+      <i id="remove" class="ri-close-line texto-md cursor-pointer"></i>
+   </div>
 
    <!-- RODAPÉ LISTA DE COMPRAS -->
    <section id="rodape-compras">
@@ -134,7 +118,7 @@
          </div>
          <div class="flex-h alinhar-centro espaço-1">
             <p>Custo Total:</p>
-            <h3><span id="carrinho-total">14,90</span>€</h3>
+            <h3><span id="carrinho-total"></span>€</h3>
          </div>
          <div class="flex-h alinhar-centro espaço-2">
             <a href="index.html" class="btn-contorno categoria-pequeno">Continuar a comprar</a>

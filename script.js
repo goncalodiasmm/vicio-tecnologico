@@ -11,9 +11,78 @@ const apresentacaoProduto = document.getElementById('apresentacao-produto')
 // LISTA DE COMPRAS
 const adicionarCarrinhoBtn = document.getElementById('adicionar-carrinho-btn')
 const listaCompras = document.getElementById('lista-compras')
+const pedidoCompras = document.getElementById('pedido-compras')
 const listaCarrinhoNumero = document.getElementById('lista-carrinho-numero')
 const rodapeCompras = document.getElementById('rodape-compras')
-const carrinhoTotal = document.getElementById('carrinho-total')
+let carrinhoTotal = document.getElementById('carrinho-total')
+const contadorQuantidade = document.querySelector('.contador-quantidade')
+
+function mostrarCarrinho() {
+  let resultado = ''
+  const items = JSON.parse(localStorage.getItem('carrinho'))
+  items.forEach((item) => {
+    resultado += `
+    <div class="flex-h flex-inicial alinhar-centro espaço-4">
+        <div class="flex-h alinhar-centro">
+          <div class="w-16">
+              <img src="${item.imagem1}"
+                alt="auriculares xiaomi">
+          </div>
+          <div class="flex-v">
+              <p class="negrito">${item.nome}</p>
+              <div class="flex-h alinhar-centro espaço-0.25">
+                <i class="ri-check-line sucesso"></i>
+                <p class="subtexto sucesso">Entrega entre 3 a 5 dias úteis</p>
+              </div>
+          </div>
+        </div>
+        <p class="subtítulo">${item.preco}€</h3>
+    </div>`
+
+    if (listaCompras != null) {
+      listaCompras.innerHTML = resultado
+    }
+
+    // PAGAMENTO 1 - QUANTIDADE PRODUTO
+    let adicionarQuantidade = document.getElementById('adicionar-quantidade')
+    let subtrairQuantidade = document.getElementById('subtrair-quantidade')
+    let produtoQuantidade = document.getElementById('produto-quantidade')
+    let removeCarrinho = document.getElementById('remove')
+
+    if (adicionarQuantidade) {
+      adicionarQuantidade.addEventListener('click', () => {
+        produtoQuantidade.value = parseInt(produtoQuantidade.value) + 1
+        carrinhoTotal.innerHTML = parseFloat(
+          item.preco * produtoQuantidade.value
+        ).toFixed(2)
+        localStorage.setItem('carrinhoTotal', carrinhoTotal.innerHTML)
+      })
+    }
+
+    if (subtrairQuantidade) {
+      subtrairQuantidade.addEventListener('click', () => {
+        if (produtoQuantidade.value < 1) {
+          produtoQuantidade = 0
+        } else {
+          produtoQuantidade.value = parseInt(produtoQuantidade.value) - 1
+          carrinhoTotal.innerHTML = parseFloat(
+            item.preco * produtoQuantidade.value
+          ).toFixed(2)
+          localStorage.setItem('carrinhoTotal', carrinhoTotal.innerHTML)
+        }
+      })
+    }
+
+    if (removeCarrinho) {
+      removeCarrinho.addEventListener('click', () => {
+        removeCarrinho = localStorage.removeItem('carrinho')
+        listaCompras.classList.add('hidden')
+        contadorQuantidade.classList.add('hidden')
+        remove.classList.add('hidden')
+      })
+    }
+  })
+}
 
 // CARRINHO
 let carrinho = []
@@ -69,7 +138,7 @@ class UI {
                  </div>
                  <div class="flex-h alinhar-centro sucesso">
                     <i class="ri-check-line"></i>
-                    <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                    <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
                  </div>
                  <div class="flex-h alinhar-centro justificar-entre">
                     <h3>${produto.preco}€</h3>
@@ -104,7 +173,7 @@ class UI {
                  </div>
                  <div class="flex-h alinhar-centro sucesso">
                     <i class="ri-check-line"></i>
-                    <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
+                    <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
                  </div>
                  <div class="flex-h alinhar-centro justificar-entre">
                     <h3>${produto.preco}€</h3>
@@ -141,7 +210,7 @@ class UI {
          <div class="flex-h flex-ajustar">
             <!-- FOTOGRAFIAS PRODUTO -->
             <div class="flex-h">
-               <div class="flex-v espaço-1">
+               <div class="flex-v espaço-1" id="fotografias-mini-produto">
                   <div class="w-6 border-2 border-solid border-cinzento-10 rounded">
                      <img src="${produto.imagem1}"
                         alt="${produto.nome}">
@@ -203,11 +272,6 @@ class UI {
                   </div>
                </div>
                <p class="subtexto">ID Produto: ${produto.id}</p>
-               <div class="contador-quantidade">
-                  <i class="ri-subtract-line"></i>
-                  <input type="text" name="quantidade" id="quantidade" value="1">
-                  <i class="ri-add-line"></i>
-               </div>
                <div class="flex-h alinhar-centro espaço-2">
                   <button onclick="adicionarCarrinho()" class="btn-primário flex-h alinhar-centro espaço-0-25" data-id=${
                     produto.id
@@ -230,7 +294,7 @@ class UI {
       <p class="categoria-médio mb-0-5">Opiniões</p>
     </button>
     <section id="seccao-opinioes">
-      <div class="flex-h justificar-centro espaço-8 ml-4">
+      <div class="flex-h justificar-centro espaço-8 ml-4 flex-ajustar">
          <!-- CLASSIFICAÇÃO GERAL -->
          <div class="flex-v espaço-0-5">
             <h1>${produto.classificacaoValor}</h1>
@@ -287,11 +351,6 @@ class UI {
       'adicionar-carrinho-btn'
     )
     let id = adicionarCarrinhoBtn.dataset.id
-    let inCarrinho = carrinho.find((item) => item.id === id)
-    if (inCarrinho) {
-      adicionarCarrinhoBtn.innerHTML = 'Produto Adicionado'
-      adicionarCarrinhoBtn.disabled = true
-    }
     adicionarCarrinhoBtn.addEventListener('click', (e) => {
       e.target.innerHTML = 'Produto Adicionado'
       e.target.disabled = true
@@ -306,7 +365,7 @@ class UI {
     opinioes.forEach((opiniao) => {
       resultado += `
       <!-- CARTAO SINGULAR -->
-         <div class="flex-v justificar-redor borda-cartao p-1 espaço-1">
+         <div class="flex-v justificar-redor borda-cartao p-1 espaço-1 max-w-28">
             <div class="flex-h justificar-entre">
                <div class="rating">
                   <i class="ri-star-fill"></i>
@@ -503,10 +562,50 @@ if (registoForm != null) {
 }
 //FORMULÁRIO DETALHE ENVIO
 
-function carregarPerfil() {
+function carregarDados() {
   nome.value = localStorage.getItem('utilizadorNome', nome.value)
   apelido.value = localStorage.getItem('utilizadorApelido', apelido.value)
   email.value = localStorage.getItem('utilizadorEmail', email.value)
+}
+
+function carregarPedido() {
+  let resultado = ''
+  const items = JSON.parse(localStorage.getItem('carrinho'))
+  items.forEach((item) => {
+    resultado += `<header>
+               <p class="categoria-pequeno cinzento-60">O seu pedido</p>
+               <div class="divisória-horizontal mb-2"></div>
+            </header>
+            <!-- PEDIDOS -->
+            <div class="flex-h alinhar-centro">
+               <div class="w-16"><img src="${item.imagem1}"
+                     alt="auriculares"></div>
+               <div>
+                  <p class="subtítulo">${item.nome}</p>
+                  <div class="flex-h">
+                     <i class="ri-check-line sucesso"></i>
+                     <p class="subtexto sucesso">Entrega entre 3 a 5 dias úteis</p>
+                  </div>
+               </div>
+            </div>
+            <div class="divisória-horizontal mb-2 mt-2"></div>
+            <div class="flex-h alinhar-centro justificar-entre">
+               <p class="subtítulo mt-0-5">Subtotal</p>
+               <p>${item.preco}€</p>
+            </div>
+            <div class="flex-h alinhar-centro justificar-entre">
+               <p class="subtítulo mt-0-5">Custos de Envio</p>
+               <p>0.00€</p>
+            </div>
+            <div class="flex-h alinhar-centro justificar-entre">
+               <p class="subtítulo mt-0-5">Total</p>
+               <p>${item.preco}€</p>
+            </div>`
+
+    if (pedidoCompras != null) {
+      pedidoCompras.innerHTML = resultado
+    }
+  })
 }
 
 if (detalheEnvio != null) {
@@ -615,14 +714,42 @@ if (detalheEnvio != null) {
 }
 
 //confirmação de envio
-
 function confirmaEntrega() {
-  const nomeConfirma = document.getElementById('confirma-Entrega')
-  const moradaConfirma = document.getElementById('confirma-Entrega')
+  const entregaNome = document.getElementById('nome-Confirma')
+  const moradaConfirma = document.getElementById('morada-Confirma')
+  const codpostalConfirma = document.getElementById('codpostal-Confirma')
+  const emailConfirma = document.getElementById('email-Confirma')
 
-  nomeConfirma.innerHTML = localStorage.getItem('utilizadorNome')
+  entregaNome.innerHTML =
+    localStorage.getItem('utilizadorNome') +
+    ' ' +
+    localStorage.getItem('utilizadorApelido')
   moradaConfirma.innerHTML = localStorage.getItem('utilizadorMorada')
-  email.innerHTML = localStorage.getItem('utilizadorEmail')
+  codpostalConfirma.innerHTML =
+    localStorage.getItem('utilizadorCodPostal') +
+    ' ' +
+    localStorage.getItem('utilizadorCidade') +
+    ' ' +
+    localStorage.getItem('utilizadorPais')
+  emailConfirma.innerHTML = localStorage.getItem('utilizadorEmail')
+}
+
+function rastoEntrega() {
+  const nomeRasto = document.getElementById('nome-Rasto')
+  const moradaRasto = document.getElementById('morada-Rasto')
+  const codPostalRasto = document.getElementById('codPostal-Rasto')
+
+  nomeRasto.innerHTML =
+    localStorage.getItem('utilizadorNome') +
+    ' ' +
+    localStorage.getItem('utilizadorApelido')
+  moradaRasto.innerHTML = localStorage.getItem('utilizadorMorada')
+  codPostalRasto.innerHTML =
+    localStorage.getItem('utilizadorCodPostal') +
+    ' ' +
+    localStorage.getItem('utilizadorCidade') +
+    ' ' +
+    localStorage.getItem('utilizadorPais')
 }
 
 function definirUtilizador() {
@@ -639,8 +766,6 @@ function verificarUtilizador() {
     window.location.href = 'http://127.0.0.1:5500/login.html'
   }
 }
-
-function entrarUtilizador() {}
 
 // CLASSES DE ERRO E SUCESSO
 function definirErro(input, mensagem) {
@@ -755,7 +880,7 @@ if (pedidosFaturasBtn != null) {
 
 // UPLOAD FOTO DE UTILIZADOR
 const utilizadorContentor = document.getElementById('utilizador-contentor')
-const utilizadorFoto = document.getElementById('utilizador-foto')
+const utilizadorFoto = document.getElementById('perfil-foto')
 const uploadInput = document.getElementById('upload-input')
 const uploadBtn = document.getElementById('upload-btn')
 
@@ -776,8 +901,33 @@ if (uploadInput) {
   })
 }
 
-//Dados perfil do cliente
-// morada.value = localStorage.getItem('utilizadorMorada', morada.value)
+// PERFIL DO CLIENTE
+let perfilNome = document.getElementById('perfil-nome')
+let perfilFoto = document.getElementById('perfil-foto')
+let dadosPessoaisNome = document.getElementById('dados-pessoais-nome')
+let dadosPessoaisEmail = document.getElementById('dados-pessoais-email')
+let dadosPessoaisMorada = document.getElementById('dados-pessoais-morada')
+let dadosPessoaisCodPostal = document.getElementById(
+  'dados-pessoais-cod-postal'
+)
+
+function carregarPerfil() {
+  perfilNome.innerHTML =
+    localStorage.getItem('utilizadorNome') +
+    ' ' +
+    localStorage.getItem('utilizadorApelido')
+  perfilFoto.innerHTML = localStorage.getItem('utilizadorFoto')
+  dadosPessoaisNome.innerHTML =
+    localStorage.getItem('utilizadorNome') +
+    ' ' +
+    localStorage.getItem('utilizadorApelido')
+  dadosPessoaisEmail.innerHTML = localStorage.getItem('utilizadorEmail')
+  dadosPessoaisMorada.innerHTML = localStorage.getItem('utilizadorMorada')
+  dadosPessoaisCodPostal.innerHTML =
+    localStorage.getItem('utilizadorCodPostal') +
+    ' ' +
+    localStorage.getItem('utilizadorCidade')
+}
 
 //Download factura
 
@@ -787,7 +937,6 @@ if (uploadInput) {
 //   apelidoCliente = localStorage.getItem('utilizadorApelido', apelido.value)
 //   emailCliente = localStorage.getItem('utilizadorEmail', email.value)
 // }
-
 
 function obterFatura() {
   var pdf = new jsPDF()

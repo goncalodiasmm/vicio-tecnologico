@@ -17,7 +17,7 @@
       integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="carregarPerfil()">
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
       <div class="flex-h justificar-entre alinhar-centro">
@@ -26,7 +26,7 @@
             <a href="index.html"><img src="./img/logo-primário.png" alt="logo primário" class="w-12"></a>
          </div>
          <div class="flex-h alinhar-centro espaço-2">
-            <div class="flex-h alinhar-centro relative">
+            <div class="flex-h alinhar-centro relative" id="motor-pesquisa">
                <i class="ri-search-line absolute left-0-5"></i>
                <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
             </div>
@@ -90,15 +90,14 @@
             <div class="flex-h alinhar-centro">
                <div class="flex-v alinhar-centro relative rounded-full w-6 h-6" id="utilizador-contentor">
                   <img src="./img/perfil-default.png" alt="foto utilizador"
-                     class="border-2 border-solid border-cinzento-10 rounded-full w-total h-total" id="utilizador-foto">
+                     class="border-2 border-solid border-cinzento-10 rounded-full w-total h-total" id="perfil-foto">
                   <input type="file" id="upload-input" class="hidden">
                   <label for="upload-input" id="upload-btn" class="absolute bottom-0 right-0 cursor-pointer">
                      <i class="ri-camera-fill branco bg-primária rounded-full p-0-5"></i>
                   </label>
                </div>
                <div class="flex-v alinhar-inicio justificar-inicio ml-1">
-                  <p class="subtítulo">João Silva</p>
-                  <p class="subtexto">Lorem, ipsum dolor.</p>
+                  <p class="subtítulo" id="perfil-nome"></p>
                </div>
             </div>
             <!-- SEPARADORES -->
@@ -130,8 +129,8 @@
                <div class="divisória-horizontal"></div>
                <div class="flex-h justificar-entre alinhar-centro">
                   <div class="flex-v">
-                     <p class="subtexto" id="nome">João Silva</p>
-                     <p class="subtexto" id="email">joaosilva@gmail.com</p>
+                     <p class="subtexto" id="dados-pessoais-nome">João Silva</p>
+                     <p class="subtexto" id="dados-pessoais-email">joaosilva@gmail.com</p>
                   </div>
                   <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Editar</button></a>
                </div>
@@ -141,8 +140,8 @@
                <div class="divisória-horizontal"></div>
                <div class="flex-h justificar-entre alinhar-centro">
                   <div class="flex-v">
-                     <p class="subtexto">Praça Teófilo Braga, 60</p>
-                     <p class="subtexto">2665-Lisboa, Portugal</p>
+                     <p class="subtexto" id="dados-pessoais-morada">Praça Teófilo Braga, 60</p>
+                     <p class="subtexto" id="dados-pessoais-cod-postal">2665-Lisboa, Portugal</p>
                   </div>
                   <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Editar</button></a>
                </div>

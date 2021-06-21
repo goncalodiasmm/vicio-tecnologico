@@ -14,7 +14,7 @@
    <script defer src="script.js"></script>
 </head>
 
-<body onload="carregarPerfil()">
+<body onload="carregarDados(); carregarPedido()">
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
       <div class="flex-h justificar-entre alinhar-centro">
@@ -23,7 +23,7 @@
             <a href="index.html"><img src="./img/logo-primário.png" alt="logo primário" class="w-12"></a>
          </div>
          <div class="flex-h alinhar-centro espaço-2">
-            <div class="flex-h alinhar-centro relative">
+            <div class="flex-h alinhar-centro relative" id="motor-pesquisa">
                <i class="ri-search-line absolute left-0-5"></i>
                <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
             </div>
@@ -196,47 +196,8 @@
             </div>
          </div>
          <!-- O SEU PEDIDO -->
-         <div>
-            <header>
-               <p class="categoria-pequeno cinzento-60">O seu pedido</p>
-               <div class="divisória-horizontal mb-2"></div>
-            </header>
-            <div class="flex-h alinhar-centro">
-               <div class="w-16"><img src="/img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg"
-                     alt="auriculares"></div>
-               <div>
-                  <p class="subtítulo">HP Pavillion Gaming 15-dk1011np</p>
-                  <div class="flex-h">
-                     <i class="ri-check-line sucesso"></i>
-                     <p class="subtexto sucesso">Entrega prevista a 30 de fevereiro</p>
-                  </div>
-               </div>
-            </div>
-            <div class="divisória-horizontal mb-2 mt-2"></div>
-            <div class="flex-h alinhar-centro">
-               <div class="w-16"><img src="/img/auriculares-xiaomi-mi-airdots/auriculares-xiaomi-mi-airdots_1.jpg"
-                     alt="auriculares"></div>
-               <div>
-                  <p class="subtítulo">HP Pavillion Gaming 15-dk1011np</p>
-                  <div class="flex-h">
-                     <i class="ri-check-line sucesso"></i>
-                     <p class="subtexto sucesso">Entrega prevista a 30 de fevereiro</p>
-                  </div>
-               </div>
-            </div>
-            <div class="divisória-horizontal mb-2 mt-2"></div>
-            <div class="flex-h alinhar-centro justificar-entre">
-               <p class="subtítulo mt-0-5">Subtotal</p>
-               <p>1668.89€</p>
-            </div>
-            <div class="flex-h alinhar-centro justificar-entre">
-               <p class="subtítulo mt-0-5">Custos de Envio</p>
-               <p>0.00€</p>
-            </div>
-            <div class="flex-h alinhar-centro justificar-entre">
-               <p class="subtítulo mt-0-5">Total</p>
-               <p>1668.89€</p>
-            </div>
+         <div class="flex-v">
+            <div id="pedido-compras"></div>
             <div class="flex-h espaço-2 justificar-fim mt-2">
                <a href="pagamento-1.html" class="btn-contorno categoria-pequeno">Retroceder</a>
                <button type="submit" class="btn-primário categoria-pequeno">Continuar</button>
