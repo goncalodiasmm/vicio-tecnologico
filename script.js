@@ -522,6 +522,8 @@ if (fecharBtn != null) {
 
 function categoriaEscolhida() {
   if (window.location.search == '?categoria=Perifericos') {
+    let categoriaNome = document.getElementById('categoria-nome')
+    categoriaNome.innerHTML = window.location.search.substring(11)
     let resultado = ''
     const produtosEncontrados = document.getElementById('produtos-encontrados')
     let produtos = JSON.parse(localStorage.getItem('produtos'))
@@ -556,6 +558,8 @@ function categoriaEscolhida() {
   } 
   
   if (window.location.search == '?categoria=Mobilidade') {
+    let categoriaNome = document.getElementById('categoria-nome')
+    categoriaNome.innerHTML = window.location.search.substring(11)
     let resultado = ''
     const produtosEncontrados = document.getElementById('produtos-encontrados')
     let produtos = JSON.parse(localStorage.getItem('produtos'))
@@ -591,6 +595,8 @@ function categoriaEscolhida() {
     })
   }
   if (window.location.search == '?categoria=Computadores') {
+    let categoriaNome = document.getElementById('categoria-nome')
+    categoriaNome.innerHTML = window.location.search.substring(11)
     let resultado = ''
     const produtosEncontrados = document.getElementById('produtos-encontrados')
     let produtos = JSON.parse(localStorage.getItem('produtos'))
@@ -626,6 +632,8 @@ function categoriaEscolhida() {
     })
   }
   if (window.location.search == '?categoria=Componentes') {
+    let categoriaNome = document.getElementById('categoria-nome')
+    categoriaNome.innerHTML = window.location.search.substring(11)
     let resultado = ''
     const produtosEncontrados = document.getElementById('produtos-encontrados')
     let produtos = JSON.parse(localStorage.getItem('produtos'))
@@ -661,6 +669,8 @@ function categoriaEscolhida() {
     })
   }
   if (window.location.search == '?categoria=Imagem-e-Som') {
+    let categoriaNome = document.getElementById('categoria-nome')
+    categoriaNome.innerHTML = window.location.search.substring(11)
     let resultado = ''
     const produtosEncontrados = document.getElementById('produtos-encontrados')
     let produtos = JSON.parse(localStorage.getItem('produtos'))
@@ -696,6 +706,8 @@ function categoriaEscolhida() {
     })
   }
   if (window.location.search == '?categoria=Armazenamento') {
+    let categoriaNome = document.getElementById('categoria-nome')
+    categoriaNome.innerHTML = window.location.search.substring(11)
     let resultado = ''
     const produtosEncontrados = document.getElementById('produtos-encontrados')
     let produtos = JSON.parse(localStorage.getItem('produtos'))
@@ -729,84 +741,8 @@ function categoriaEscolhida() {
         }
       }
     })
-  }
-  
+  } 
 }
-
-
-
-// if (window.location.search == '?categoria=Perifericos')
-// function categoriaPerifericos() {
-//   let resultado = ''
-//   const produtosEncontrados = document.getElementById('produtos-encontrados')
-//   let produtos = JSON.parse(localStorage.getItem('produtos'))
-//   produtos.forEach((produto) => {
-//     if (produto.categoria == 'Periféricos') {
-//       resultado += `<!-- PRODUTO -->
-//                <div class="flex-v">
-//                   <img src="${produto.imagem1}">
-//                   <div class="flex-v">
-//                      <p class="categoria-pequeno">${produto.categoria}</p>
-//                      <p>${produto.nome}</p>
-//                   </div>
-//                   <div class="flex-h alinhar-centro sucesso">
-//                      <i class="ri-check-line"></i>
-//                      <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
-//                   </div>
-//                   <div class="flex-h alinhar-centro justificar-entre">
-//                      <h3>${produto.preco}€</h3>
-//                      <p class="cruzado">${(produto.preco * 1.5).toFixed(2)}€</p>
-//                   </div>
-//                   <div class="flex-h alinhar-centro">
-//                      <i class="ri-heart-line alerta"></i>
-//                      <p class="subtexto">Favoritos</p>
-//                   </div>
-//                </div>`
-
-//       if (produtosEncontrados != null) {
-//         produtosEncontrados.innerHTML = resultado
-//       }
-//     }
-//   })
-// }
-
-// if (window.location.search == '?categoria=Mobilidade') {
-//   function categoriaMobilidade() {
-//     let resultado = ''
-//     const produtosEncontrados = document.getElementById('produtos-encontrados')
-//     let produtos = JSON.parse(localStorage.getItem('produtos'))
-//     produtos.forEach((produto) => {
-//       if (produto.categoria == 'Mobilidade') {
-//         resultado += `<!-- PRODUTO -->
-//                  <div class="flex-v">
-//                     <img src="${produto.imagem1}">
-//                     <div class="flex-v">
-//                        <p class="categoria-pequeno">${produto.categoria}</p>
-//                        <p>${produto.nome}</p>
-//                     </div>
-//                     <div class="flex-h alinhar-centro sucesso">
-//                        <i class="ri-check-line"></i>
-//                        <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
-//                     </div>
-//                     <div class="flex-h alinhar-centro justificar-entre">
-//                        <h3>${produto.preco}€</h3>
-//                        <p class="cruzado">${(produto.preco * 1.5).toFixed(
-//                          2
-//                        )}€</p>
-//                     </div>
-//                     <div class="flex-h alinhar-centro">
-//                        <i class="ri-heart-line alerta"></i>
-//                        <p class="subtexto">Favoritos</p>
-//                     </div>
-//                  </div>`
-
-//         if (produtosEncontrados != null) {
-//           produtosEncontrados.innerHTML = resultado
-//         }
-//       }
-//     })
-//   }
-// }
 
 // FORMULÁRIOS
 const loginForm = document.getElementById('login-form')
