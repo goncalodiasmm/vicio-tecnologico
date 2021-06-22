@@ -14,31 +14,31 @@
    <script defer src="script.js"></script>
 </head>
 
-<body>
+<body onload="categoriaEscolhida()">
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
-      <div class="flex-h justificar-entre alinhar-centro">
+      <div class="flex-h justificar-entre alinhar-centro pl-1 pr-1 flex-ajustar espaço-1">
          <div class="flex-h alinhar-centro espaço-2">
             <button id="hamburger-btn"><i class="ri-menu-2-line"></i></button>
             <a href="index.html"><img src="./img/logo-primário.png" alt="logo primário" class="w-12"></a>
          </div>
          <div class="flex-h alinhar-centro espaço-2">
-            <div class="flex-h alinhar-centro relative" id="motor-pesquisa">
+            <!-- <div class="flex-h alinhar-centro relative" id="motor-pesquisa">
                <i class="ri-search-line absolute left-0-5"></i>
                <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
-            </div>
-            <div class="flex-h alinhar-centro espaço-1">
+            </div> -->
+            <div class="flex-h alinhar-centro espaço-1" id="nav-menus">
                <a href="perfil.html" class="flex-h alinhar-centro">
                   <i class="ri-heart-line"></i>
-                  <p class="subtexto" id="lista-favoritos"></p>
+                  <p class="subtexto" id="lista-favoritos-numero"></p>
                </a>
-               <a href="login.html" class="flex-h alinhar-centro">
+               <a href="login.html" onclick="verificarUtilizador(); return false" class="flex-h alinhar-centro">
                   <i class="ri-user-fill"></i>
                   <p class="subtexto" id="utilizador-nome"></p>
                </a>
                <a href="pagamento-1.html" class="flex-h alinhar-centro">
                   <i class="ri-shopping-cart-2-fill"></i>
-                  <p class="subtexto" id="lista-carrinho"></p>
+                  <p class="subtexto" id="lista-carrinho-numero"></p>
                </a>
             </div>
          </div>
@@ -53,23 +53,24 @@
                <button id="fechar-btn"><i class="ri-close-line texto-md"></i></button>
                <img src="./img/logo-primário.png" alt="logo" class="logo">
             </div>
+            <!-- CATEGORIAS -->
             <ul class="flex-v espaço-1">
-               <a href="#">
+               <a href="pesquisa-produto.html?categoria=Computadores">
                   <li class="categoria-pequeno">Computadores</li>
                </a>
-               <a href="#">
+               <a href="pesquisa-produto.html?categoria=Mobilidade">
                   <li class="categoria-pequeno">Mobilidade</li>
                </a>
-               <a href="#">
+               <a href="pesquisa-produto.html?categoria=Componentes">
                   <li class="categoria-pequeno">Componentes</li>
                </a>
-               <a href="#">
+               <a href="pesquisa-produto.html?categoria=Imagem-e-Som">
                   <li class="categoria-pequeno">Imagem e Som</li>
                </a>
-               <a href="#">
+               <a href="pesquisa-produto.html?categoria=Perifericos">
                   <li class="categoria-pequeno">Periféricos</li>
                </a>
-               <a href="#">
+               <a href="pesquisa-produto.html?categoria=Armazenamento">
                   <li class="categoria-pequeno">Armazenamento</li>
                </a>
             </ul>
@@ -237,7 +238,7 @@
             </div>
       </aside>
       <!-- PRODUTOS ENCONTRADOS -->
-      <main class="produtos-encontrados">
+      <main>
          <div class="flex-v">
             <!-- CABEÇALHO -->
             <div class="flex-h justificar-entre mb-2">
@@ -256,248 +257,7 @@
                </div>
             </div>
             <!-- GRELHA DE PRODUTOS -->
-            <div class="grid grid-cols-autofit espaço-4">
-               <!-- PRODUTO -->
-               <div class="flex-v">
-                  <img src="./img/smartphone-oneplus-7t/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
-                  <div class="flex-v">
-                     <p class="categoria-pequeno">Mobilidade</p>
-                     <p>Auriculares Xiaomi Mi Airdots</p>
-                  </div>
-                  <div class="flex-h alinhar-centro sucesso">
-                     <i class="ri-check-line"></i>
-                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-                  </div>
-                  <div class="flex-h alinhar-centro justificar-entre">
-                     <h3>14,90€</h3>
-                     <p class="cruzado">19,90€</p>
-                  </div>
-                  <div class="flex-h alinhar-centro">
-                     <i class="ri-heart-line alerta"></i>
-                     <p class="subtexto">Favoritos</p>
-                  </div>
-               </div>
-               <!-- PRODUTO -->
-               <div class="flex-v">
-                  <img src="./img/smartphone-oneplus-7t/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
-                  <div class="flex-v">
-                     <p class="categoria-pequeno">Mobilidade</p>
-                     <p>Auriculares Xiaomi Mi Airdots</p>
-                  </div>
-                  <div class="flex-h alinhar-centro sucesso">
-                     <i class="ri-check-line"></i>
-                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-                  </div>
-                  <div class="flex-h alinhar-centro justificar-entre">
-                     <h3>14,90€</h3>
-                     <p class="cruzado">19,90€</p>
-                  </div>
-                  <div class="flex-h alinhar-centro">
-                     <i class="ri-heart-line alerta"></i>
-                     <p class="subtexto">Favoritos</p>
-                  </div>
-               </div>
-               <!-- PRODUTO -->
-               <div class="flex-v">
-                  <img src="./img/smartphone-oneplus-7t/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
-                  <div class="flex-v">
-                     <p class="categoria-pequeno">Mobilidade</p>
-                     <p>Auriculares Xiaomi Mi Airdots</p>
-                  </div>
-                  <div class="flex-h alinhar-centro sucesso">
-                     <i class="ri-check-line"></i>
-                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-                  </div>
-                  <div class="flex-h alinhar-centro justificar-entre">
-                     <h3>14,90€</h3>
-                     <p class="cruzado">19,90€</p>
-                  </div>
-                  <div class="flex-h alinhar-centro">
-                     <i class="ri-heart-line alerta"></i>
-                     <p class="subtexto">Favoritos</p>
-                  </div>
-               </div>
-               <!-- PRODUTO -->
-               <div class="flex-v">
-                  <img src="./img/smartphone-oneplus-7t/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
-                  <div class="flex-v">
-                     <p class="categoria-pequeno">Mobilidade</p>
-                     <p>Auriculares Xiaomi Mi Airdots</p>
-                  </div>
-                  <div class="flex-h alinhar-centro sucesso">
-                     <i class="ri-check-line"></i>
-                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-                  </div>
-                  <div class="flex-h alinhar-centro justificar-entre">
-                     <h3>14,90€</h3>
-                     <p class="cruzado">19,90€</p>
-                  </div>
-                  <div class="flex-h alinhar-centro">
-                     <i class="ri-heart-line alerta"></i>
-                     <p class="subtexto">Favoritos</p>
-                  </div>
-               </div>
-               <!-- PRODUTO -->
-               <div class="flex-v">
-                  <img src="./img/smartphone-oneplus-7t/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
-                  <div class="flex-v">
-                     <p class="categoria-pequeno">Mobilidade</p>
-                     <p>Auriculares Xiaomi Mi Airdots</p>
-                  </div>
-                  <div class="flex-h alinhar-centro sucesso">
-                     <i class="ri-check-line"></i>
-                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-                  </div>
-                  <div class="flex-h alinhar-centro justificar-entre">
-                     <h3>14,90€</h3>
-                     <p class="cruzado">19,90€</p>
-                  </div>
-                  <div class="flex-h alinhar-centro">
-                     <i class="ri-heart-line alerta"></i>
-                     <p class="subtexto">Favoritos</p>
-                  </div>
-               </div>
-               <!-- PRODUTO -->
-               <div class="flex-v">
-                  <img src="./img/smartphone-oneplus-7t/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
-                  <div class="flex-v">
-                     <p class="categoria-pequeno">Mobilidade</p>
-                     <p>Auriculares Xiaomi Mi Airdots</p>
-                  </div>
-                  <div class="flex-h alinhar-centro sucesso">
-                     <i class="ri-check-line"></i>
-                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-                  </div>
-                  <div class="flex-h alinhar-centro justificar-entre">
-                     <h3>14,90€</h3>
-                     <p class="cruzado">19,90€</p>
-                  </div>
-                  <div class="flex-h alinhar-centro">
-                     <i class="ri-heart-line alerta"></i>
-                     <p class="subtexto">Favoritos</p>
-                  </div>
-               </div>
-               <!-- PRODUTO -->
-               <div class="flex-v">
-                  <img src="./img/smartphone-oneplus-7t/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
-                  <div class="flex-v">
-                     <p class="categoria-pequeno">Mobilidade</p>
-                     <p>Auriculares Xiaomi Mi Airdots</p>
-                  </div>
-                  <div class="flex-h alinhar-centro sucesso">
-                     <i class="ri-check-line"></i>
-                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-                  </div>
-                  <div class="flex-h alinhar-centro justificar-entre">
-                     <h3>14,90€</h3>
-                     <p class="cruzado">19,90€</p>
-                  </div>
-                  <div class="flex-h alinhar-centro">
-                     <i class="ri-heart-line alerta"></i>
-                     <p class="subtexto">Favoritos</p>
-                  </div>
-               </div>
-               <!-- PRODUTO -->
-               <div class="flex-v">
-                  <img src="./img/smartphone-oneplus-7t/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
-                  <div class="flex-v">
-                     <p class="categoria-pequeno">Mobilidade</p>
-                     <p>Auriculares Xiaomi Mi Airdots</p>
-                  </div>
-                  <div class="flex-h alinhar-centro sucesso">
-                     <i class="ri-check-line"></i>
-                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-                  </div>
-                  <div class="flex-h alinhar-centro justificar-entre">
-                     <h3>14,90€</h3>
-                     <p class="cruzado">19,90€</p>
-                  </div>
-                  <div class="flex-h alinhar-centro">
-                     <i class="ri-heart-line alerta"></i>
-                     <p class="subtexto">Favoritos</p>
-                  </div>
-               </div>
-               <!-- PRODUTO -->
-               <div class="flex-v">
-                  <img src="./img/smartphone-oneplus-7t/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
-                  <div class="flex-v">
-                     <p class="categoria-pequeno">Mobilidade</p>
-                     <p>Auriculares Xiaomi Mi Airdots</p>
-                  </div>
-                  <div class="flex-h alinhar-centro sucesso">
-                     <i class="ri-check-line"></i>
-                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-                  </div>
-                  <div class="flex-h alinhar-centro justificar-entre">
-                     <h3>14,90€</h3>
-                     <p class="cruzado">19,90€</p>
-                  </div>
-                  <div class="flex-h alinhar-centro">
-                     <i class="ri-heart-line alerta"></i>
-                     <p class="subtexto">Favoritos</p>
-                  </div>
-               </div>
-               <!-- PRODUTO -->
-               <div class="flex-v">
-                  <img src="./img/smartphone-oneplus-7t/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
-                  <div class="flex-v">
-                     <p class="categoria-pequeno">Mobilidade</p>
-                     <p>Auriculares Xiaomi Mi Airdots</p>
-                  </div>
-                  <div class="flex-h alinhar-centro sucesso">
-                     <i class="ri-check-line"></i>
-                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-                  </div>
-                  <div class="flex-h alinhar-centro justificar-entre">
-                     <h3>14,90€</h3>
-                     <p class="cruzado">19,90€</p>
-                  </div>
-                  <div class="flex-h alinhar-centro">
-                     <i class="ri-heart-line alerta"></i>
-                     <p class="subtexto">Favoritos</p>
-                  </div>
-               </div>
-               <!-- PRODUTO -->
-               <div class="flex-v">
-                  <img src="./img/smartphone-oneplus-7t/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
-                  <div class="flex-v">
-                     <p class="categoria-pequeno">Mobilidade</p>
-                     <p>Auriculares Xiaomi Mi Airdots</p>
-                  </div>
-                  <div class="flex-h alinhar-centro sucesso">
-                     <i class="ri-check-line"></i>
-                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-                  </div>
-                  <div class="flex-h alinhar-centro justificar-entre">
-                     <h3>14,90€</h3>
-                     <p class="cruzado">19,90€</p>
-                  </div>
-                  <div class="flex-h alinhar-centro">
-                     <i class="ri-heart-line alerta"></i>
-                     <p class="subtexto">Favoritos</p>
-                  </div>
-               </div>
-               <!-- PRODUTO -->
-               <div class="flex-v">
-                  <img src="./img/smartphone-oneplus-7t/smartphone-oneplus-7t_1.jpg" alt="smartphone-oneplus">
-                  <div class="flex-v">
-                     <p class="categoria-pequeno">Mobilidade</p>
-                     <p>Auriculares Xiaomi Mi Airdots</p>
-                  </div>
-                  <div class="flex-h alinhar-centro sucesso">
-                     <i class="ri-check-line"></i>
-                     <p class="subtexto">Entrega prevista a 30 de Fevereiro</p>
-                  </div>
-                  <div class="flex-h alinhar-centro justificar-entre">
-                     <h3>14,90€</h3>
-                     <p class="cruzado">19,90€</p>
-                  </div>
-                  <div class="flex-h alinhar-centro">
-                     <i class="ri-heart-line alerta"></i>
-                     <p class="subtexto">Favoritos</p>
-                  </div>
-               </div>
-            </div>
+            <div class="grid grid-cols-autofit espaço-4" id="produtos-encontrados"></div>
          </div>
          <div class="divisória-horizontal mt-2 mb-2"></div>
          <!-- LISTA DE PÁGINAS -->

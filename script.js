@@ -317,7 +317,7 @@ class UI {
                     produto.id
                   }
                      id="adicionar-carrinho-btn">
-                     <i onclick="adicionarFavoritos()" class="ri-shopping-cart-2-fill" id="adicionar-favoritos-btn" data-id=${
+                     <i class="ri-shopping-cart-2-fill" id="adicionar-favoritos-btn" data-id=${
                        produto.id
                      }></i>
                      <p class="categoria-pequeno">Adicionar ao Carrinho</p>
@@ -408,6 +408,7 @@ class UI {
     )
     let id = adicionarFavoritosBtn.dataset.id
     adicionarFavoritosBtn.addEventListener('click', () => {
+      console.log('test')
       let produtoFavoritos = { ...Storage.apresentarProduto(id), quantidade: 1 }
       favoritos = [...favoritos, produtoFavoritos]
       Storage.guardarFavoritos(favoritos)
@@ -489,7 +490,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ui.mostrarNovidades(produtos)
       ui.mostrarProduto(Storage.apresentarProduto(lerId()))
       ui.adicionarProduto()
-      ui.adicionarFavoritos()
     })
     .catch((error) => {
       console.log(error)
@@ -518,6 +518,295 @@ if (fecharBtn != null) {
     navegacaoLateral.classList.remove('left-0')
   })
 }
+
+
+function categoriaEscolhida() {
+  if (window.location.search == '?categoria=Perifericos') {
+    let resultado = ''
+    const produtosEncontrados = document.getElementById('produtos-encontrados')
+    let produtos = JSON.parse(localStorage.getItem('produtos'))
+    produtos.forEach((produto) => {
+      if (produto.categoria == 'Periféricos') {
+        resultado += `<!-- PRODUTO -->
+                 <div class="flex-v">
+                    <img src="${produto.imagem1}">
+                    <div class="flex-v">
+                       <p class="categoria-pequeno">${produto.categoria}</p>
+                       <p>${produto.nome}</p>
+                    </div>
+                    <div class="flex-h alinhar-centro sucesso">
+                       <i class="ri-check-line"></i>
+                       <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+                    </div>
+                    <div class="flex-h alinhar-centro justificar-entre">
+                       <h3>${produto.preco}€</h3>
+                       <p class="cruzado">${(produto.preco * 1.5).toFixed(2)}€</p>
+                    </div>
+                    <div class="flex-h alinhar-centro">
+                       <i class="ri-heart-line alerta"></i>
+                       <p class="subtexto">Favoritos</p>
+                    </div>
+                 </div>`
+  
+        if (produtosEncontrados != null) {
+          produtosEncontrados.innerHTML = resultado
+        }
+      }
+    })
+  } 
+  
+  if (window.location.search == '?categoria=Mobilidade') {
+    let resultado = ''
+    const produtosEncontrados = document.getElementById('produtos-encontrados')
+    let produtos = JSON.parse(localStorage.getItem('produtos'))
+    produtos.forEach((produto) => {
+      if (produto.categoria == 'Mobilidade') {
+        resultado += `<!-- PRODUTO -->
+                 <div class="flex-v">
+                    <img src="${produto.imagem1}">
+                    <div class="flex-v">
+                       <p class="categoria-pequeno">${produto.categoria}</p>
+                       <p>${produto.nome}</p>
+                    </div>
+                    <div class="flex-h alinhar-centro sucesso">
+                       <i class="ri-check-line"></i>
+                       <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+                    </div>
+                    <div class="flex-h alinhar-centro justificar-entre">
+                       <h3>${produto.preco}€</h3>
+                       <p class="cruzado">${(produto.preco * 1.5).toFixed(
+                         2
+                       )}€</p>
+                    </div>
+                    <div class="flex-h alinhar-centro">
+                       <i class="ri-heart-line alerta"></i>
+                       <p class="subtexto">Favoritos</p>
+                    </div>
+                 </div>`
+
+        if (produtosEncontrados != null) {
+          produtosEncontrados.innerHTML = resultado
+        }
+      }
+    })
+  }
+  if (window.location.search == '?categoria=Computadores') {
+    let resultado = ''
+    const produtosEncontrados = document.getElementById('produtos-encontrados')
+    let produtos = JSON.parse(localStorage.getItem('produtos'))
+    produtos.forEach((produto) => {
+      if (produto.categoria == 'Computadores') {
+        resultado += `<!-- PRODUTO -->
+                 <div class="flex-v">
+                    <img src="${produto.imagem1}">
+                    <div class="flex-v">
+                       <p class="categoria-pequeno">${produto.categoria}</p>
+                       <p>${produto.nome}</p>
+                    </div>
+                    <div class="flex-h alinhar-centro sucesso">
+                       <i class="ri-check-line"></i>
+                       <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+                    </div>
+                    <div class="flex-h alinhar-centro justificar-entre">
+                       <h3>${produto.preco}€</h3>
+                       <p class="cruzado">${(produto.preco * 1.5).toFixed(
+                         2
+                       )}€</p>
+                    </div>
+                    <div class="flex-h alinhar-centro">
+                       <i class="ri-heart-line alerta"></i>
+                       <p class="subtexto">Favoritos</p>
+                    </div>
+                 </div>`
+
+        if (produtosEncontrados != null) {
+          produtosEncontrados.innerHTML = resultado
+        }
+      }
+    })
+  }
+  if (window.location.search == '?categoria=Componentes') {
+    let resultado = ''
+    const produtosEncontrados = document.getElementById('produtos-encontrados')
+    let produtos = JSON.parse(localStorage.getItem('produtos'))
+    produtos.forEach((produto) => {
+      if (produto.categoria == 'Componentes') {
+        resultado += `<!-- PRODUTO -->
+                 <div class="flex-v">
+                    <img src="${produto.imagem1}">
+                    <div class="flex-v">
+                       <p class="categoria-pequeno">${produto.categoria}</p>
+                       <p>${produto.nome}</p>
+                    </div>
+                    <div class="flex-h alinhar-centro sucesso">
+                       <i class="ri-check-line"></i>
+                       <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+                    </div>
+                    <div class="flex-h alinhar-centro justificar-entre">
+                       <h3>${produto.preco}€</h3>
+                       <p class="cruzado">${(produto.preco * 1.5).toFixed(
+                         2
+                       )}€</p>
+                    </div>
+                    <div class="flex-h alinhar-centro">
+                       <i class="ri-heart-line alerta"></i>
+                       <p class="subtexto">Favoritos</p>
+                    </div>
+                 </div>`
+
+        if (produtosEncontrados != null) {
+          produtosEncontrados.innerHTML = resultado
+        }
+      }
+    })
+  }
+  if (window.location.search == '?categoria=Imagem-e-Som') {
+    let resultado = ''
+    const produtosEncontrados = document.getElementById('produtos-encontrados')
+    let produtos = JSON.parse(localStorage.getItem('produtos'))
+    produtos.forEach((produto) => {
+      if (produto.categoria == 'Imagem e Som') {
+        resultado += `<!-- PRODUTO -->
+                 <div class="flex-v">
+                    <img src="${produto.imagem1}">
+                    <div class="flex-v">
+                       <p class="categoria-pequeno">${produto.categoria}</p>
+                       <p>${produto.nome}</p>
+                    </div>
+                    <div class="flex-h alinhar-centro sucesso">
+                       <i class="ri-check-line"></i>
+                       <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+                    </div>
+                    <div class="flex-h alinhar-centro justificar-entre">
+                       <h3>${produto.preco}€</h3>
+                       <p class="cruzado">${(produto.preco * 1.5).toFixed(
+                         2
+                       )}€</p>
+                    </div>
+                    <div class="flex-h alinhar-centro">
+                       <i class="ri-heart-line alerta"></i>
+                       <p class="subtexto">Favoritos</p>
+                    </div>
+                 </div>`
+
+        if (produtosEncontrados != null) {
+          produtosEncontrados.innerHTML = resultado
+        }
+      }
+    })
+  }
+  if (window.location.search == '?categoria=Armazenamento') {
+    let resultado = ''
+    const produtosEncontrados = document.getElementById('produtos-encontrados')
+    let produtos = JSON.parse(localStorage.getItem('produtos'))
+    produtos.forEach((produto) => {
+      if (produto.categoria == 'Armazenamento') {
+        resultado += `<!-- PRODUTO -->
+                 <div class="flex-v">
+                    <img src="${produto.imagem1}">
+                    <div class="flex-v">
+                       <p class="categoria-pequeno">${produto.categoria}</p>
+                       <p>${produto.nome}</p>
+                    </div>
+                    <div class="flex-h alinhar-centro sucesso">
+                       <i class="ri-check-line"></i>
+                       <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+                    </div>
+                    <div class="flex-h alinhar-centro justificar-entre">
+                       <h3>${produto.preco}€</h3>
+                       <p class="cruzado">${(produto.preco * 1.5).toFixed(
+                         2
+                       )}€</p>
+                    </div>
+                    <div class="flex-h alinhar-centro">
+                       <i class="ri-heart-line alerta"></i>
+                       <p class="subtexto">Favoritos</p>
+                    </div>
+                 </div>`
+
+        if (produtosEncontrados != null) {
+          produtosEncontrados.innerHTML = resultado
+        }
+      }
+    })
+  }
+  
+}
+
+
+
+// if (window.location.search == '?categoria=Perifericos')
+// function categoriaPerifericos() {
+//   let resultado = ''
+//   const produtosEncontrados = document.getElementById('produtos-encontrados')
+//   let produtos = JSON.parse(localStorage.getItem('produtos'))
+//   produtos.forEach((produto) => {
+//     if (produto.categoria == 'Periféricos') {
+//       resultado += `<!-- PRODUTO -->
+//                <div class="flex-v">
+//                   <img src="${produto.imagem1}">
+//                   <div class="flex-v">
+//                      <p class="categoria-pequeno">${produto.categoria}</p>
+//                      <p>${produto.nome}</p>
+//                   </div>
+//                   <div class="flex-h alinhar-centro sucesso">
+//                      <i class="ri-check-line"></i>
+//                      <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+//                   </div>
+//                   <div class="flex-h alinhar-centro justificar-entre">
+//                      <h3>${produto.preco}€</h3>
+//                      <p class="cruzado">${(produto.preco * 1.5).toFixed(2)}€</p>
+//                   </div>
+//                   <div class="flex-h alinhar-centro">
+//                      <i class="ri-heart-line alerta"></i>
+//                      <p class="subtexto">Favoritos</p>
+//                   </div>
+//                </div>`
+
+//       if (produtosEncontrados != null) {
+//         produtosEncontrados.innerHTML = resultado
+//       }
+//     }
+//   })
+// }
+
+// if (window.location.search == '?categoria=Mobilidade') {
+//   function categoriaMobilidade() {
+//     let resultado = ''
+//     const produtosEncontrados = document.getElementById('produtos-encontrados')
+//     let produtos = JSON.parse(localStorage.getItem('produtos'))
+//     produtos.forEach((produto) => {
+//       if (produto.categoria == 'Mobilidade') {
+//         resultado += `<!-- PRODUTO -->
+//                  <div class="flex-v">
+//                     <img src="${produto.imagem1}">
+//                     <div class="flex-v">
+//                        <p class="categoria-pequeno">${produto.categoria}</p>
+//                        <p>${produto.nome}</p>
+//                     </div>
+//                     <div class="flex-h alinhar-centro sucesso">
+//                        <i class="ri-check-line"></i>
+//                        <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+//                     </div>
+//                     <div class="flex-h alinhar-centro justificar-entre">
+//                        <h3>${produto.preco}€</h3>
+//                        <p class="cruzado">${(produto.preco * 1.5).toFixed(
+//                          2
+//                        )}€</p>
+//                     </div>
+//                     <div class="flex-h alinhar-centro">
+//                        <i class="ri-heart-line alerta"></i>
+//                        <p class="subtexto">Favoritos</p>
+//                     </div>
+//                  </div>`
+
+//         if (produtosEncontrados != null) {
+//           produtosEncontrados.innerHTML = resultado
+//         }
+//       }
+//     })
+//   }
+// }
 
 // FORMULÁRIOS
 const loginForm = document.getElementById('login-form')
