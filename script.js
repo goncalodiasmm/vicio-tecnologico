@@ -8,8 +8,38 @@ const opinioesWebsite = document.getElementById('opinioes-website')
 // DETALHE DE PRODUTO
 const apresentacaoProduto = document.getElementById('apresentacao-produto')
 
+//LISTA FAVORITO
+const listaFavoritos = document.getElementById('lista-favoritos-seccao')
+function mostrarFavorito() {
+  let resultado = ''
+  const items = JSON.parse(localStorage.getItem('favoritos'))
+  items.forEach((item) => {
+    resultado += `
+ 
+               <div class="flex-h alinhar-inicio">
+                  <img src="${item.imagem}" class="w-12">
+                  <div class="flex-h justificar-entre">
+                     <div class="flex-v">
+                        <p class="negrito">${item.nome}</p>
+                        <p class="subtexto">Não tem melhor maneira de aquecer o seu coração que pular ao som das suas
+                           batidas favoritas e desfrutar de ligações cristalina para quem você ama</p>
+                        <div class="flex-h espaço-0-5">
+                           <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Adicionar ao
+                                 Carrinho</button></a>
+                           <a href="#"><button class="btn-alerta mt-1 categoria-pequeno">Remover</button></a>
+                        </div>
+                     </div>
+                  </div>
+                  <p class="negrito">179.90€</p>
+               </div>       
+      `
+
+    if (listaFavoritos != null) {
+      listaFavoritos.innerHTML = resultado
+    }
+  })
+}
 // LISTA DE COMPRAS
-const adicionarCarrinhoBtn = document.getElementById('adicionar-carrinho-btn')
 const listaCompras = document.getElementById('lista-compras')
 const pedidoCompras = document.getElementById('pedido-compras')
 const listaCarrinhoNumero = document.getElementById('lista-carrinho-numero')
@@ -56,6 +86,7 @@ function mostrarCarrinho() {
           item.preco * produtoQuantidade.value
         ).toFixed(2)
         localStorage.setItem('carrinhoTotal', carrinhoTotal.innerHTML)
+        localStorage.setItem('produtoQuantidade', produtoQuantidade.value)
       })
     }
 
@@ -79,18 +110,27 @@ function mostrarCarrinho() {
         listaCompras.classList.add('hidden')
         contadorQuantidade.classList.add('hidden')
         remove.classList.add('hidden')
+        localStorage.setItem('carrinhoTotal', 0)
+        carrinhoTotal.innerHTML = 0
       })
     }
   })
 }
 
-// CARRINHO
+// CARRINHO E FAVORITOS
 let carrinho = []
+let favoritos = []
 
 function lerId() {
   let url = new URL(window.location)
   let id = url.searchParams.get('id')
   return id
+}
+
+function lerCategoria() {
+  let url = new URL(window.location)
+  let categoria = url.searchParams.get('categoria')
+  return categoria
 }
 
 // BUSCAR PRODUTOS
@@ -277,7 +317,9 @@ class UI {
                     produto.id
                   }
                      id="adicionar-carrinho-btn">
-                     <i class="ri-shopping-cart-2-fill"></i>
+                     <i onclick="adicionarFavoritos()" class="ri-shopping-cart-2-fill" id="adicionar-favoritos-btn" data-id=${
+                       produto.id
+                     }></i>
                      <p class="categoria-pequeno">Adicionar ao Carrinho</p>
                   </button>
                   <button>
@@ -360,6 +402,18 @@ class UI {
     })
   }
 
+  adicionarFavoritos() {
+    const adicionarFavoritosBtn = document.getElementById(
+      'adicionar-favoritos-btn'
+    )
+    let id = adicionarFavoritosBtn.dataset.id
+    adicionarFavoritosBtn.addEventListener('click', () => {
+      let produtoFavoritos = { ...Storage.apresentarProduto(id), quantidade: 1 }
+      favoritos = [...favoritos, produtoFavoritos]
+      Storage.guardarFavoritos(favoritos)
+    })
+  }
+
   mostrarOpinioes(opinioes) {
     let resultado = ''
     opinioes.forEach((opiniao) => {
@@ -406,8 +460,17 @@ class Storage {
     return produtos.find((produto) => produto.id == id)
   }
 
+  static apresentarProduto2(categoria) {
+    let produtos = JSON.parse(localStorage.getItem('produtos'))
+    return produtos.find((produto) => produto.categoria == categoria)
+  }
+
   static guardarCarrinho(carrinho) {
     localStorage.setItem('carrinho', JSON.stringify(carrinho))
+  }
+
+  static guardarFavoritos(favoritos) {
+    localStorage.setItem('favoritos', JSON.stringify(favoritos))
   }
 }
 
@@ -426,6 +489,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ui.mostrarNovidades(produtos)
       ui.mostrarProduto(Storage.apresentarProduto(lerId()))
       ui.adicionarProduto()
+      ui.adicionarFavoritos()
     })
     .catch((error) => {
       console.log(error)
@@ -587,24 +651,16 @@ function carregarPedido() {
                      <p class="subtexto sucesso">Entrega entre 3 a 5 dias úteis</p>
                   </div>
                </div>
-            </div>
-            <div class="divisória-horizontal mb-2 mt-2"></div>
-            <div class="flex-h alinhar-centro justificar-entre">
-               <p class="subtítulo mt-0-5">Subtotal</p>
-               <p>${item.preco}€</p>
-            </div>
-            <div class="flex-h alinhar-centro justificar-entre">
-               <p class="subtítulo mt-0-5">Custos de Envio</p>
-               <p>0.00€</p>
-            </div>
-            <div class="flex-h alinhar-centro justificar-entre">
-               <p class="subtítulo mt-0-5">Total</p>
-               <p>${item.preco}€</p>
             </div>`
 
     if (pedidoCompras != null) {
       pedidoCompras.innerHTML = resultado
     }
+
+    let pedidoTotal = document.getElementById('pedido-total')
+    let pedidoSubtotal = document.getElementById('pedido-subtotal')
+    pedidoTotal.innerHTML = localStorage.getItem('carrinhoTotal')
+    pedidoSubtotal.innerHTML = localStorage.getItem('carrinhoTotal')
   })
 }
 
@@ -929,14 +985,51 @@ function carregarPerfil() {
     localStorage.getItem('utilizadorCidade')
 }
 
-//Download factura
+//Consulta pedidos e facturas
 
-// function obterFactura() {
-//   nomeCliente = localStorage.getItem('utilizadorNome', nome.value)
-//   moradaCliente = localStorage.getItem('utilizadorMorada', morada.value)
-//   apelidoCliente = localStorage.getItem('utilizadorApelido', apelido.value)
-//   emailCliente = localStorage.getItem('utilizadorEmail', email.value)
-// }
+const consultaPedidoFactura = document.getElementById('ver-pedido')
+function mostrarPedido() {
+  let resultado = ''
+  const items = JSON.parse(localStorage.getItem('carrinho'))
+  items.forEach((item) => {
+    resultado += `
+      <!-- PEDIDO -->
+      <div class="flex-h alinhar-centro justificar-entre" id="fatura">
+        <div class="flex-h alinhar-centro">
+            <div class="w-12">
+              <img src="${item.imagem1}">
+            </div>
+            <div class="flex-h justificar-entre">
+              <div class="flex-v">
+                  <p class="negrito">${item.nome}</p>
+                  <div class="flex-h alinhar-centro espaço-0.25">
+                    <i class="ri-check-line sucesso"></i>
+                    <p class="subtexto sucesso">Entrega entre 3 a 5 dias úteis</p>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div class="flex-h espaço-1">
+            <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Avaliar</button></a>
+            <a href="#"><button class="btn-contorno mt-1 categoria-pequeno">Devolver</button></a>
+        </div>
+      </div>`
+
+    if (consultaPedidoFactura != null) {
+      consultaPedidoFactura.innerHTML = resultado
+    }
+  })
+}
+
+//Pedidos e faturas - data de compra
+
+let dataCompra = document.getElementById('data-compra')
+let numeroArtigo = document.getElementById('numero-artigos')
+
+function mostrarDataPedido() {
+  dataCompra.innerHTML = dataHoje
+  numeroArtigo.innerHTML = localStorage.getItem('produtoQuantidade')
+}
 
 function obterFatura() {
   var pdf = new jsPDF()

@@ -17,7 +17,7 @@
       integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 </head>
 
-<body onload="carregarPerfil()">
+<body onload="carregarPerfil(); mostrarPedido(); mostrarDataPedido(); mostrarFavorito()">
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
       <div class="flex-h justificar-entre alinhar-centro">
@@ -174,6 +174,7 @@
          <section id="lista-favoritos-seccao" class="hidden">
             <p class="categoria-médio mb-0-5">Lista de Favoritos</p>
             <div class="divisória-horizontal"></div>
+            <!--
             <div class="flex-h flex-inicial alinhar-centro espaço-4 mt-2">
                <div class="flex-h alinhar-inicio">
                   <img src="./img/headphones-lenovo-yoga/headphones-lenovo-yoga_1.jpg" class="w-12">
@@ -190,17 +191,18 @@
                      </div>
                   </div>
                   <p class="negrito">179.90€</p>
-               </div>
+               </div>   -->
             </div>
          </section>
+   
          <!-- SECCÃO PEDIDOS E FATURAS -->
          <section id="pedidos-faturas-seccao" class="hidden">
             <p class="categoria-médio mb-0-5">Pedidos e Faturas</p>
             <div class="divisória-horizontal"></div>
             <div class="flex-h justificar-entre mt-0-5">
                <div class="flex-h justificar-entre espaço-2">
-                  <p class="subtexto">Pedido realizado em: <span>18/02/2021</span></p>
-                  <p class="subtexto"><span>2</span> artigos</p>
+                  <p class="subtexto">Pedido realizado em: <span id="data-compra">18/02/2021</span></p>
+                  <p class="subtexto"><span id="numero-artigos"></span> artigos</p>
                </div>
                <div class="flex-h alinhar-centro cursor-pointer" onclick="obterFatura()">
                   <i class="ri-file-text-line"></i>
@@ -209,48 +211,7 @@
                   </button>
                </div>
             </div>
-            <div class="flex-v espaço-1 mt-1">
-               <div class="flex-h alinhar-centro justificar-entre" id="fatura">
-                  <div class="flex-h alinhar-centro">
-                     <div class="w-12">
-                        <img src="./img/gamepad-microsoft-xbox/gamepad-microsoft-xbox_1.jpg" alt="gamepad microsoft">
-                     </div>
-                     <div class="flex-h justificar-entre">
-                        <div class="flex-v">
-                           <p class="negrito">Gamepad Microsoft Xbox</p>
-                           <div class="flex-h alinhar-centro espaço-0.25">
-                              <i class="ri-check-line sucesso"></i>
-                              <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="flex-h espaço-1">
-                     <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Avaliar</button></a>
-                     <a href="#"><button class="btn-contorno mt-1 categoria-pequeno">Devolver</button></a>
-                  </div>
-               </div>
-               <div class="flex-h alinhar-centro justificar-entre">
-                  <div class="flex-h alinhar-centro">
-                     <div class="w-12">
-                        <img src="./img/gamepad-microsoft-xbox/gamepad-microsoft-xbox_1.jpg" alt="gamepad microsoft">
-                     </div>
-                     <div class="flex-h justificar-entre">
-                        <div class="flex-v">
-                           <p class="negrito">Gamepad Microsoft Xbox</p>
-                           <div class="flex-h alinhar-centro espaço-0.25">
-                              <i class="ri-check-line sucesso"></i>
-                              <p class="subtexto sucesso">Entrega prevista a 30 de Fevereiro</p>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="flex-h espaço-1">
-                     <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Avaliar</button></a>
-                     <a href="#"><button class="btn-contorno mt-1 categoria-pequeno">Devolver</button></a>
-                  </div>
-               </div>
-            </div>
+            <div id="ver-pedido" class="flex-v espaço-1 mt-1"></div>
             <a href="#"><button class="btn-alerta mt-1 categoria-pequeno">Cancelar Pedido<button></a>
          </section>
       </main>
