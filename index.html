@@ -17,7 +17,7 @@
 <body>
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
-      <div class="flex-h justificar-entre alinhar-centro pl-1 pr-1 flex-ajustar espaço-1">
+      <div class="flex-h justificar-entre alinhar-centro pl-1 pr-1 espaço-1" id="nav-contentor">
          <div class="flex-h alinhar-centro espaço-2">
             <button id="hamburger-btn"><i class="ri-menu-2-line"></i></button>
             <a href="index.html"><img src="./img/logo-primário.png" alt="logo primário" class="w-12"></a>
@@ -120,20 +120,21 @@
    </section>
    <!-- SECÇÃO NEWSLETTER -->
    <section id="newsletter">
-      <div class="flex-v alinhar-centro mt-2">
+      <div class="flex-v alinhar-centro mt-2" id="newsletter-contentor">
          <div class="divisória-horizontal mb-2"></div>
-         <h3>Não perca as próximas ofertas</h3>
-         <div class="flex-h alinhar-centro espaço-1 mt-1 flex-ajustar">
+         <h3 class="texto-centro">Não perca as próximas ofertas</h3>
+         <div class="flex-h alinhar-centro espaço-1 mt-1" id="email-subscricao">
             <input type="email" placeholder="Email">
             <a href="#"><button class="btn-primário categoria-pequeno">Subscrever-me</button></a>
          </div>
-         <div class="condições mt-0-5">
+         <div class="flex-h alinhar-centro espaço-0-5 my-0-5" id="condicoes">
             <input type="checkbox">
             <p class="subtexto">Li e aceito as condições gerais e a política de privacidade do Vício Tecnológico</p>
          </div>
          <div class="divisória-horizontal mt-2"></div>
       </div>
    </section>
+   
    <!-- RODAPÉ -->
    <footer id="rodape">
       <div class="flex-h justificar-entre mt-2 flex-ajustar">

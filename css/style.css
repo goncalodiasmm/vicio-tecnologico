@@ -326,12 +326,6 @@ input[type='checkbox'] {
   margin-bottom: 1rem;
 }
 
-.condições {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
 .contador-quantidade {
   width: 6rem;
   display: flex;
@@ -557,6 +551,11 @@ img {
 
 .m-4 {
   margin: 4rem;
+}
+
+.my-0-5 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .my-1 {
@@ -1019,8 +1018,15 @@ img {
   #motor-pesquisa {
     display: none;
   }
-  #nav-menus {
+  #nav-contentor {
     flex-direction: column;
+    gap: 2rem;
+  }
+  #nav-menus {
+    gap: 3rem
+  }
+  #nav-menus > a > i {
+    font-size: 1.5rem;
   }
   #novidades-produto {
     justify-content: center;
@@ -1050,5 +1056,23 @@ img {
   }
   #social-media-icons {
     justify-content: center;
+  }
+  #artigos-encontrados {
+    display: none;
+  }
+  #meio-pagamento {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 1rem;
+  }
+  #email-subscricao {
+    flex-direction: column;
+  }
+  #favorito-preco {
+    display: none;
+  }
+  #info-pedido {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }

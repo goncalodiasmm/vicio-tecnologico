@@ -14,7 +14,7 @@ function mostrarFavoritos() {
   let resultado = ''
   const items = JSON.parse(localStorage.getItem('favoritos'))
   items.forEach((item) => {
-    resultado += `<div class="flex-h alinhar-inicio">
+    resultado += `<div class="flex-h alinhar-inicio flex-ajustar">
         <img src="${item.imagem1}" class="w-12">
         <div class="flex-h justificar-entre">
             <div class="flex-v">
@@ -30,7 +30,7 @@ function mostrarFavoritos() {
               </div>
             </div>
         </div>
-        <p class="negrito">${item.preco}€</p>
+        <p class="negrito" id="favorito-preco">${item.preco}€</p>
       </div>`
 
     if (listaFavoritos != null) {
@@ -316,7 +316,7 @@ class UI {
                   <button>
                      <i id="adicionar-favoritos-btn" data-id=${
                        produto.id
-                     } class="ri-heart-line texto-lg alerta" onclick="adicionarFavoritos()"></i>
+                     } class="ri-heart-line texto-lg alerta"></i>
                   </button>
                </div>
             </div>
@@ -1195,6 +1195,7 @@ if (listaFavoritosBtn != null) {
     listaFavoritosHeader.classList.remove('hidden')
     listaFavoritosSeccao.classList.remove('hidden')
     pedidosFaturasSeccao.classList.add('hidden')
+    mostrarFavoritos()
   })
 }
 
@@ -1210,6 +1211,8 @@ if (pedidosFaturasBtn != null) {
     listaFavoritosHeader.classList.add('hidden')
     listaFavoritosSeccao.classList.add('hidden')
     pedidosFaturasSeccao.classList.remove('hidden')
+    mostrarPedido()
+    mostrarDataPedido()
   })
 }
 
@@ -1272,7 +1275,7 @@ function mostrarPedido() {
   items.forEach((item) => {
     resultado += `
       <!-- PEDIDO -->
-      <div class="flex-h alinhar-centro justificar-entre" id="fatura">
+      <div class="flex-h alinhar-centro justificar-entre flex-ajustar">
         <div class="flex-h alinhar-centro">
             <div class="w-12">
               <img src="${item.imagem1}">
