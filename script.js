@@ -1308,17 +1308,8 @@ function mostrarDataPedido() {
   numeroArtigo.innerHTML = localStorage.getItem('produtoQuantidade')
 }
 
-// function obterFatura() {
-//   var pdf = new jsPDF()
-//   window.html2canvas = html2canvas
-//   const doc = document.getElementById('fatura')
-//   if (doc) {
-//     pdf.html(doc).then(() => pdf.save('fatura.pdf'))
-//   }
-// }
 
-//DOWNLOAD FATURA
-
+// DOWNLOAD FATURA
 function obterFatura() {
   var carrinhoItems = localStorage.getItem('carrinho')
   var prod
