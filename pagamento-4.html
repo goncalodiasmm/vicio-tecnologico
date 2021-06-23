@@ -17,16 +17,16 @@
 <body onload="rastoEntrega()">
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
-      <div class="flex-h justificar-entre alinhar-centro pl-1 pr-1 flex-ajustar espaço-1">
+      <div class="flex-h justificar-entre alinhar-centro pl-1 pr-1 espaço-1" id="nav-contentor">
          <div class="flex-h alinhar-centro espaço-2">
             <button id="hamburger-btn"><i class="ri-menu-2-line"></i></button>
             <a href="index.html"><img src="./img/logo-primário.png" alt="logo primário" class="w-12"></a>
          </div>
          <div class="flex-h alinhar-centro espaço-2">
             <!-- <div class="flex-h alinhar-centro relative" id="motor-pesquisa">
-               <i class="ri-search-line absolute left-0-5"></i>
-               <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
-            </div> -->
+                  <i class="ri-search-line absolute left-0-5"></i>
+                  <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
+               </div> -->
             <div class="flex-h alinhar-centro espaço-1" id="nav-menus">
                <a href="perfil.html" class="flex-h alinhar-centro">
                   <i class="ri-heart-line"></i>
@@ -79,12 +79,12 @@
    </nav>
 
    <!-- CONFIRMAÇÃO DE COMPRA -->
-   <div class="flex-v alinhar-centro justificar-centro">
+   <div class="flex-v alinhar-centro justificar-centro mt-4" id="confirmacao-compra">
       <i class="ri-check-line anel p-1 sucesso texto-xl"></i>
-      <h2>O seu pedido vai a caminho</h2>
+      <h2>O seu pedido vai a caminho!</h2>
       <p class="subtítulo mt-0-5">Entrega entre 3 a 5 dias</p>
       <div class="divisória-horizontal mb-2 mt-2"></div>
-      <div class="flex-h alinhar-inicio">
+      <div class="flex-h alinhar-inicio justificar-centro flex-ajustar" id="origem-destino">
          <div class="flex-v alinhar-centro texto-centro texto-estender">
             <i class="ri-map-pin-range-line"></i>
             <p class="categoria-pequeno">Vício Tecnológico</p>

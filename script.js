@@ -51,21 +51,23 @@ function mostrarCarrinho() {
   const items = JSON.parse(localStorage.getItem('carrinho'))
   items.forEach((item) => {
     resultado += `
-    <div class="flex-h flex-inicial alinhar-centro espaço-4">
+    <div class="flex-h flex-inicial alinhar-centro espaço-4 flex-ajustar">
         <div class="flex-h alinhar-centro">
-          <div class="w-16">
-              <img src="${item.imagem1}"
-                alt="auriculares xiaomi">
-          </div>
-          <div class="flex-v">
-              <p class="negrito">${item.nome}</p>
-              <div class="flex-h alinhar-centro espaço-0.25">
-                <i class="ri-check-line sucesso"></i>
-                <p class="subtexto sucesso">Entrega entre 3 a 5 dias úteis</p>
-              </div>
+          <div class="flex-h alinhar-centro espaço-2" id="carrinho-contentor-app">
+            <div class="w-16">
+                <img src="${item.imagem1}"
+                  alt="auriculares xiaomi">
+            </div>
+            <div class="flex-v">
+                <p class="negrito">${item.nome}</p>
+                <div class="flex-h alinhar-centro espaço-0.25">
+                  <i class="ri-check-line sucesso"></i>
+                  <p class="subtexto sucesso">Entrega entre 3 a 5 dias úteis</p>
+                </div>
+            </div>
+            <p class="subtítulo">${item.preco}€</h3>
           </div>
         </div>
-        <p class="subtítulo">${item.preco}€</h3>
     </div>`
 
     if (listaCompras != null) {
@@ -174,7 +176,7 @@ class UI {
                     <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
                  </div>
                  <div class="flex-h alinhar-centro justificar-entre">
-                    <h3>${produto.preco}€</h3>
+                    <h3 class="produto-preco-app">${produto.preco}€</h3>
                     <p class="cruzado">${(produto.preco * 1.5).toFixed(2)}€</p>
                  </div>
                  <div class="flex-h alinhar-centro">
@@ -209,7 +211,7 @@ class UI {
                     <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
                  </div>
                  <div class="flex-h alinhar-centro justificar-entre">
-                    <h3>${produto.preco}€</h3>
+                    <h3 class="produto-preco-app">${produto.preco}€</h3>
                     <p class="cruzado">${(produto.preco * 1.5).toFixed(2)}€</p>
                  </div>
                  <div class="flex-h alinhar-centro">
@@ -288,7 +290,7 @@ class UI {
                <div class="etiqueta-primária categoria-pequeno alinhar-item-inicio mt-1 mb-1">Novidade</div>
                <h3>${produto.nome}</h3>
                <div class="flex-h alinhar-centro justificar-entre">
-                  <h2>${produto.preco}€</h2>
+                  <h2 class="produto-preco-app">${produto.preco}€</h2>
                   <h3 class="cruzado cinzento-60 regular">${(
                     produto.preco * 1.5
                   ).toFixed(2)}€</h3>
@@ -325,10 +327,10 @@ class UI {
     </section>
     
     <!-- OPINIÕES -->
-    <button class="flex-v alinhar-centro borda-primária w-total mb-4 mx-auto">
+    <button class="flex-v alinhar-centro borda-primária w-total mb-4 mx-auto" id="titulo-opinioes-app">
       <p class="categoria-médio mb-0-5">Opiniões</p>
     </button>
-    <section id="seccao-opinioes">
+    <section id="seccao-opinioes" class ="opinioes-app">
       <div class="flex-h justificar-centro espaço-8 ml-4 flex-ajustar">
          <!-- CLASSIFICAÇÃO GERAL -->
          <div class="flex-v espaço-0-5">
@@ -538,7 +540,7 @@ function categoriaEscolhida() {
                        <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
                     </div>
                     <div class="flex-h alinhar-centro justificar-entre">
-                       <h3>${produto.preco}€</h3>
+                       <h3 class="produto-preco-app">${produto.preco}€</h3>
                        <p class="cruzado">${(produto.preco * 1.5).toFixed(
                          2
                        )}€</p>
@@ -576,7 +578,7 @@ function categoriaEscolhida() {
                        <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
                     </div>
                     <div class="flex-h alinhar-centro justificar-entre">
-                       <h3>${produto.preco}€</h3>
+                       <h3 class="produto-preco-app">${produto.preco}€</h3>
                        <p class="cruzado">${(produto.preco * 1.5).toFixed(
                          2
                        )}€</p>
@@ -613,7 +615,7 @@ function categoriaEscolhida() {
                        <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
                     </div>
                     <div class="flex-h alinhar-centro justificar-entre">
-                       <h3>${produto.preco}€</h3>
+                       <h3 class="produto-preco-app">${produto.preco}€</h3>
                        <p class="cruzado">${(produto.preco * 1.5).toFixed(
                          2
                        )}€</p>
@@ -650,7 +652,7 @@ function categoriaEscolhida() {
                        <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
                     </div>
                     <div class="flex-h alinhar-centro justificar-entre">
-                       <h3>${produto.preco}€</h3>
+                       <h3class="produto-preco-app">${produto.preco}€</h3>
                        <p class="cruzado">${(produto.preco * 1.5).toFixed(
                          2
                        )}€</p>
@@ -692,7 +694,7 @@ function categoriaEscolhida() {
                        <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
                     </div>
                     <div class="flex-h alinhar-centro justificar-entre">
-                       <h3>${produto.preco}€</h3>
+                       <h3 class="produto-preco-app">${produto.preco}€</h3>
                        <p class="cruzado">${(produto.preco * 1.5).toFixed(
                          2
                        )}€</p>
@@ -729,7 +731,7 @@ function categoriaEscolhida() {
                        <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
                     </div>
                     <div class="flex-h alinhar-centro justificar-entre">
-                       <h3>${produto.preco}€</h3>
+                       <h3 class="produto-preco-app">${produto.preco}€</h3>
                        <p class="cruzado">${(produto.preco * 1.5).toFixed(
                          2
                        )}€</p>
@@ -773,7 +775,7 @@ function categoriaEscolhida() {
                        <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
                     </div>
                     <div class="flex-h alinhar-centro justificar-entre">
-                       <h3>${produto.preco}€</h3>
+                       <h3 class="produto-preco-app">${produto.preco}€</h3>
                        <p class="cruzado">${(produto.preco * 1.5).toFixed(
                          2
                        )}€</p>
@@ -912,7 +914,7 @@ function carregarPedido() {
                <div class="divisória-horizontal mb-2"></div>
             </header>
             <!-- PEDIDOS -->
-            <div class="flex-h alinhar-centro">
+            <div class="flex-h alinhar-centro flex-ajustar">
                <div class="w-16"><img src="${item.imagem1}"
                      alt="auriculares"></div>
                <div>
@@ -1310,7 +1312,6 @@ function mostrarDataPedido() {
   dataCompra.innerHTML = dataHoje
   numeroArtigo.innerHTML = localStorage.getItem('produtoQuantidade')
 }
-
 
 // DOWNLOAD FATURA
 function obterFatura() {

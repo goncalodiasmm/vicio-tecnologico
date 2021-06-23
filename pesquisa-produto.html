@@ -17,16 +17,16 @@
 <body onload="categoriaEscolhida()">
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
-      <div class="flex-h justificar-entre alinhar-centro pl-1 pr-1 flex-ajustar espaço-1">
+      <div class="flex-h justificar-entre alinhar-centro pl-1 pr-1 espaço-1" id="nav-contentor">
          <div class="flex-h alinhar-centro espaço-2">
             <button id="hamburger-btn"><i class="ri-menu-2-line"></i></button>
             <a href="index.html"><img src="./img/logo-primário.png" alt="logo primário" class="w-12"></a>
          </div>
          <div class="flex-h alinhar-centro espaço-2">
             <!-- <div class="flex-h alinhar-centro relative" id="motor-pesquisa">
-               <i class="ri-search-line absolute left-0-5"></i>
-               <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
-            </div> -->
+                  <i class="ri-search-line absolute left-0-5"></i>
+                  <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
+               </div> -->
             <div class="flex-h alinhar-centro espaço-1" id="nav-menus">
                <a href="perfil.html" class="flex-h alinhar-centro">
                   <i class="ri-heart-line"></i>
@@ -261,8 +261,9 @@
          </div>
       </main>
    </div>
+
    <!-- SECÇÃO NEWSLETTER -->
-   <section id="newsletter">
+   <section id="newsletter" class = "newsletter-app" >
       <div class="flex-v alinhar-centro mt-2">
          <div class="divisória-horizontal mb-2"></div>
          <h3>Não perca as próximas ofertas</h3>
@@ -277,6 +278,7 @@
          <div class="divisória-horizontal mt-2"></div>
       </div>
    </section>
+
    <!-- RODAPÉ -->
    <footer id="rodape">
       <div class="flex-h justificar-entre mt-2 flex-ajustar">
@@ -289,7 +291,7 @@
                <i class="ri-twitter-fill"></i>
             </div>
          </div>
-         <div class="flex-h alinhar-inicio justificar-entre espaço-2 flex-ajustar">
+         <div class="flex-h alinhar-inicio justificar-entre espaço-2 flex-ajustar" id="footer-menus">
             <!-- APOIO AO CLIENTE -->
             <ul>
                <li class="categoria-pequeno">Apoio ao Cliente</li>
@@ -327,7 +329,7 @@
                </a>
             </ul>
          </div>
-         <div class="flex-v alinhar-fim justificar-entre">
+         <div class="flex-v alinhar-fim justificar-entre" id="extra-info">
             <div class="flex-h alinhar-centro espaço-1">
                <img src="./img/pagamento-visa.png" alt="visa">
                <img src="./img/pagamento-mastercard.png" alt="mastercard">

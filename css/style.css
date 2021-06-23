@@ -1015,6 +1015,36 @@ img {
 }
 
 @media screen and (max-width: 768px) {
+  .passo-pagamento {
+    display: none;
+  }
+  #codigo-promo {
+    display: none;
+  }
+  #pedido-compras {
+    margin-top: 2rem;
+  }
+  #confirmacao-compra {
+    margin-top: 2rem;
+  }
+  #confirmacao-compra > i {
+    font-size: 2rem;
+    padding: 0.5rem;
+  }
+  #confirmacao-compra > h2 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  #confirmacao-compra > p {
+    font-size: 1rem;
+  }
+  #origem-destino {
+    gap: 1rem;
+  }
+  #carrinho-contentor-app {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
   #motor-pesquisa {
     display: none;
   }
@@ -1023,7 +1053,7 @@ img {
     gap: 2rem;
   }
   #nav-menus {
-    gap: 3rem
+    gap: 3rem;
   }
   #nav-menus > a > i {
     font-size: 1.5rem;
@@ -1074,5 +1104,37 @@ img {
   #info-pedido {
     flex-direction: column;
     gap: 0.5rem;
+  }
+  #rodape-compras-contentor {
+    gap: 1rem;
+  }
+  #lista-compras-contentor {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .form-linha {
+    flex-direction: column;
+    gap: 0;
+  }
+  .opinioes-app {
+    display: none;
+  }
+  #titulo-opinioes-app {
+    display: none;
+  }
+  .cruzado {
+    font-size: 1rem;
+  }
+  .produto-preco-app {
+    font-size: 1.5rem;
+  }
+  .newsletter-app {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .passo-icon-pagamento {
+    display: none;
   }
 }

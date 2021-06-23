@@ -17,16 +17,16 @@
 <body onload="confirmaEntrega(); carregarPedido()">
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
-      <div class="flex-h justificar-entre alinhar-centro pl-1 pr-1 flex-ajustar espaço-1">
+      <div class="flex-h justificar-entre alinhar-centro pl-1 pr-1 espaço-1" id="nav-contentor">
          <div class="flex-h alinhar-centro espaço-2">
             <button id="hamburger-btn"><i class="ri-menu-2-line"></i></button>
             <a href="index.html"><img src="./img/logo-primário.png" alt="logo primário" class="w-12"></a>
          </div>
          <div class="flex-h alinhar-centro espaço-2">
             <!-- <div class="flex-h alinhar-centro relative" id="motor-pesquisa">
-               <i class="ri-search-line absolute left-0-5"></i>
-               <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
-            </div> -->
+                  <i class="ri-search-line absolute left-0-5"></i>
+                  <input type="text" name="pesquisar" placeholder="Pesquise" class="indent-1-5">
+               </div> -->
             <div class="flex-h alinhar-centro espaço-1" id="nav-menus">
                <a href="perfil.html" class="flex-h alinhar-centro">
                   <i class="ri-heart-line"></i>
@@ -44,7 +44,7 @@
          </div>
       </div>
    </nav>
-
+   
    <!-- NAVEGAÇÃO LATERAL -->
    <nav class="h-total fixed top-0 -left-24 pt-2 transicao-base bg-branco w-24 shadow-lg" id="navegacao-lateral">
       <div class="flex-h alinhar-inicio">
@@ -82,16 +82,25 @@
    <section id="passos-pagamento">
       <div class="flex-h justificar-centro mt-4 mb-2">
          <!-- CARRINHO DE COMPRAS -->
-         <a href="pagamento-1.html" class="borda-cinzento w-total">
-            <p class="categoria-médio mb-0-5 texto-centro">Carrinho de compras</p>
+         <a href="pagamento-1.html" class="borda-cinzento w-total flex-h justificar-centro">
+            <p class="categoria-médio mb-0-5 texto-centro passo-pagamento">Carrinho de compras</p>
+            <p
+               class="border-2 border-solid border-cinzento-10 rounded-full texto-centro w-2 passo-icon-pagamento p-0-25 negrito mb-0-5">
+               1</p>
          </a>
          <!-- CHECKOUT -->
-         <a href="pagamento-2.html" class="borda-cinzento w-total">
-            <p class="categoria-médio mb-0-5 texto-centro">Checkout</p>
+         <a href="pagamento-2.html" class="borda-cinzento w-total flex-h justificar-centro">
+            <p class="categoria-médio mb-0-5 texto-centro passo-pagamento">Checkout</p>
+            <p
+               class="border-2 border-solid border-cinzento-10 rounded-full texto-centro w-2 passo-icon-pagamento p-0-25 negrito mb-0-5">
+               2</p>
          </a>
          <!-- CONFIRMAÇÃO -->
-         <a href="pagamento-3.html" class="borda-primária w-total">
-            <p class="categoria-médio mb-0-5 texto-centro">Confirmação</p>
+         <a href="pagamento-3.html" class="borda-primária w-total flex-h justificar-centro">
+            <p class="categoria-médio mb-0-5 texto-centro passo-pagamento">Confirmação</p>
+            <p
+               class="border-2 border-solid border-primaria rounded-full texto-centro w-2 passo-icon-pagamento p-0-25 negrito mb-0-5">
+               3</p>
          </a>
       </div>
    </section>
