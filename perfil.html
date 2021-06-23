@@ -14,10 +14,11 @@
    <script defer src="./script.js"></script>
    <script type="text/javascript" src="html2canvas.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
-      integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+      integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+      crossorigin="anonymous"></script>
 </head>
 
-<body onload="carregarPerfil(); mostrarPedido(); mostrarDataPedido(); mostrarFavorito()">
+<body onload="carregarPerfil(); mostrarPedido(); mostrarDataPedido(); mostrarFavoritos()">
    <!-- NAVEGAÇÃO TOPO -->
    <nav id="navegacao-topo">
       <div class="flex-h justificar-entre alinhar-centro">
@@ -35,7 +36,8 @@
                   <i class="ri-heart-line"></i>
                   <p class="subtexto" id="lista-favoritos"></p>
                </a>
-               <a href="login.html" class="flex-h alinhar-centro cursor-pointer">
+               <a href="login.html" class="flex-h alinhar-centro cursor-pointer"
+                  onclick="verificarUtilizador(); return false">
                   <i class="ri-user-fill"></i>
                   <p class="subtexto" id="utilizador-nome"></p>
                </a>
@@ -171,30 +173,12 @@
             </div>
          </section>
          <!-- SECCÃO LISTA DE FAVORITOS-->
-         <section id="lista-favoritos-seccao" class="hidden">
+         <header class="hidden mb-2" id="lista-favoritos-header">
             <p class="categoria-médio mb-0-5">Lista de Favoritos</p>
             <div class="divisória-horizontal"></div>
-            <!--
-            <div class="flex-h flex-inicial alinhar-centro espaço-4 mt-2">
-               <div class="flex-h alinhar-inicio">
-                  <img src="./img/headphones-lenovo-yoga/headphones-lenovo-yoga_1.jpg" class="w-12">
-                  <div class="flex-h justificar-entre">
-                     <div class="flex-v">
-                        <p class="negrito">Headphones Lenovo Yoga</p>
-                        <p class="subtexto">Não tem melhor maneira de aquecer o seu coração que pular ao som das suas
-                           batidas favoritas e desfrutar de ligações cristalina para quem você ama</p>
-                        <div class="flex-h espaço-0-5">
-                           <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Adicionar ao
-                                 Carrinho</button></a>
-                           <a href="#"><button class="btn-alerta mt-1 categoria-pequeno">Remover</button></a>
-                        </div>
-                     </div>
-                  </div>
-                  <p class="negrito">179.90€</p>
-               </div>   -->
-            </div>
-         </section>
-   
+         </header>
+         <section class="hidden" id="lista-favoritos-seccao"></section>
+
          <!-- SECCÃO PEDIDOS E FATURAS -->
          <section id="pedidos-faturas-seccao" class="hidden">
             <p class="categoria-médio mb-0-5">Pedidos e Faturas</p>
@@ -204,7 +188,9 @@
                   <p class="subtexto">Pedido realizado em: <span id="data-compra">18/02/2021</span></p>
                   <p class="subtexto"><span id="numero-artigos"></span> artigos</p>
                </div>
-               <div class="flex-h alinhar-centro cursor-pointer" onclick="obterFatura()">
+               <!--<button onclick="saveTextAsFile()">Guardar</button>
+               <input type="text" id="inputFileNameToSaveAs" value="Fatura">-->
+               <div id ="obter-fatura"class="flex-h alinhar-centro cursor-pointer" onclick="obterFatura()">
                   <i class="ri-file-text-line"></i>
                   <button>
                      <p class="categoria-pequeno">Obter fatura</p>
@@ -297,6 +283,8 @@
          </div>
       </div>
    </footer>
+
+   
 </body>
 
 </html>

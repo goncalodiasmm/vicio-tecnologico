@@ -8,31 +8,30 @@ const opinioesWebsite = document.getElementById('opinioes-website')
 // DETALHE DE PRODUTO
 const apresentacaoProduto = document.getElementById('apresentacao-produto')
 
-//LISTA FAVORITO
+// LISTA FAVORITOS
 const listaFavoritos = document.getElementById('lista-favoritos-seccao')
-function mostrarFavorito() {
+function mostrarFavoritos() {
   let resultado = ''
   const items = JSON.parse(localStorage.getItem('favoritos'))
   items.forEach((item) => {
-    resultado += `
- 
-               <div class="flex-h alinhar-inicio">
-                  <img src="${item.imagem}" class="w-12">
-                  <div class="flex-h justificar-entre">
-                     <div class="flex-v">
-                        <p class="negrito">${item.nome}</p>
-                        <p class="subtexto">Não tem melhor maneira de aquecer o seu coração que pular ao som das suas
-                           batidas favoritas e desfrutar de ligações cristalina para quem você ama</p>
-                        <div class="flex-h espaço-0-5">
-                           <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Adicionar ao
-                                 Carrinho</button></a>
-                           <a href="#"><button class="btn-alerta mt-1 categoria-pequeno">Remover</button></a>
-                        </div>
-                     </div>
-                  </div>
-                  <p class="negrito">179.90€</p>
-               </div>       
-      `
+    resultado += `<div class="flex-h alinhar-inicio">
+        <img src="${item.imagem1}" class="w-12">
+        <div class="flex-h justificar-entre">
+            <div class="flex-v">
+              <p class="negrito">${item.nome}</p>
+              <div class="flex-h alinhar-centro espaço-0.25">
+                <i class="ri-check-line sucesso"></i>
+                <p class="subtexto sucesso">Entrega entre 3 a 5 dias úteis</p>
+              </div>
+              <div class="flex-h espaço-0-5">
+                  <a href="#"><button class="btn-primário mt-1 categoria-pequeno">Adicionar ao
+                        Carrinho</button></a>
+                  <a href="#"><button class="btn-alerta mt-1 categoria-pequeno">Remover</button></a>
+              </div>
+            </div>
+        </div>
+        <p class="negrito">${item.preco}€</p>
+      </div>`
 
     if (listaFavoritos != null) {
       listaFavoritos.innerHTML = resultado
@@ -125,12 +124,6 @@ function lerId() {
   let url = new URL(window.location)
   let id = url.searchParams.get('id')
   return id
-}
-
-function lerCategoria() {
-  let url = new URL(window.location)
-  let categoria = url.searchParams.get('categoria')
-  return categoria
 }
 
 // BUSCAR PRODUTOS
@@ -317,13 +310,13 @@ class UI {
                     produto.id
                   }
                      id="adicionar-carrinho-btn">
-                     <i class="ri-shopping-cart-2-fill" id="adicionar-favoritos-btn" data-id=${
-                       produto.id
-                     }></i>
+                     <i class="ri-shopping-cart-2-fill"></i>
                      <p class="categoria-pequeno">Adicionar ao Carrinho</p>
                   </button>
                   <button>
-                     <i class="ri-heart-line texto-lg alerta"></i>
+                     <i id="adicionar-favoritos-btn" data-id=${
+                       produto.id
+                     } class="ri-heart-line texto-lg alerta" onclick="adicionarFavoritos()"></i>
                   </button>
                </div>
             </div>
@@ -408,7 +401,8 @@ class UI {
     )
     let id = adicionarFavoritosBtn.dataset.id
     adicionarFavoritosBtn.addEventListener('click', () => {
-      console.log('test')
+      adicionarFavoritosBtn.classList.remove('ri-heart-line')
+      adicionarFavoritosBtn.classList.add('ri-heart-fill')
       let produtoFavoritos = { ...Storage.apresentarProduto(id), quantidade: 1 }
       favoritos = [...favoritos, produtoFavoritos]
       Storage.guardarFavoritos(favoritos)
@@ -490,6 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ui.mostrarNovidades(produtos)
       ui.mostrarProduto(Storage.apresentarProduto(lerId()))
       ui.adicionarProduto()
+      ui.adicionarFavoritos()
     })
     .catch((error) => {
       console.log(error)
@@ -500,7 +495,9 @@ document.addEventListener('DOMContentLoaded', () => {
   definirUtilizador()
 })
 
-// ALTERNAR BARRA DE NAVEGAÇÃO LATERAL
+//////////////// NAVEGAÇÃO LATERAL ////////////////
+
+// ABRIR E FECHAR BARRA DE NAVEGAÇÃO LATERAL
 const navegacaoLateral = document.getElementById('navegacao-lateral')
 const hamburgerBtn = document.getElementById('hamburger-btn')
 const fecharBtn = document.getElementById('fechar-btn')
@@ -519,7 +516,7 @@ if (fecharBtn != null) {
   })
 }
 
-
+// GERAR URL BASEADO NA CATEGORIA ESCOLHIDA
 function categoriaEscolhida() {
   if (window.location.search == '?categoria=Perifericos') {
     let categoriaNome = document.getElementById('categoria-nome')
@@ -542,21 +539,23 @@ function categoriaEscolhida() {
                     </div>
                     <div class="flex-h alinhar-centro justificar-entre">
                        <h3>${produto.preco}€</h3>
-                       <p class="cruzado">${(produto.preco * 1.5).toFixed(2)}€</p>
+                       <p class="cruzado">${(produto.preco * 1.5).toFixed(
+                         2
+                       )}€</p>
                     </div>
                     <div class="flex-h alinhar-centro">
                        <i class="ri-heart-line alerta"></i>
                        <p class="subtexto">Favoritos</p>
                     </div>
                  </div>`
-  
+
         if (produtosEncontrados != null) {
           produtosEncontrados.innerHTML = resultado
         }
       }
     })
-  } 
-  
+  }
+
   if (window.location.search == '?categoria=Mobilidade') {
     let categoriaNome = document.getElementById('categoria-nome')
     categoriaNome.innerHTML = window.location.search.substring(11)
@@ -670,7 +669,12 @@ function categoriaEscolhida() {
   }
   if (window.location.search == '?categoria=Imagem-e-Som') {
     let categoriaNome = document.getElementById('categoria-nome')
-    categoriaNome.innerHTML = window.location.search.substring(11)
+    categoriaNome.innerHTML =
+      window.location.search.substring(11, 17) +
+      ' ' +
+      window.location.search.substring(18, 19) +
+      ' ' +
+      window.location.search.substring(20, 23)
     let resultado = ''
     const produtosEncontrados = document.getElementById('produtos-encontrados')
     let produtos = JSON.parse(localStorage.getItem('produtos'))
@@ -741,10 +745,54 @@ function categoriaEscolhida() {
         }
       }
     })
-  } 
+  }
+  if (window.location.search == '?categoria=Casa-e-Ar-Livre') {
+    let categoriaNome = document.getElementById('categoria-nome')
+    categoriaNome.innerHTML =
+      window.location.search.substring(11, 15) +
+      ' ' +
+      window.location.search.substring(16, 17) +
+      ' ' +
+      window.location.search.substring(18, 20) +
+      ' ' +
+      window.location.search.substring(21, 26)
+    let resultado = ''
+    const produtosEncontrados = document.getElementById('produtos-encontrados')
+    let produtos = JSON.parse(localStorage.getItem('produtos'))
+    produtos.forEach((produto) => {
+      if (produto.categoria == 'Casa e Ar Livre') {
+        resultado += `<!-- PRODUTO -->
+                 <div class="flex-v">
+                    <img src="${produto.imagem1}">
+                    <div class="flex-v">
+                       <p class="categoria-pequeno">${produto.categoria}</p>
+                       <p>${produto.nome}</p>
+                    </div>
+                    <div class="flex-h alinhar-centro sucesso">
+                       <i class="ri-check-line"></i>
+                       <p class="subtexto">Entrega entre 3 a 5 dias úteis</p>
+                    </div>
+                    <div class="flex-h alinhar-centro justificar-entre">
+                       <h3>${produto.preco}€</h3>
+                       <p class="cruzado">${(produto.preco * 1.5).toFixed(
+                         2
+                       )}€</p>
+                    </div>
+                    <div class="flex-h alinhar-centro">
+                       <i class="ri-heart-line alerta"></i>
+                       <p class="subtexto">Favoritos</p>
+                    </div>
+                 </div>`
+
+        if (produtosEncontrados != null) {
+          produtosEncontrados.innerHTML = resultado
+        }
+      }
+    })
+  }
 }
 
-// FORMULÁRIOS
+//////////////// FORMULÁRIOS ////////////////
 const loginForm = document.getElementById('login-form')
 const registoForm = document.getElementById('registo-form')
 const detalheEnvio = document.getElementById('detalhe-envio')
@@ -786,8 +834,6 @@ if (loginForm != null) {
     }
   })
 }
-
-//email.value =
 
 // FORMULÁRIO REGISTO
 if (registoForm != null) {
@@ -849,8 +895,8 @@ if (registoForm != null) {
     }
   })
 }
-//FORMULÁRIO DETALHE ENVIO
 
+// FORMULÁRIO DETALHE ENVIO
 function carregarDados() {
   nome.value = localStorage.getItem('utilizadorNome', nome.value)
   apelido.value = localStorage.getItem('utilizadorApelido', apelido.value)
@@ -994,7 +1040,7 @@ if (detalheEnvio != null) {
   })
 }
 
-//confirmação de envio
+// CONFIRMAÇÃO DE ENVIO
 function confirmaEntrega() {
   const entregaNome = document.getElementById('nome-Confirma')
   const moradaConfirma = document.getElementById('morada-Confirma')
@@ -1077,9 +1123,11 @@ function passwordValida(palavraPasse) {
     palavraPasse
   )
 }
+
 function codPostalValido(codPostal) {
   return /^\d{4}-\d{3}?$/.test(codPostal)
 }
+
 function nifValido(nif) {
   return /^[0-9]\d{8}$/.test(nif)
 }
@@ -1109,8 +1157,11 @@ function fecharModalCarrinho() {
   modalCarrinho.classList.add('hidden')
 }
 
+//////////////// PÁGINA DE PERFIL ////////////////
+
 // ALTERNAR SECÇÕES PERFIL
 const dadosPessoaisSeccao = document.getElementById('dados-pessoais-seccao')
+const listaFavoritosHeader = document.getElementById('lista-favoritos-header')
 const listaFavoritosSeccao = document.getElementById('lista-favoritos-seccao')
 const pedidosFaturasSeccao = document.getElementById('pedidos-faturas-seccao')
 const dadosPessoaisBtn = document.getElementById('dados-pessoais-btn')
@@ -1126,6 +1177,7 @@ if (dadosPessoaisBtn != null) {
     dadosPessoaisBtn.classList.add('negrito')
     dadosPessoaisBtn.classList.add('primária')
     dadosPessoaisSeccao.classList.remove('hidden')
+    listaFavoritosHeader.classList.add('hidden')
     listaFavoritosSeccao.classList.add('hidden')
     pedidosFaturasSeccao.classList.add('hidden')
   })
@@ -1140,6 +1192,7 @@ if (listaFavoritosBtn != null) {
     dadosPessoaisBtn.classList.remove('negrito')
     dadosPessoaisBtn.classList.remove('primária')
     dadosPessoaisSeccao.classList.add('hidden')
+    listaFavoritosHeader.classList.remove('hidden')
     listaFavoritosSeccao.classList.remove('hidden')
     pedidosFaturasSeccao.classList.add('hidden')
   })
@@ -1154,31 +1207,9 @@ if (pedidosFaturasBtn != null) {
     dadosPessoaisBtn.classList.remove('negrito')
     dadosPessoaisBtn.classList.remove('primária')
     dadosPessoaisSeccao.classList.add('hidden')
+    listaFavoritosHeader.classList.add('hidden')
     listaFavoritosSeccao.classList.add('hidden')
     pedidosFaturasSeccao.classList.remove('hidden')
-  })
-}
-
-// UPLOAD FOTO DE UTILIZADOR
-const utilizadorContentor = document.getElementById('utilizador-contentor')
-const utilizadorFoto = document.getElementById('perfil-foto')
-const uploadInput = document.getElementById('upload-input')
-const uploadBtn = document.getElementById('upload-btn')
-
-if (uploadInput) {
-  uploadInput.addEventListener('change', () => {
-    const upload = uploadInput.files[0]
-    const tipoUpload = /image.*/
-
-    if (upload.type.match(tipoUpload)) {
-      const reader = new FileReader()
-      reader.addEventListener('load', () => {
-        utilizadorFoto.setAttribute('src', reader.result)
-        localStorage.setItem('utilizadorFoto', utilizadorFoto)
-      })
-
-      reader.readAsDataURL(upload)
-    }
   })
 }
 
@@ -1210,8 +1241,30 @@ function carregarPerfil() {
     localStorage.getItem('utilizadorCidade')
 }
 
-//Consulta pedidos e facturas
+// UPLOAD FOTO DE UTILIZADOR
+const utilizadorContentor = document.getElementById('utilizador-contentor')
+const utilizadorFoto = document.getElementById('perfil-foto')
+const uploadInput = document.getElementById('upload-input')
+const uploadBtn = document.getElementById('upload-btn')
 
+if (uploadInput) {
+  uploadInput.addEventListener('change', () => {
+    const upload = uploadInput.files[0]
+    const tipoUpload = /image.*/
+
+    if (upload.type.match(tipoUpload)) {
+      const reader = new FileReader()
+      reader.addEventListener('load', () => {
+        utilizadorFoto.setAttribute('src', reader.result)
+        localStorage.setItem('utilizadorFoto', utilizadorFoto)
+      })
+
+      reader.readAsDataURL(upload)
+    }
+  })
+}
+
+// PEDIDOS E FATURAS - CONSULTAR
 const consultaPedidoFactura = document.getElementById('ver-pedido')
 function mostrarPedido() {
   let resultado = ''
@@ -1246,8 +1299,7 @@ function mostrarPedido() {
   })
 }
 
-//Pedidos e faturas - data de compra
-
+// PEDIDOS E FATURAS - DATA DE COMPRA
 let dataCompra = document.getElementById('data-compra')
 let numeroArtigo = document.getElementById('numero-artigos')
 
@@ -1256,11 +1308,79 @@ function mostrarDataPedido() {
   numeroArtigo.innerHTML = localStorage.getItem('produtoQuantidade')
 }
 
+// function obterFatura() {
+//   var pdf = new jsPDF()
+//   window.html2canvas = html2canvas
+//   const doc = document.getElementById('fatura')
+//   if (doc) {
+//     pdf.html(doc).then(() => pdf.save('fatura.pdf'))
+//   }
+// }
+
+//DOWNLOAD FATURA
+
 function obterFatura() {
-  var pdf = new jsPDF()
-  window.html2canvas = html2canvas
-  const doc = document.getElementById('fatura')
-  if (doc) {
-    pdf.html(doc).then(() => pdf.save('fatura.pdf'))
+  var carrinhoItems = localStorage.getItem('carrinho')
+  var prod
+  carrinhoItems = JSON.parse(carrinhoItems)
+  Object.values(carrinhoItems).map((item) => {
+    prod += item.nome + ' ' + item.preco
+  })
+  prod = prod.replace('undefined', ' ')
+  console.log(prod)
+
+  var textToWrite =
+    'Vício Tecnológico' +
+    '\n' +
+    'Fatura/Recibo' +
+    '\n' +
+    '\n' +
+    '---------------------------------------' +
+    '\n' +
+    'Nome: ' +
+    localStorage.getItem('utilizadorNome') +
+    ' ' +
+    localStorage.getItem('utilizadorApelido') +
+    '\n' +
+    '\n' +
+    'Morada: ' +
+    localStorage.getItem('utilizadorMorada') +
+    ',' +
+    ' ' +
+    localStorage.getItem('utilizadorCodPostal') +
+    ' ' +
+    localStorage.getItem('utilizadorCidade') +
+    '\n' +
+    '\n' +
+    'NIF: ' +
+    localStorage.getItem('utilizadorNIF') +
+    '\n' +
+    '\n' +
+    '---------------------------------------' +
+    '\n' +
+    'Produtos Comprados:' +
+    '\n' +
+    prod +
+    '*' +
+    localStorage.getItem('produtoQuantidade') +
+    '\n' +
+    '\n' +
+    '-----------------------------------------' +
+    '\n' +
+    'Preço: ' +
+    localStorage.getItem('carrinhoTotal') +
+    ' euros'
+
+  var textFileAsBlob = new Blob([textToWrite], {
+    type: 'text/plain',
+  })
+
+  var fileNameToSaveAs = 'fatura'
+  var downloadLink = document.createElement('a')
+  downloadLink.download = fileNameToSaveAs
+
+  if (window.URL != null) {
+    downloadLink.href = window.URL.createObjectURL(textFileAsBlob)
   }
+  downloadLink.click()
 }
